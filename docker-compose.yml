@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  host:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - microfrontend-network
+
+  workorder:
+    build:
+      context: ./apps/workorder
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - microfrontend-network
+
+  asset:
+    build:
+      context: ./apps/asset
+      dockerfile: Dockerfile
+    ports:
+      - "3002:80"
+    environment:
+      - NODE_ENV=production
+    networks:
+      - microfrontend-network
+
+networks:
+  microfrontend-network:
+    driver: bridge

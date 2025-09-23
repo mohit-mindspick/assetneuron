@@ -1,0 +1,61 @@
+{
+  "asset": {
+    "title": "Assets",
+    "addAsset": "Add Asset",
+    "editAsset": "Edit Asset",
+    "assetForm": "Asset form would be implemented here with proper form validation and submission.",
+    "searchPlaceholder": "Search assets...",
+    "typeFilter": "Type Filter",
+    "statusFilter": "Status Filter",
+    "allTypes": "All Types",
+    "allStatus": "All Status",
+    "type": {
+      "equipment": "Equipment",
+      "vehicle": "Vehicle",
+      "building": "Building",
+      "furniture": "Furniture",
+      "technology": "Technology"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "maintenance": "Maintenance",
+      "retired": "Retired"
+    },
+    "fields": {
+      "name": "Name",
+      "type": "Type",
+      "status": "Status",
+      "location": "Location",
+      "purchaseDate": "Purchase Date",
+      "warrantyExpiry": "Warranty Expiry",
+      "value": "Value",
+      "description": "Description",
+      "assignedTo": "Assigned To",
+      "lastMaintenanceDate": "Last Maintenance Date",
+      "nextMaintenanceDate": "Next Maintenance Date"
+    },
+    "sampleData": {
+      "hvacSystem": {
+        "name": "HVAC System - Building A",
+        "description": "Central air conditioning system for Building A"
+      },
+      "companyVehicle": {
+        "name": "Company Vehicle - Ford Transit",
+        "description": "Ford Transit van for deliveries and field work"
+      },
+      "officeBuilding": {
+        "name": "Office Building - Main Campus",
+        "description": "Main office building with 5 floors"
+      },
+      "conferenceFurniture": {
+        "name": "Conference Room Furniture Set",
+        "description": "Complete furniture set for conference room"
+      },
+      "serverRack": {
+        "name": "Server Rack - Data Center",
+        "description": "High-performance server rack for data processing"
+      }
+    }
+  }
+}

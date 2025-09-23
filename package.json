@@ -1,0 +1,25 @@
+{
+  "name": "assetneuron-microfrontend",
+  "version": "1.0.0",
+  "description": "Microfrontend application with Module Federation",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:host\" \"npm run dev:workorder\" \"npm run dev:asset\"",
+    "dev:host": "cd apps/host && npm run dev",
+    "dev:workorder": "cd apps/workorder && npm run dev",
+    "dev:asset": "cd apps/asset && npm run dev",
+    "build": "npm run build:host && npm run build:workorder && npm run build:asset",
+    "build:host": "cd apps/host && npm run build",
+    "build:workorder": "cd apps/workorder && npm run build",
+    "build:asset": "cd apps/asset && npm run build",
+    "install:all": "npm install && cd apps/host && npm install && cd ../workorder && npm install && cd ../asset && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "copy-webpack-plugin": "^13.0.1"
+  }
+}

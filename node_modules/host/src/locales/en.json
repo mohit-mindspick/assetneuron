@@ -1,0 +1,31 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "Your comprehensive asset and work order management platform",
+    "welcome": "Welcome to AssetNeuron"
+  },
+  "navigation": {
+    "workOrders": "Work Orders",
+    "assets": "Assets",
+    "dashboard": "Dashboard"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Work Orders",
+      "description": "Manage and track work orders efficiently"
+    },
+    "assets": {
+      "title": "Assets",
+      "description": "Monitor and maintain your assets"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Overview of your operations"
+    },
+    "openFeature": "Open {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "Loading {{app}} microfrontend...",
+    "notFound": "Microfrontend not found"
+  }
+}

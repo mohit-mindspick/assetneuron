@@ -1,0 +1,48 @@
+{
+  "workorder": {
+    "title": "Work Orders",
+    "createWorkOrder": "Create Work Order",
+    "editWorkOrder": "Edit Work Order",
+    "workOrderForm": "Work order form would be implemented here with proper form validation and submission.",
+    "searchPlaceholder": "Search work orders...",
+    "statusFilter": "Status Filter",
+    "allStatus": "All Status",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "fields": {
+      "title": "Title",
+      "description": "Description",
+      "assignedTo": "Assigned To",
+      "dueDate": "Due Date",
+      "assetId": "Asset ID"
+    },
+    "sampleData": {
+      "hvacRepair": {
+        "title": "Repair HVAC System",
+        "description": "Fix the air conditioning unit in Building A"
+      },
+      "lightBulbs": {
+        "title": "Replace Light Bulbs",
+        "description": "Replace all fluorescent bulbs in the office"
+      },
+      "maintenance": {
+        "title": "Maintenance Check",
+        "description": "Monthly maintenance check for all equipment"
+      }
+    }
+  }
+}
