@@ -27,5 +27,85 @@
   "microfrontend": {
     "loading": "Cargando microfrontend {{app}}...",
     "notFound": "Microfrontend no encontrado"
+  },
+  "header": {
+    "searchPlaceholder": "Búsqueda Inteligente IA...",
+    "allSites": "Todos los Sitios",
+    "bharatManufacturing": "Bharat Manufacturing Ltd"
+  },
+  "settings": {
+    "title": "Configuración",
+    "languageAndRegion": "Idioma y región",
+    "password": "Contraseña"
+  },
+  "languageAndRegion": {
+    "title": "Idioma y región",
+    "breadcrumb": "Configuración /",
+    "preferredLanguage": "Idioma preferido",
+    "country": "País",
+    "timeZone": "Zona horaria",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "languages": {
+      "en-US": "Inglés (Estados Unidos)",
+      "en-GB": "Inglés (Reino Unido)",
+      "es-ES": "Español (España)",
+      "fr-FR": "Francés (Francia)",
+      "de-DE": "Alemán (Alemania)",
+      "it-IT": "Italiano (Italia)",
+      "pt-BR": "Portugués (Brasil)",
+      "zh-CN": "Chino Simplificado (China)",
+      "zh-TW": "Chino Tradicional (Taiwán)",
+      "ja-JP": "Japonés (Japón)",
+      "ko-KR": "Coreano (Corea del Sur)",
+      "ru-RU": "Ruso (Rusia)",
+      "ar-SA": "Árabe (Arabia Saudita)",
+      "hi-IN": "Hindi (India)"
+    },
+    "countries": {
+      "US": "Estados Unidos de América (EE.UU.)",
+      "IN": "India",
+      "GB": "Reino Unido (RU)",
+      "CA": "Canadá",
+      "AU": "Australia",
+      "DE": "Alemania",
+      "FR": "Francia",
+      "ES": "España",
+      "IT": "Italia",
+      "BR": "Brasil",
+      "JP": "Japón",
+      "CN": "China",
+      "RU": "Rusia",
+      "SA": "Arabia Saudita",
+      "MX": "México",
+      "NL": "Países Bajos",
+      "SE": "Suecia",
+      "NO": "Noruega",
+      "DK": "Dinamarca",
+      "FI": "Finlandia"
+    },
+    "timeZones": {
+      "EST": "Hora Estándar del Este (EST)",
+      "IST": "Hora Estándar de la India (IST)",
+      "PST": "Hora Estándar del Pacífico (PST)",
+      "MST": "Hora Estándar de la Montaña (MST)",
+      "CST": "Hora Estándar Central (CST)",
+      "GMT": "Hora del Meridiano de Greenwich (GMT)",
+      "CET": "Hora de Europa Central (CET)",
+      "JST": "Hora Estándar de Japón (JST)",
+      "AEST": "Hora Estándar del Este de Australia (AEST)",
+      "MSK": "Hora Estándar de Moscú (MSK)",
+      "CST-China": "Hora Estándar de China (CST)",
+      "BRT": "Hora de Brasilia (BRT)",
+      "AST": "Hora Estándar de Arabia (AST)",
+      "NZST": "Hora Estándar de Nueva Zelanda (NZST)",
+      "CAT": "Hora de África Central (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Perfil",
+    "logout": "Cerrar sesión",
+    "myAccount": "Mi cuenta",
+    "saving": "Guardando..."
   }
 }

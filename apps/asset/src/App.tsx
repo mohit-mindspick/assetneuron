@@ -1,7 +1,48 @@
-import React from 'react';
-import { ThemeProvider, createTheme, CssBaseline, Container } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { ThemeProvider, createTheme, CssBaseline, Container, Box, CircularProgress } from '@mui/material';
 import AssetList from './components/AssetList';
 import { createBrandPalette, customColors } from 'shared';
+import i18n from './i18n';
+
+// Component to wait for i18n initialization
+const I18nLoader: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [isI18nReady, setIsI18nReady] = useState(false);
+
+  useEffect(() => {
+    const checkI18nReady = () => {
+      // Check if i18n is initialized and has resources
+      if (i18n.isInitialized && i18n.hasResourceBundle('en', 'translation')) {
+        setIsI18nReady(true);
+      } else {
+        // Wait for i18n to be ready
+        const timer = setTimeout(checkI18nReady, 100);
+        return () => clearTimeout(timer);
+      }
+    };
+
+    checkI18nReady();
+  }, []);
+
+  if (!isI18nReady) {
+    return (
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          flexDirection: 'column',
+          gap: 2,
+        }}
+      >
+        <CircularProgress />
+        <Box sx={{ color: 'text.secondary' }}>Loading translations...</Box>
+      </Box>
+    );
+  }
+
+  return <>{children}</>;
+};
 
 const theme = createTheme({
   palette: {
@@ -71,12 +112,14 @@ const theme = createTheme({
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="xl">
-        <AssetList />
-      </Container>
-    </ThemeProvider>
+    <I18nLoader>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Container maxWidth="xl">
+          <AssetList />
+        </Container>
+      </ThemeProvider>
+    </I18nLoader>
   );
 };
 

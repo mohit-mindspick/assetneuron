@@ -229,7 +229,7 @@ const registerMicrofrontend = (appName: string) => {
 };
 
 // Initialize i18n
-const initI18n = (appTranslations: any = {}, appName: string = 'unknown') => {
+const initI18n = async (appTranslations: any = {}, appName: string = 'unknown') => {
   console.log(`initI18n called for ${appName} with appTranslations:`, appTranslations);
   const isInitialized = typeof window !== 'undefined' ? (window as any).__i18n_initialized : false;
   const globalI18n = typeof window !== 'undefined' ? (window as any).__i18n_instance : i18n;
@@ -260,7 +260,7 @@ const initI18n = (appTranslations: any = {}, appName: string = 'unknown') => {
     console.log('Common translations EN:', commonTranslations.en);
     console.log('App translations EN:', appTranslations.en);
 
-    globalI18n
+    await globalI18n
       .use(LanguageDetector)
       .use(initReactI18next)
       .init({
@@ -281,6 +281,7 @@ const initI18n = (appTranslations: any = {}, appName: string = 'unknown') => {
       if (typeof window !== 'undefined') {
         (window as any).__i18n_initialized = true;
       }
+      console.log('i18n initialization completed');
   } else {
     console.log('i18n already initialized, adding new resources:', appTranslations);
     // If already initialized, add new resources
