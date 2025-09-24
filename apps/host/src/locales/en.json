@@ -31,7 +31,8 @@
   "header": {
     "searchPlaceholder": "AI Smart Search...",
     "allSites": "All Sites",
-    "bharatManufacturing": "Bharat Manufacturing Ltd"
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Aggregated view across all sites"
   },
   "settings": {
     "title": "Settings",

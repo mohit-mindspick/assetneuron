@@ -1,157 +1,146 @@
-# Locale API Service
+# Navigation API Service
 
-This service provides a mock REST API for fetching locale data (languages, countries, timezones) and saving user preferences. It's designed to be easily replaceable with a real API.
+This service provides a mock implementation for fetching navigation data (sites). It's designed to be easily replaceable with a real REST API.
+
+## Current Implementation
+
+The service currently uses mock data from `../data/navigation.json` with simulated API delays.
 
 ## Files Structure
 
-```
-src/
-├── data/
-│   └── localeData.json          # JSON data file with all locale options
-├── types/
-│   └── api.ts                   # TypeScript interfaces for API responses
-├── services/
-│   ├── localeApi.ts             # Mock API service implementation
-│   └── README.md                # This documentation
-└── hooks/
-    └── useLocaleData.ts         # React hooks for consuming the API
-```
+- `navigationApi.ts` - Main API service with mock implementation
+- `../data/navigation.json` - Mock data file
+- `../hooks/useNavigationData.ts` - React hooks for consuming the API
 
-## Current Implementation (Mock API)
+## API Methods
 
-The current implementation uses:
-- **JSON file**: `src/data/localeData.json` contains all the locale data
-- **Mock service**: `src/services/localeApi.ts` simulates API calls with delays
-- **React hooks**: `src/hooks/useLocaleData.ts` provides easy-to-use hooks
+### `NavigationApiService.getSites()`
+Fetches all sites data.
 
-## Switching to Real API
-
-To switch from mock to real API, you have two options:
-
-### Option 1: Update the existing service
-
-1. **Update the configuration** in `localeApi.ts`:
-```typescript
-import { switchToRealApi } from './localeApi';
-
-// Replace with your real API configuration
-switchToRealApi({
-  baseUrl: 'https://your-api.com/api/v1',
-  timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer your-token',
-  },
-});
-```
-
-2. **Replace the mock methods** with real fetch calls:
-```typescript
-async getLocaleData(): Promise<ApiResponse<LocaleDataResponse>> {
-  const response = await fetch(`${this.config.baseUrl}/locale-data`, {
-    method: 'GET',
-    headers: this.config.headers,
-  });
-  
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-  
-  return await response.json();
-}
-```
-
-### Option 2: Create a new service
-
-1. **Create a new service file** (e.g., `realLocaleApi.ts`)
-2. **Implement the same interface** as the mock service
-3. **Update the imports** in your components:
-```typescript
-// Change from:
-import { localeApiService } from '../services/localeApi';
-
-// To:
-import { localeApiService } from '../services/realLocaleApi';
-```
-
-## API Endpoints
-
-The service expects these endpoints:
-
-### GET `/api/v1/locale-data`
-Returns all locale data:
+**Mock Response:**
 ```json
 {
+  "success": true,
   "data": {
-    "languages": [
-      { "value": "en-US", "label": "English (United States)" }
-    ],
-    "countries": [
-      { "value": "US", "label": "United States of America (USA)" }
-    ],
-    "timezones": [
-      { "value": "EST", "label": "Eastern Standard Time (EST)" }
+    "sites": [
+      {
+        "id": "pune",
+        "name": "Pune Plant",
+        "status": "ACTIVE",
+        "location": "Maharashtra",
+        "type": "Site"
+      }
     ]
   },
-  "success": true,
-  "message": "Locale data fetched successfully"
+  "message": "Sites data fetched successfully"
 }
 ```
 
-### POST `/api/v1/user/preferences`
-Saves user preferences:
-```json
-{
-  "language": "en-US",
-  "country": "US", 
-  "timezone": "EST"
+### `NavigationApiService.getSiteById(siteId: string)`
+Fetches a specific site by ID.
+
+### `NavigationApiService.getSitesByType(type: Site['type'])`
+Fetches sites filtered by type (Region, Site, Location, Building, Floor).
+
+## Replacing with Real API
+
+To replace the mock API with a real REST API:
+
+1. **Update the API service methods** in `navigationApi.ts`:
+   ```typescript
+   static async getSites(): Promise<NavigationApiResponse> {
+     try {
+       const response = await fetch('/api/sites', {
+         method: 'GET',
+         headers: {
+           'Content-Type': 'application/json',
+           // Add authentication headers if needed
+           'Authorization': `Bearer ${getAuthToken()}`
+         }
+       });
+       
+       if (!response.ok) {
+         throw new Error(`HTTP error! status: ${response.status}`);
+       }
+       
+       const data = await response.json();
+       return {
+         success: true,
+         data: data,
+         message: 'Sites data fetched successfully'
+       };
+     } catch (error) {
+       console.error('API Error:', error);
+       return {
+         success: false,
+         data: { sites: [] },
+         message: 'Failed to fetch sites data'
+       };
+     }
+   }
+   ```
+
+2. **Update API endpoints** to match your backend:
+   - `/api/sites` - Get all sites
+   - `/api/sites/:id` - Get site by ID
+   - `/api/sites?type=:type` - Get sites by type
+
+3. **Add authentication** if required:
+   ```typescript
+   // Add to headers
+   'Authorization': `Bearer ${getAuthToken()}`
+   ```
+
+4. **Update error handling** for real API responses:
+   ```typescript
+   if (!response.ok) {
+     const errorData = await response.json();
+     throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+   }
+   ```
+
+## Data Structure
+
+The API expects the following data structure:
+
+```typescript
+interface Site {
+  id: string;
+  name: string;
+  status: 'ACTIVE' | 'INACTIVE';
+  location: string;
+  type: 'Region' | 'Site' | 'Location' | 'Building' | 'Floor';
 }
 ```
-
-Returns:
-```json
-{
-  "data": { "saved": true },
-  "success": true,
-  "message": "User preferences saved successfully"
-}
-```
-
-## Features
-
-- ✅ **Loading states**: Shows spinners while data loads
-- ✅ **Error handling**: Displays error messages with retry options
-- ✅ **TypeScript support**: Full type safety
-- ✅ **Easy switching**: Simple configuration to switch APIs
-- ✅ **Fallback data**: Uses localStorage as backup
-- ✅ **Realistic delays**: Simulates network latency
 
 ## Usage in Components
 
+The service is consumed through React hooks:
+
 ```typescript
-import { useLocaleData, useSaveUserPreferences } from '../hooks/useLocaleData';
+import { useNavigationData } from '../hooks/useNavigationData';
 
 const MyComponent = () => {
-  const { languages, countries, timezones, loading, error, refetch } = useLocaleData();
-  const { savePreferences, saving, error: saveError } = useSaveUserPreferences();
-
-  // Use the data in your component
+  const { sites, loading, error, refetch } = useNavigationData();
+  
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  
   return (
     <div>
-      {loading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
-      {/* Your component content */}
+      {sites.map(site => (
+        <div key={site.id}>{site.name}</div>
+      ))}
     </div>
   );
 };
 ```
 
-## Testing
+## Benefits of This Architecture
 
-The mock API includes simulated errors for testing:
-```typescript
-// Uncomment this line in localeApi.ts to test error handling
-// if (Math.random() < 0.1) {
-//   throw new Error('Simulated API error');
-// }
-```
+1. **Easy Migration**: Mock API can be replaced with real API by updating only the service methods
+2. **Type Safety**: Full TypeScript support with proper interfaces
+3. **Error Handling**: Consistent error handling across all API calls
+4. **Loading States**: Built-in loading and error states for UI components
+5. **Caching**: Hooks can be extended to include caching mechanisms
+6. **Testing**: Mock implementation makes unit testing easier

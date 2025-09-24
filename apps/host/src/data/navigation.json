@@ -1,0 +1,39 @@
+{
+  "sites": [
+    {
+      "id": "pune",
+      "name": "Pune Plant",
+      "status": "ACTIVE",
+      "location": "Maharashtra",
+      "type": "Site"
+    },
+    {
+      "id": "chennai",
+      "name": "Chennai Plant",
+      "status": "ACTIVE",
+      "location": "Tamil Nadu",
+      "type": "Site"
+    },
+    {
+      "id": "ahmedabad",
+      "name": "Ahmedabad Plant",
+      "status": "ACTIVE",
+      "location": "Gujarat",
+      "type": "Site"
+    },
+    {
+      "id": "bengaluru",
+      "name": "Bengaluru Plant",
+      "status": "ACTIVE",
+      "location": "Karnataka",
+      "type": "Site"
+    },
+    {
+      "id": "hyderabad",
+      "name": "Hyderabad Plant",
+      "status": "ACTIVE",
+      "location": "Telangana",
+      "type": "Site"
+    }
+  ]
+}

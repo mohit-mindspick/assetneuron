@@ -16,6 +16,11 @@ import {
   InputAdornment,
   Badge,
   Avatar,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+  Chip,
+  alpha,
 } from '@mui/material';
 import {
   Menu as MenuIcon,
@@ -29,21 +34,33 @@ import {
   Settings,
   Notifications,
   KeyboardArrowDown,
+  Check,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '@mui/material/styles';
 import { useAppContext } from '../context/AppContext';
 import { handleLocaleChange } from '../i18n';
 import SettingsDrawer from './SettingsDrawer';
+import { useNavigationData } from '../hooks/useNavigationData';
+import { Site } from '../services/navigationApi';
+import { customColors } from '../../../../packages/shared/theme';
+
+// Site data structure is now imported from navigationApi.ts
 
 const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state, setTheme } = useAppContext();
   const { t, i18n } = useTranslation();
+  const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [siteMenuAnchor, setSiteMenuAnchor] = React.useState<null | HTMLElement>(null);
   const [settingsDrawerOpen, setSettingsDrawerOpen] = React.useState(false);
+  const [selectedSite, setSelectedSite] = React.useState<string>('all-sites');
+
+  // Use the custom hook to fetch sites data
+  const { sites, loading: sitesLoading, error: sitesError, refetch: refetchSites } = useNavigationData();
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -59,6 +76,19 @@ const Navigation: React.FC = () => {
 
   const handleSiteMenuClose = () => {
     setSiteMenuAnchor(null);
+  };
+
+  const handleSiteSelection = (siteId: string) => {
+    setSelectedSite(siteId);
+    setSiteMenuAnchor(null);
+  };
+
+  const getSelectedSiteDisplay = () => {
+    if (selectedSite === 'all-sites') {
+      return `${t('header.allSites')} | ${t('header.fallbackCompanyName')}`;
+    }
+    const site = sites.find(s => s.id === selectedSite);
+    return site?.name;
   };
 
   const handleSettingsClick = () => {
@@ -159,31 +189,179 @@ const Navigation: React.FC = () => {
 
           {/* Site Selector */}
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Button 
+              size="small" 
+              onClick={handleSiteMenu}
+              sx={{ color: '#6B7C32' }}
+            >
             <Typography 
               variant="body2" 
               sx={{ 
                 color: 'black',
                 fontSize: '0.9rem',
-                mr: 1
+                mr: 1,
+                fontWeight: 600
               }}
             >
-              {t('header.allSites')} | {t('header.bharatManufacturing')}
+              {getSelectedSiteDisplay()}
             </Typography>
-            <IconButton 
-              size="small" 
-              onClick={handleSiteMenu}
-              sx={{ color: '#6B7C32' }}
-            >
+           
               <KeyboardArrowDown />
-            </IconButton>
+            </Button>
             <Menu
               anchorEl={siteMenuAnchor}
               open={Boolean(siteMenuAnchor)}
               onClose={handleSiteMenuClose}
+              PaperProps={{
+                sx: {
+                  width: 320,
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                  border: '1px solid #e0e0e0',
+                  mt: 1,
+                }
+              }}
+              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-              <MenuItem onClick={handleSiteMenuClose}>{t('header.allSites')}</MenuItem>
-              <MenuItem onClick={handleSiteMenuClose}>{t('header.bharatManufacturing')}</MenuItem>
-              <MenuItem onClick={handleSiteMenuClose}>Other Site</MenuItem>
+              {/* All Sites Option */}
+              <MenuItem
+                onClick={() => handleSiteSelection('all-sites')}
+                sx={{
+                  px: 2,
+                  py: 1.5,
+                  backgroundColor: selectedSite === 'all-sites' ? customColors.navigation.selectedBackground : 'transparent',
+                  '&:hover': {
+                    backgroundColor: selectedSite === 'all-sites' ? customColors.navigation.hoverBackground : customColors.navigation.unselectedHoverBackground,
+                  },
+                }}
+              >
+                <Box sx={{ flexGrow: 1 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontWeight: 600,
+                      color: 'black',
+                      fontSize: '0.9rem',
+                      mb: 0.5,
+                    }}
+                  >
+                    {t('header.allSites')}
+                  </Typography>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: '#666',
+                      fontSize: '0.75rem',
+                    }}
+                  >
+                    {t('header.aggregatedView')}
+                  </Typography>
+                </Box>
+                {selectedSite === 'all-sites' && (
+                  <Box
+                    sx={{
+                      width: 20,
+                      height: 20,
+                      borderRadius: '50%',
+                      backgroundColor: '#1976d2',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <Check sx={{ color: 'white', fontSize: '0.8rem' }} />
+                  </Box>
+                )}
+              </MenuItem>
+
+              {/* Separator Line */}
+              <Divider sx={{ mx: 0 }} />
+
+              {/* Site List */}
+              {sitesLoading ? (
+                <MenuItem disabled>
+                  <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                    Loading sites...
+                  </Typography>
+                </MenuItem>
+              ) : sitesError ? (
+                <MenuItem disabled>
+                  <Typography variant="body2" sx={{ color: '#d32f2f' }}>
+                    Error loading sites: {sitesError}
+                  </Typography>
+                </MenuItem>
+              ) : sites.length === 0 ? (
+                <MenuItem disabled>
+                  <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                    No sites available
+                  </Typography>
+                </MenuItem>
+              ) : (
+                sites.map((site) => (
+                <MenuItem
+                  key={site.id}
+                  onClick={() => handleSiteSelection(site.id)}
+                  sx={{
+                    px: 2,
+                    py: 1,
+                    backgroundColor: selectedSite === site.id ? customColors.navigation.selectedBackground : 'transparent',
+                    '&:hover': {
+                      backgroundColor: selectedSite === site.id ? customColors.navigation.hoverBackground : customColors.navigation.unselectedHoverBackground,
+                    },
+                  }}
+                >
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.25 }}>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontWeight: 600,
+                          color: 'black',
+                          fontSize: '0.8rem',
+                        }}
+                      >
+                        {site.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: '#4caf50',
+                          fontSize: '0.5rem',
+                          fontWeight: 400,
+                        }}
+                      >
+                        {site.status}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: '#666',
+                        fontSize: '0.75rem',
+                      }}
+                    >
+                      {site.location}
+                    </Typography>
+                  </Box>
+                  {selectedSite === site.id && (
+                    <Box
+                      sx={{
+                        width: 20,
+                        height: 20,
+                        borderRadius: '50%',
+                        backgroundColor: '#1976d2',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      <Check sx={{ color: 'white', fontSize: '0.8rem' }} />
+                    </Box>
+                  )}
+                </MenuItem>
+                ))
+              )}
             </Menu>
           </Box>
 

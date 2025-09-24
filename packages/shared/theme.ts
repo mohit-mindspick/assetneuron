@@ -74,4 +74,10 @@ export const customColors = {
     primary: brandColors.accentE,
     secondary: brandColors.accentN,
   },
+  navigation: {
+    selectedBackground: '#EFF3FF',
+    hoverBackground: '#EFF3FF',
+    unselectedHoverBackground: '#F0F7FF',
+    primaryHoverAlpha: 0.12,
+  },
 } as const;

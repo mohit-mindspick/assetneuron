@@ -31,7 +31,8 @@
   "header": {
     "searchPlaceholder": "Búsqueda Inteligente IA...",
     "allSites": "Todos los Sitios",
-    "bharatManufacturing": "Bharat Manufacturing Ltd"
+    "bharatManufacturing": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Vista agregada de todos los sitios"
   },
   "settings": {
     "title": "Configuración",
