@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Anderson",
+      "email": "john.anderson@seams.com",
+      "phone": "+1-555-0101",
+      "role": "Regional Manager",
+      "department": "Regional Operations",
+      "username": "@regional.manager",
+      "password": "demo123"
+    },
+    {
+      "id": "2",
+      "name": "Rajesh Kumar",
+      "email": "rajesh.kumar@seams.com",
+      "phone": "+1-555-0102",
+      "role": "Plant Manager",
+      "department": "Plant Operations",
+      "username": "@plant.manager",
+      "password": "demo123"
+    },
+    {
+      "id": "3",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@seams.com",
+      "phone": "+1-555-0103",
+      "role": "Maintenance Manager",
+      "department": "Maintenance",
+      "username": "@maintenance.manager",
+      "password": "demo123"
+    },
+    {
+      "id": "4",
+      "name": "Vikram Singh",
+      "email": "vikram.singh@seams.com",
+      "phone": "+1-555-0104",
+      "role": "Asset Manager",
+      "department": "Asset Management",
+      "username": "@asset.manager",
+      "password": "demo123"
+    },
+    {
+      "id": "5",
+      "name": "Amit Patel",
+      "email": "amit.patel@seams.com",
+      "phone": "+1-555-0105",
+      "role": "Maintenance Technician",
+      "department": "Field Operations",
+      "username": "@technician.user",
+      "password": "demo123"
+    },
+    {
+      "id": "6",
+      "name": "Sarah Thompson",
+      "email": "sarah.thompson@seams.com",
+      "phone": "+1-555-0106",
+      "role": "Executive",
+      "department": "Executive Management",
+      "username": "@executive.user",
+      "password": "demo123"
+    }
+  ]
+}

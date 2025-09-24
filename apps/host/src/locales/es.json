@@ -4,10 +4,39 @@
     "subtitle": "Su plataforma integral de gestión de activos y órdenes de trabajo",
     "welcome": "Bienvenido a AssetNeuron"
   },
+  "login": {
+    "title": "Bienvenido a AssetNeuron",
+    "selectDemoUser": "Seleccionar Usuario Demo",
+    "continueWithGoogle": "Continuar con Google",
+    "manualLogin": "Inicio de Sesión Manual",
+    "username": "Nombre de Usuario",
+    "password": "Contraseña",
+    "loginButton": "Iniciar Sesión",
+    "hideManualLogin": "Ocultar Inicio de Sesión Manual",
+    "backToMainLogin": "← Volver al Inicio de Sesión Principal",
+    "invalidCredentials": "Nombre de usuario o contraseña inválidos",
+    "loginFailed": "Error al iniciar sesión. Por favor, inténtalo de nuevo.",
+    "demoLoginFailed": "Error al iniciar sesión demo. Por favor, inténtalo de nuevo."
+  },
   "navigation": {
     "workOrders": "Órdenes de Trabajo",
     "assets": "Activos",
     "dashboard": "Panel de Control"
+  },
+  "sidebar": {
+    "dashboard": "Panel de Control",
+    "sitesLocation": "Sitios y Ubicación",
+    "assets": "Activos",
+    "inventory": "Inventario",
+    "cases": "Casos",
+    "preventiveMaintenance": "Mantenimiento Preventivo",
+    "workOrder": "Orden de Trabajo",
+    "smartScheduling": "Programación Inteligente",
+    "people": "Personas",
+    "investmentPlanning": "Planificación de Inversión",
+    "sustainability": "Sostenibilidad",
+    "analytics": "Analíticas",
+    "collapse": "Contraer"
   },
   "home": {
     "workOrders": {

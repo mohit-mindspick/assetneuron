@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 3000,
+    port: process.env.PORT || 3000,
     historyApiFallback: true,
   },
   entry: './src/index.tsx',

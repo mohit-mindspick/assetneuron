@@ -4,10 +4,39 @@
     "subtitle": "Your comprehensive asset and work order management platform",
     "welcome": "Welcome to AssetNeuron"
   },
+  "login": {
+    "title": "Welcome to AssetNeuron",
+    "selectDemoUser": "Select Demo User",
+    "continueWithGoogle": "Continue with Google",
+    "manualLogin": "Manual Login",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "hideManualLogin": "Hide Manual Login",
+    "backToMainLogin": "← Back to Main Login",
+    "invalidCredentials": "Invalid username or password",
+    "loginFailed": "Login failed. Please try again.",
+    "demoLoginFailed": "Demo login failed. Please try again."
+  },
   "navigation": {
     "workOrders": "Work Orders",
     "assets": "Assets",
     "dashboard": "Dashboard"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "sitesLocation": "Sites & Location",
+    "assets": "Assets",
+    "inventory": "Inventory",
+    "cases": "Cases",
+    "preventiveMaintenance": "Preventive Maintenance",
+    "workOrder": "Work Order",
+    "smartScheduling": "Smart Scheduling",
+    "people": "People",
+    "investmentPlanning": "Investment Planning",
+    "sustainability": "Sustainability",
+    "analytics": "Analytics",
+    "collapse": "Collapse"
   },
   "home": {
     "workOrders": {

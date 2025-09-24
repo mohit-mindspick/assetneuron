@@ -125,7 +125,7 @@ const loadLocaleResources = async (appName: string, locale: string) => {
     let url;
     switch (appName) {
       case 'host':
-        url = `http://localhost:3000/locales/${locale}.json`;
+        url = `http://localhost:3003/locales/${locale}.json`;
         break;
       case 'workorder':
         url = `http://localhost:3001/locales/${locale}.json`;

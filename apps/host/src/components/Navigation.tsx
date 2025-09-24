@@ -41,6 +41,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import { useAppContext } from '../context/AppContext';
+import { useAuth } from '../context/AuthContext';
 import { handleLocaleChange } from '../i18n';
 import SettingsDrawer from './SettingsDrawer';
 import { useNavigationData } from '../hooks/useNavigationData';
@@ -54,6 +55,7 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state, setTheme } = useAppContext();
+  const { user: authUser, logout } = useAuth();
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -76,12 +78,9 @@ const Navigation: React.FC = () => {
   };
 
   const handleSignOutClick = async () => {
-    const success = await handleSignOut();
-    if (success) {
-      handleClose();
-      // You can add additional sign out logic here (e.g., redirect to login page)
-      console.log('User signed out successfully');
-    }
+    logout();
+    handleClose();
+    navigate('/login');
   };
 
   const handleSiteMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -127,12 +126,13 @@ const Navigation: React.FC = () => {
 
   return (
     <AppBar 
-      position="static" 
+      position="fixed" 
       sx={{ 
         backgroundColor: 'white',
         color: 'black',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-        borderBottom: '1px solid #e0e0e0'
+        boxShadow: 'none',
+        borderBottom: '1px solid #e0e0e0',
+        zIndex: 1200
       }}
     >
       <Toolbar sx={{ minHeight: '64px !important' }}>
@@ -155,7 +155,7 @@ const Navigation: React.FC = () => {
             flexGrow: 1
           }}
         >
-          SEAMS
+          AssetNeuron
         </Typography>
         
         {/* Right-aligned components container */}
@@ -473,7 +473,7 @@ const Navigation: React.FC = () => {
                       <Typography variant="body2" sx={{ color: '#d32f2f' }}>
                         Error loading user data
                       </Typography>
-                    ) : user ? (
+                    ) : authUser ? (
                       <>
                         <Typography
                           variant="h6"
@@ -484,7 +484,7 @@ const Navigation: React.FC = () => {
                             mb: 0.5,
                           }}
                         >
-                          {user.firstName} {user.lastName}
+                          {authUser.name}
                         </Typography>
                         <Typography
                           variant="body2"
@@ -504,7 +504,7 @@ const Navigation: React.FC = () => {
                             mb: 0.25,
                           }}
                         >
-                          {user.email}
+                          {authUser.email}
                         </Typography>
                         <Typography
                           variant="body2"
@@ -513,7 +513,7 @@ const Navigation: React.FC = () => {
                             fontSize: '0.9rem',
                           }}
                         >
-                          {user.role}
+                          {authUser.role}
                         </Typography>
                       </>
                     ) : (

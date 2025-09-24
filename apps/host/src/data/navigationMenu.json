@@ -1,0 +1,89 @@
+{
+  "menuItems": [
+    {
+      "id": "dashboard",
+      "labelKey": "sidebar.dashboard",
+      "icon": "DashboardIcon",
+      "path": "/",
+      "active": true
+    },
+    {
+      "id": "sites-location",
+      "labelKey": "sidebar.sitesLocation",
+      "icon": "SitesIcon",
+      "path": "/sites",
+      "active": false
+    },
+    {
+      "id": "assets",
+      "labelKey": "sidebar.assets",
+      "icon": "AssetsIcon",
+      "path": "/asset",
+      "active": false
+    },
+    {
+      "id": "inventory",
+      "labelKey": "sidebar.inventory",
+      "icon": "InventoryIcon",
+      "path": "/inventory",
+      "active": false
+    },
+    {
+      "id": "cases",
+      "labelKey": "sidebar.cases",
+      "icon": "CasesIcon",
+      "path": "/cases",
+      "active": false
+    },
+    {
+      "id": "preventive-maintenance",
+      "labelKey": "sidebar.preventiveMaintenance",
+      "icon": "PreventiveMaintenanceIcon",
+      "path": "/preventive-maintenance",
+      "active": false
+    },
+    {
+      "id": "work-order",
+      "labelKey": "sidebar.workOrder",
+      "icon": "WorkOrderIcon",
+      "path": "/workorder",
+      "active": false
+    },
+    {
+      "id": "smart-scheduling",
+      "labelKey": "sidebar.smartScheduling",
+      "icon": "SmartSchedulingIcon",
+      "path": "/smart-scheduling",
+      "active": false
+    },
+    {
+      "id": "people",
+      "labelKey": "sidebar.people",
+      "icon": "PeopleIcon",
+      "path": "/people",
+      "active": false
+    },
+    {
+      "id": "investment-planning",
+      "labelKey": "sidebar.investmentPlanning",
+      "icon": "CapitalPlanningIcon",
+      "path": "/investment-planning",
+      "active": false
+    },
+    {
+      "id": "sustainability",
+      "labelKey": "sidebar.sustainability",
+      "icon": "SustainabilityIcon",
+      "path": "/sustainability",
+      "active": false
+    },
+    {
+      "id": "analytics",
+      "labelKey": "sidebar.analytics",
+      "icon": "AnalyticsIcon",
+      "path": "/analytics",
+      "active": false,
+      "hasSubmenu": true
+    }
+  ]
+}
