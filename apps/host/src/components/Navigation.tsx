@@ -35,6 +35,7 @@ import {
   Notifications,
   KeyboardArrowDown,
   Check,
+  ExitToApp,
 } from '@mui/icons-material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -44,6 +45,7 @@ import { handleLocaleChange } from '../i18n';
 import SettingsDrawer from './SettingsDrawer';
 import { useNavigationData } from '../hooks/useNavigationData';
 import { Site } from '../services/navigationApi';
+import { useUserProfile } from '../hooks/useUserProfile';
 import { customColors } from '../../../../packages/shared/theme';
 
 // Site data structure is now imported from navigationApi.ts
@@ -61,6 +63,9 @@ const Navigation: React.FC = () => {
 
   // Use the custom hook to fetch sites data
   const { sites, loading: sitesLoading, error: sitesError, refetch: refetchSites } = useNavigationData();
+  
+  // Use the custom hook to fetch user profile data
+  const { user, loading: userLoading, error: userError, signOut: handleSignOut } = useUserProfile();
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -68,6 +73,15 @@ const Navigation: React.FC = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleSignOutClick = async () => {
+    const success = await handleSignOut();
+    if (success) {
+      handleClose();
+      // You can add additional sign out logic here (e.g., redirect to login page)
+      console.log('User signed out successfully');
+    }
   };
 
   const handleSiteMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -386,13 +400,13 @@ const Navigation: React.FC = () => {
                 sx={{ 
                   width: 32, 
                   height: 32, 
-                  backgroundColor: '#9e9e9e',
+                  backgroundColor: customColors.userProfile.avatarBackgroundColor,
                   color: 'white',
                   fontSize: '0.8rem',
                   fontWeight: 600
                 }}
               >
-                JA
+                {user?.avatar?.initials || 'JA'}
               </Avatar>
               <IconButton 
                 size="small" 
@@ -407,7 +421,7 @@ const Navigation: React.FC = () => {
               id="menu-appbar"
               anchorEl={anchorEl}
               anchorOrigin={{
-                vertical: 'top',
+                vertical: 'bottom',
                 horizontal: 'right',
               }}
               keepMounted
@@ -417,10 +431,125 @@ const Navigation: React.FC = () => {
               }}
               open={Boolean(anchorEl)}
               onClose={handleClose}
+              PaperProps={{
+                sx: {
+                  width: 280,
+                  borderRadius: '12px',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                  border: '1px solid #e0e0e0',
+                  mt: 1,
+                  p: 0,
+                }
+              }}
             >
-              <MenuItem onClick={handleClose}>{t('common.profile')}</MenuItem>
-              <MenuItem onClick={handleClose}>{t('common.myAccount')}</MenuItem>
-              <MenuItem onClick={handleClose}>{t('common.logout')}</MenuItem>
+              {/* User Information Section */}
+              <Box
+                sx={{
+                  p: 3,
+                  backgroundColor: '#F5F5F5',
+                  borderTopLeftRadius: '12px',
+                  borderTopRightRadius: '12px',
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <Avatar 
+                    sx={{ 
+                      width: 48, 
+                      height: 48, 
+                      backgroundColor: customColors.userProfile.avatarBackgroundColor,
+                      color: 'white',
+                      fontSize: '1.2rem',
+                      fontWeight: 600
+                    }}
+                  >
+                    {user?.avatar?.initials || 'JA'}
+                  </Avatar>
+                  <Box sx={{ flexGrow: 1 }}>
+                    {userLoading ? (
+                      <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                        Loading user data...
+                      </Typography>
+                    ) : userError ? (
+                      <Typography variant="body2" sx={{ color: '#d32f2f' }}>
+                        Error loading user data
+                      </Typography>
+                    ) : user ? (
+                      <>
+                        <Typography
+                          variant="h6"
+                          sx={{
+                            fontWeight: 600,
+                            color: 'black',
+                            fontSize: '1.1rem',
+                            mb: 0.5,
+                          }}
+                        >
+                          {user.firstName} {user.lastName}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: '#666',
+                            fontSize: '0.8rem',
+                            mb: 0.25,
+                          }}
+                        >
+                          Email
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: 'black',
+                            fontSize: '0.9rem',
+                            mb: 0.25,
+                          }}
+                        >
+                          {user.email}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: 'black',
+                            fontSize: '0.9rem',
+                          }}
+                        >
+                          {user.role}
+                        </Typography>
+                      </>
+                    ) : (
+                      <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                        No user data available
+                      </Typography>
+                    )}
+                  </Box>
+                </Box>
+              </Box>
+
+              {/* Sign Out Button */}
+              <Box sx={{ p: 3, pt: 2, display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                  variant="contained"
+                  endIcon={<ExitToApp />}
+                  onClick={handleSignOutClick}
+                  sx={{
+                    backgroundColor: theme.palette.primary.main,
+                    color: theme.palette.primary.contrastText,
+                    textTransform: 'none',
+                    fontSize: '1rem',
+                    fontWeight: 500,
+                    borderRadius: '6px',
+                    px: 3,
+                    py: 1,
+                    boxShadow: 'none',
+                    '&:hover': {
+                      backgroundColor: theme.palette.primary.dark,
+                      boxShadow: 'none',
+                    },
+                  }}
+                >
+                  Sign Out
+                </Button>
+              </Box>
             </Menu>
           </Box>
         </Box>

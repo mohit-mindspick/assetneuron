@@ -80,4 +80,7 @@ export const customColors = {
     unselectedHoverBackground: '#F0F7FF',
     primaryHoverAlpha: 0.12,
   },
+  userProfile: {
+    avatarBackgroundColor: '#9e9e9e',
+  },
 } as const;

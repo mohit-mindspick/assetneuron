@@ -1,0 +1,18 @@
+{
+  "user": {
+    "id": "user-001",
+    "firstName": "John",
+    "lastName": "Anderson",
+    "email": "John.Anderson@work.com",
+    "role": "Regional Manager",
+    "avatar": {
+      "initials": "JA"
+    },
+    "profile": {
+      "department": "Operations",
+      "location": "Regional Office",
+      "employeeId": "EMP-001",
+      "joinDate": "2022-01-15"
+    }
+  }
+}
