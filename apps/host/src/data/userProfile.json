@@ -1,18 +1,18 @@
 {
   "user": {
-    "id": "user-001",
+    "id": "1",
     "firstName": "John",
     "lastName": "Anderson",
-    "email": "John.Anderson@work.com",
+    "email": "john.anderson@seams.com",
     "role": "Regional Manager",
     "avatar": {
       "initials": "JA"
     },
     "profile": {
-      "department": "Operations",
-      "location": "Regional Office",
-      "employeeId": "EMP-001",
-      "joinDate": "2022-01-15"
+      "department": "Regional Operations",
+      "location": "New York, USA",
+      "employeeId": "EMP001",
+      "joinDate": "2020-01-15"
     }
   }
 }

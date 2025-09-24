@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "Asset",
+    "addAsset": "Aggiungi Asset",
+    "editAsset": "Modifica Asset",
+    "assetForm": "Il modulo asset verrebbe implementato qui con validazione e invio appropriati.",
+    "searchPlaceholder": "Cerca asset...",
+    "typeFilter": "Filtro Tipo",
+    "statusFilter": "Filtro Stato",
+    "allTypes": "Tutti i Tipi",
+    "allStatus": "Tutti gli Stati",
+    "type": {
+      "equipment": "Attrezzatura",
+      "vehicle": "Veicolo",
+      "building": "Edificio",
+      "furniture": "Mobili",
+      "technology": "Tecnologia"
+    },
+    "status": {
+      "active": "Attivo",
+      "inactive": "Inattivo",
+      "maintenance": "In Manutenzione",
+      "retired": "Ritirato"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "Macchina CNC A-101",
+        "description": "Centro di lavorazione CNC ad alta precisione per la linea di produzione"
+      },
+      "conveyorBelt": {
+        "title": "Nastro Trasportatore B-203",
+        "description": "Sistema di trasporto automatizzato per la movimentazione dei materiali"
+      },
+      "motorUnit": {
+        "title": "Unità Motore C-405",
+        "description": "Motore industriale per alimentare l'attrezzatura di produzione"
+      },
+      "fireSystem": {
+        "title": "Sistema di Soppressione Incendi",
+        "description": "Sistema automatizzato di rilevamento e soppressione incendi"
+      }
+    }
+  }
+}

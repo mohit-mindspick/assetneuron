@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "작업 주문",
+    "createWorkOrder": "작업 주문 생성",
+    "editWorkOrder": "작업 주문 편집",
+    "workOrderForm": "작업 주문 양식은 적절한 양식 검증 및 제출과 함께 여기에 구현됩니다.",
+    "searchPlaceholder": "작업 주문 검색...",
+    "statusFilter": "상태 필터",
+    "allStatus": "모든 상태",
+    "pending": "대기 중",
+    "inProgress": "진행 중",
+    "completed": "완료",
+    "cancelled": "취소됨",
+    "priority": {
+      "low": "낮음",
+      "medium": "보통",
+      "high": "높음",
+      "urgent": "긴급"
+    },
+    "status": {
+      "pending": "대기 중",
+      "inProgress": "진행 중",
+      "completed": "완료",
+      "cancelled": "취소됨",
+      "onHold": "보류"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "정기 유지보수 - 생산 라인 A",
+        "description": "컨베이어 시스템의 정기 유지보수",
+        "priority": "보통",
+        "status": "진행 중"
+      },
+      "repairWork": {
+        "title": "모터 수리 - CNC 머신 B-102",
+        "description": "CNC 가공 센터의 결함 있는 모터 유닛 교체",
+        "priority": "높음",
+        "status": "대기 중"
+      },
+      "inspectionTask": {
+        "title": "안전 점검 - 화재 진압 시스템",
+        "description": "화재 감지 시스템의 월간 안전 점검",
+        "priority": "높음",
+        "status": "완료"
+      },
+      "calibrationWork": {
+        "title": "장비 보정 - 품질 관리 스테이션",
+        "description": "품질 보증을 위한 측정 기기 보정",
+        "priority": "보통",
+        "status": "보류"
+      }
+    }
+  }
+}

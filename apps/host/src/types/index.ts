@@ -5,15 +5,17 @@ export interface User {
   role: 'admin' | 'user' | 'manager';
 }
 
+export type ThemeType = 'light' | 'dark' | 'blackWhite' | 'blueYellow';
+
 export interface AppState {
   user: User | null;
   currentRoute: string;
-  theme: 'light' | 'dark';
+  theme: ThemeType;
 }
 
 export interface AppContextType {
   state: AppState;
   setUser: (user: User | null) => void;
   setCurrentRoute: (route: string) => void;
-  setTheme: (theme: 'light' | 'dark') => void;
+  setTheme: (theme: ThemeType) => void;
 }

@@ -8,7 +8,18 @@
       "role": "Regional Manager",
       "department": "Regional Operations",
       "username": "@regional.manager",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "John",
+      "lastName": "Anderson",
+      "avatar": {
+        "initials": "JA"
+      },
+      "profile": {
+        "department": "Regional Operations",
+        "location": "New York, USA",
+        "employeeId": "EMP001",
+        "joinDate": "2020-01-15"
+      }
     },
     {
       "id": "2",
@@ -18,7 +29,18 @@
       "role": "Plant Manager",
       "department": "Plant Operations",
       "username": "@plant.manager",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "Rajesh",
+      "lastName": "Kumar",
+      "avatar": {
+        "initials": "RK"
+      },
+      "profile": {
+        "department": "Plant Operations",
+        "location": "Mumbai, India",
+        "employeeId": "EMP002",
+        "joinDate": "2019-03-22"
+      }
     },
     {
       "id": "3",
@@ -28,7 +50,18 @@
       "role": "Maintenance Manager",
       "department": "Maintenance",
       "username": "@maintenance.manager",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "Priya",
+      "lastName": "Sharma",
+      "avatar": {
+        "initials": "PS"
+      },
+      "profile": {
+        "department": "Maintenance",
+        "location": "Delhi, India",
+        "employeeId": "EMP003",
+        "joinDate": "2021-06-10"
+      }
     },
     {
       "id": "4",
@@ -38,7 +71,18 @@
       "role": "Asset Manager",
       "department": "Asset Management",
       "username": "@asset.manager",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "Vikram",
+      "lastName": "Singh",
+      "avatar": {
+        "initials": "VS"
+      },
+      "profile": {
+        "department": "Asset Management",
+        "location": "Bangalore, India",
+        "employeeId": "EMP004",
+        "joinDate": "2020-09-05"
+      }
     },
     {
       "id": "5",
@@ -48,7 +92,18 @@
       "role": "Maintenance Technician",
       "department": "Field Operations",
       "username": "@technician.user",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "Amit",
+      "lastName": "Patel",
+      "avatar": {
+        "initials": "AP"
+      },
+      "profile": {
+        "department": "Field Operations",
+        "location": "Ahmedabad, India",
+        "employeeId": "EMP005",
+        "joinDate": "2022-02-14"
+      }
     },
     {
       "id": "6",
@@ -58,7 +113,18 @@
       "role": "Executive",
       "department": "Executive Management",
       "username": "@executive.user",
-      "password": "demo123"
+      "password": "demo123",
+      "firstName": "Sarah",
+      "lastName": "Thompson",
+      "avatar": {
+        "initials": "ST"
+      },
+      "profile": {
+        "department": "Executive Management",
+        "location": "London, UK",
+        "employeeId": "EMP006",
+        "joinDate": "2018-11-20"
+      }
     }
   ]
 }

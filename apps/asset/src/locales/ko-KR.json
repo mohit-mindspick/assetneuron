@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "자산",
+    "addAsset": "자산 추가",
+    "editAsset": "자산 편집",
+    "assetForm": "자산 양식은 적절한 양식 검증 및 제출과 함께 여기에 구현됩니다.",
+    "searchPlaceholder": "자산 검색...",
+    "typeFilter": "유형 필터",
+    "statusFilter": "상태 필터",
+    "allTypes": "모든 유형",
+    "allStatus": "모든 상태",
+    "type": {
+      "equipment": "장비",
+      "vehicle": "차량",
+      "building": "건물",
+      "furniture": "가구",
+      "technology": "기술"
+    },
+    "status": {
+      "active": "활성",
+      "inactive": "비활성",
+      "maintenance": "유지보수 중",
+      "retired": "퇴역"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC 머신 A-101",
+        "description": "생산 라인용 고정밀 CNC 가공 센터"
+      },
+      "conveyorBelt": {
+        "title": "컨베이어 벨트 B-203",
+        "description": "자재 취급을 위한 자동화된 컨베이어 시스템"
+      },
+      "motorUnit": {
+        "title": "모터 유닛 C-405",
+        "description": "생산 장비에 전력을 공급하는 산업용 모터"
+      },
+      "fireSystem": {
+        "title": "화재 진압 시스템",
+        "description": "자동화된 화재 감지 및 진압 시스템"
+      }
+    }
+  }
+}

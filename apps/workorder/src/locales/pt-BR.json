@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "Ordens de trabalho",
+    "createWorkOrder": "Criar ordem de trabalho",
+    "editWorkOrder": "Editar ordem de trabalho",
+    "workOrderForm": "O formulário de ordem de trabalho seria implementado aqui com validação e envio apropriados.",
+    "searchPlaceholder": "Pesquisar ordens de trabalho...",
+    "statusFilter": "Filtro de status",
+    "allStatus": "Todos os status",
+    "pending": "Pendente",
+    "inProgress": "Em andamento",
+    "completed": "Concluído",
+    "cancelled": "Cancelado",
+    "priority": {
+      "low": "Baixo",
+      "medium": "Médio",
+      "high": "Alto",
+      "urgent": "Urgente"
+    },
+    "status": {
+      "pending": "Pendente",
+      "inProgress": "Em andamento",
+      "completed": "Concluído",
+      "cancelled": "Cancelado",
+      "onHold": "Em espera"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "Manutenção de rotina - Linha de produção A",
+        "description": "Manutenção programada do sistema de transporte",
+        "priority": "Médio",
+        "status": "Em andamento"
+      },
+      "repairWork": {
+        "title": "Reparo de motor - Máquina CNC B-102",
+        "description": "Substituir unidade de motor defeituosa no centro de usinagem CNC",
+        "priority": "Alto",
+        "status": "Pendente"
+      },
+      "inspectionTask": {
+        "title": "Inspeção de segurança - Sistema de supressão de incêndio",
+        "description": "Inspeção de segurança mensal do sistema de detecção de incêndio",
+        "priority": "Alto",
+        "status": "Concluído"
+      },
+      "calibrationWork": {
+        "title": "Calibração de equipamentos - Estação de controle de qualidade",
+        "description": "Calibrar instrumentos de medição para garantia de qualidade",
+        "priority": "Médio",
+        "status": "Em espera"
+      }
+    }
+  }
+}

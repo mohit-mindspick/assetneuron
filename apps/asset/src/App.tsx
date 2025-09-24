@@ -11,7 +11,7 @@ const I18nLoader: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     const checkI18nReady = () => {
       // Check if i18n is initialized and has resources
-      if (i18n.isInitialized && i18n.hasResourceBundle('en', 'translation')) {
+      if (i18n.isInitialized && i18n.hasResourceBundle('en-US', 'translation')) {
         setIsI18nReady(true);
       } else {
         // Wait for i18n to be ready

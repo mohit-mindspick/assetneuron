@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "Assets",
+    "addAsset": "Add Asset",
+    "editAsset": "Edit Asset",
+    "assetForm": "Asset form would be implemented here with proper form validation and submission.",
+    "searchPlaceholder": "Search assets...",
+    "typeFilter": "Type Filter",
+    "statusFilter": "Status Filter",
+    "allTypes": "All Types",
+    "allStatus": "All Status",
+    "type": {
+      "equipment": "Equipment",
+      "vehicle": "Vehicle",
+      "building": "Building",
+      "furniture": "Furniture",
+      "technology": "Technology"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "maintenance": "Under Maintenance",
+      "retired": "Retired"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC Machine A-101",
+        "description": "High-precision CNC machining centre for production line"
+      },
+      "conveyorBelt": {
+        "title": "Conveyor Belt B-203",
+        "description": "Automated conveyor system for material handling"
+      },
+      "motorUnit": {
+        "title": "Motor Unit C-405",
+        "description": "Industrial motor for powering production equipment"
+      },
+      "fireSystem": {
+        "title": "Fire Suppression System",
+        "description": "Automated fire detection and suppression system"
+      }
+    }
+  }
+}

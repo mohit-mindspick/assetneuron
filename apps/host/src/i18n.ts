@@ -2,12 +2,12 @@ import { initI18n, handleLocaleChange } from 'shared';
 import i18n from 'i18next';
 
 // Import translations as require to ensure they're loaded properly
-const enTranslations = require('./locales/en.json');
-const esTranslations = require('./locales/es.json');
+const enTranslations = require('./locales/en-US.json');
+const esTranslations = require('./locales/es-ES.json');
 
 const appTranslations = {
-  en: enTranslations,
-  es: esTranslations,
+  'en-US': enTranslations,
+  'es-ES': esTranslations,
 };
 
 console.log('Host: Initializing i18n with app translations:', appTranslations);
@@ -28,12 +28,12 @@ initPromise.then(instance => {
 
   // Check if resources are loaded
   try {
-    const enResources = instance.getResourceBundle('en', 'translation');
-    const esResources = instance.getResourceBundle('es', 'translation');
-    console.log('Host: EN resources loaded:', !!enResources);
-    console.log('Host: ES resources loaded:', !!esResources);
-    console.log('Host: EN app.title exists:', !!enResources?.app?.title);
-    console.log('Host: EN common.home exists:', !!enResources?.common?.home);
+    const enResources = instance.getResourceBundle('en-US', 'translation');
+    const esResources = instance.getResourceBundle('es-ES', 'translation');
+    console.log('Host: EN-US resources loaded:', !!enResources);
+    console.log('Host: ES-ES resources loaded:', !!esResources);
+    console.log('Host: EN-US app.title exists:', !!enResources?.app?.title);
+    console.log('Host: EN-US common.home exists:', !!enResources?.common?.home);
   } catch (error) {
     console.error('Host: Error checking resources:', error);
   }

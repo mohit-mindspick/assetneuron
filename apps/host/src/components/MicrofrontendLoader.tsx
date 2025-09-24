@@ -25,13 +25,47 @@ const MicrofrontendLoader: React.FC<MicrofrontendLoaderProps> = ({ microfrontend
   const renderMicrofrontend = () => {
     switch (microfrontend) {
       case 'workorder':
-        return <WorkorderApp />;
+        return (
+          <Box 
+            role="main"
+            aria-label="Work Order Management Application"
+            sx={{ 
+              width: '100%',
+              height: '100%',
+              minHeight: 'calc(100vh - 200px)',
+            }}
+          >
+            <WorkorderApp />
+          </Box>
+        );
       case 'asset':
-        return <AssetApp />;
+        return (
+          <Box 
+            role="main"
+            aria-label="Asset Management Application"
+            sx={{ 
+              width: '100%',
+              height: '100%',
+              minHeight: 'calc(100vh - 200px)',
+            }}
+          >
+            <AssetApp />
+          </Box>
+        );
       default:
         return (
-          <Box sx={{ p: 3, textAlign: 'center' }}>
-            <Typography variant="h6" color="error">
+          <Box 
+            role="main"
+            aria-label="Application Error"
+            sx={{ 
+              p: 3, 
+              textAlign: 'center',
+              width: '100%',
+              height: '100%',
+              minHeight: 'calc(100vh - 200px)',
+            }}
+          >
+            <Typography variant="h6" color="error" role="alert" aria-live="polite">
               {t('microfrontend.notFound')}
             </Typography>
           </Box>
@@ -43,17 +77,21 @@ const MicrofrontendLoader: React.FC<MicrofrontendLoaderProps> = ({ microfrontend
     <Suspense
       fallback={
         <Box
+          role="status"
+          aria-label={`Loading ${microfrontend} application`}
           sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '400px',
+            minHeight: 'calc(100vh - 200px)',
+            width: '100%',
+            height: '100%',
             flexDirection: 'column',
             gap: 2,
           }}
         >
-          <CircularProgress />
-          <Typography variant="body1">
+          <CircularProgress aria-hidden="true" />
+          <Typography variant="body1" aria-live="polite">
             {t('microfrontend.loading', { app: microfrontend })}
           </Typography>
         </Box>

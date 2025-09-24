@@ -36,7 +36,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
-  const [preferredLanguage, setPreferredLanguage] = useState('en-GB');
+  const [preferredLanguage, setPreferredLanguage] = useState('en-US');
   const [country, setCountry] = useState('IN');
   const [timeZone, setTimeZone] = useState('IST');
   const [isSaving, setIsSaving] = useState(false);
@@ -63,13 +63,14 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
       // Map i18n locale back to language code
       const currentLanguage = i18n.language;
       const languageMap: { [key: string]: string } = {
-        'en': 'en-GB', // Default to en-GB for English
-        'es': 'es-ES',
-        'fr': 'fr-FR',
-        'de': 'de-DE',
-        'hi': 'hi-IN',
+        'en-US': 'en-US',
+        'en-GB': 'en-GB',
+        'es-ES': 'es-ES',
+        'fr-FR': 'fr-FR',
+        'de-DE': 'de-DE',
+        'hi-IN': 'hi-IN',
       };
-      const mappedLanguage = languageMap[currentLanguage] || 'en-GB';
+      const mappedLanguage = languageMap[currentLanguage] || 'en-US';
       setPreferredLanguage(mappedLanguage);
     }
   }, [i18n.language]);
@@ -77,22 +78,22 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
   // Map language codes to i18n locale codes
   const getLocaleFromLanguage = (languageCode: string): string => {
     const languageMap: { [key: string]: string } = {
-      'en-GB': 'en',
-      'en-US': 'en',
-      'es-ES': 'es',
-      'fr-FR': 'fr',
-      'de-DE': 'de',
-      'hi-IN': 'hi',
-      'it-IT': 'it',
-      'pt-BR': 'pt',
-      'zh-CN': 'zh',
-      'zh-TW': 'zh',
-      'ja-JP': 'ja',
-      'ko-KR': 'ko',
-      'ru-RU': 'ru',
-      'ar-SA': 'ar',
+      'en-GB': 'en-GB',
+      'en-US': 'en-US',
+      'es-ES': 'es-ES',
+      'fr-FR': 'fr-FR',
+      'de-DE': 'de-DE',
+      'hi-IN': 'hi-IN',
+      'it-IT': 'it-IT',
+      'pt-BR': 'pt-BR',
+      'zh-CN': 'zh-CN',
+      'zh-TW': 'zh-TW',
+      'ja-JP': 'ja-JP',
+      'ko-KR': 'ko-KR',
+      'ru-RU': 'ru-RU',
+      'ar-SA': 'ar-SA',
     };
-    return languageMap[languageCode] || 'en';
+    return languageMap[languageCode] || 'en-US';
   };
 
   const handleLanguageChange = (newLanguage: string) => {

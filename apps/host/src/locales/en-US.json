@@ -1,0 +1,141 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "Your comprehensive asset and work order management platform",
+    "welcome": "Welcome to AssetNeuron"
+  },
+  "login": {
+    "title": "Welcome to AssetNeuron",
+    "selectDemoUser": "Select Demo User",
+    "continueWithGoogle": "Continue with Google",
+    "manualLogin": "Manual Login",
+    "username": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "hideManualLogin": "Hide Manual Login",
+    "backToMainLogin": "← Back to Main Login",
+    "invalidCredentials": "Invalid username or password",
+    "loginFailed": "Login failed. Please try again.",
+    "demoLoginFailed": "Demo login failed. Please try again."
+  },
+  "navigation": {
+    "workOrders": "Work Orders",
+    "assets": "Assets",
+    "dashboard": "Dashboard"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "sitesLocation": "Sites & Location",
+    "assets": "Assets",
+    "inventory": "Inventory",
+    "cases": "Cases",
+    "preventiveMaintenance": "Preventive Maintenance",
+    "workOrder": "Work Order",
+    "smartScheduling": "Smart Scheduling",
+    "people": "People",
+    "investmentPlanning": "Investment Planning",
+    "sustainability": "Sustainability",
+    "analytics": "Analytics",
+    "collapse": "Collapse"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Work Orders",
+      "description": "Manage and track work orders efficiently"
+    },
+    "assets": {
+      "title": "Assets",
+      "description": "Monitor and maintain your assets"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Overview of your operations"
+    },
+    "openFeature": "Open {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "Loading {{app}} microfrontend...",
+    "notFound": "Microfrontend not found"
+  },
+  "header": {
+    "searchPlaceholder": "AI Smart Search...",
+    "allSites": "All Sites",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Aggregated view across all sites"
+  },
+  "settings": {
+    "title": "Settings",
+    "languageAndRegion": "Language and region",
+    "password": "Password"
+  },
+  "languageAndRegion": {
+    "title": "Language and region",
+    "breadcrumb": "Settings /",
+    "preferredLanguage": "Preferred language",
+    "country": "Country",
+    "timeZone": "Time zone",
+    "cancel": "Cancel",
+    "save": "Save",
+    "languages": {
+      "en-US": "English (United States)",
+      "en-GB": "English (United Kingdom)",
+      "es-ES": "Spanish (Spain)",
+      "fr-FR": "French (France)",
+      "de-DE": "German (Germany)",
+      "it-IT": "Italian (Italy)",
+      "pt-BR": "Portuguese (Brazil)",
+      "zh-CN": "Simplified Chinese (China)",
+      "zh-TW": "Traditional Chinese (Taiwan)",
+      "ja-JP": "Japanese (Japan)",
+      "ko-KR": "Korean (South Korea)",
+      "ru-RU": "Russian (Russia)",
+      "ar-SA": "Arabic (Saudi Arabia)",
+      "hi-IN": "Hindi (India)"
+    },
+    "countries": {
+      "US": "United States of America (USA)",
+      "IN": "India",
+      "GB": "United Kingdom (UK)",
+      "CA": "Canada",
+      "AU": "Australia",
+      "DE": "Germany",
+      "FR": "France",
+      "ES": "Spain",
+      "IT": "Italy",
+      "BR": "Brazil",
+      "JP": "Japan",
+      "CN": "China",
+      "RU": "Russia",
+      "SA": "Saudi Arabia",
+      "MX": "Mexico",
+      "NL": "Netherlands",
+      "SE": "Sweden",
+      "NO": "Norway",
+      "DK": "Denmark",
+      "FI": "Finland"
+    },
+    "timeZones": {
+      "EST": "Eastern Standard Time (EST)",
+      "IST": "Indian Standard Time (IST)",
+      "PST": "Pacific Standard Time (PST)",
+      "MST": "Mountain Standard Time (MST)",
+      "CST": "Central Standard Time (CST)",
+      "GMT": "Greenwich Mean Time (GMT)",
+      "CET": "Central European Time (CET)",
+      "JST": "Japan Standard Time (JST)",
+      "AEST": "Australian Eastern Standard Time (AEST)",
+      "MSK": "Moscow Standard Time (MSK)",
+      "CST-China": "China Standard Time (CST)",
+      "BRT": "Brasília Time (BRT)",
+      "AST": "Arabia Standard Time (AST)",
+      "NZST": "New Zealand Standard Time (NZST)",
+      "CAT": "Central Africa Time (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Profile",
+    "logout": "Logout",
+    "myAccount": "My account",
+    "saving": "Saving..."
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "أوامر العمل",
+    "createWorkOrder": "إنشاء أمر عمل",
+    "editWorkOrder": "تحرير أمر العمل",
+    "workOrderForm": "سيتم تنفيذ نموذج أمر العمل هنا مع التحقق المناسب من النموذج والإرسال.",
+    "searchPlaceholder": "البحث في أوامر العمل...",
+    "statusFilter": "مرشح الحالة",
+    "allStatus": "جميع الحالات",
+    "pending": "في الانتظار",
+    "inProgress": "قيد التنفيذ",
+    "completed": "مكتمل",
+    "cancelled": "ملغي",
+    "priority": {
+      "low": "منخفض",
+      "medium": "متوسط",
+      "high": "عالي",
+      "urgent": "عاجل"
+    },
+    "status": {
+      "pending": "في الانتظار",
+      "inProgress": "قيد التنفيذ",
+      "completed": "مكتمل",
+      "cancelled": "ملغي",
+      "onHold": "معلق"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "صيانة روتينية - خط الإنتاج A",
+        "description": "صيانة مجدولة لنظام الناقل",
+        "priority": "متوسط",
+        "status": "قيد التنفيذ"
+      },
+      "repairWork": {
+        "title": "إصلاح المحرك - آلة CNC B-102",
+        "description": "استبدال وحدة المحرك المعطلة في مركز التشغيل CNC",
+        "priority": "عالي",
+        "status": "في الانتظار"
+      },
+      "inspectionTask": {
+        "title": "فحص السلامة - نظام إطفاء الحرائق",
+        "description": "فحص السلامة الشهري لنظام كشف الحرائق",
+        "priority": "عالي",
+        "status": "مكتمل"
+      },
+      "calibrationWork": {
+        "title": "معايرة المعدات - محطة مراقبة الجودة",
+        "description": "معايرة أدوات القياس لضمان الجودة",
+        "priority": "متوسط",
+        "status": "معلق"
+      }
+    }
+  }
+}

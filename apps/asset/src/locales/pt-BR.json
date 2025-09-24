@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "Ativos",
+    "addAsset": "Adicionar Ativo",
+    "editAsset": "Editar Ativo",
+    "assetForm": "O formulário de ativo seria implementado aqui com validação e envio apropriados.",
+    "searchPlaceholder": "Pesquisar ativos...",
+    "typeFilter": "Filtro de Tipo",
+    "statusFilter": "Filtro de Status",
+    "allTypes": "Todos os Tipos",
+    "allStatus": "Todos os Status",
+    "type": {
+      "equipment": "Equipamento",
+      "vehicle": "Veículo",
+      "building": "Edifício",
+      "furniture": "Móveis",
+      "technology": "Tecnologia"
+    },
+    "status": {
+      "active": "Ativo",
+      "inactive": "Inativo",
+      "maintenance": "Em Manutenção",
+      "retired": "Aposentado"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "Máquina CNC A-101",
+        "description": "Centro de usinagem CNC de alta precisão para linha de produção"
+      },
+      "conveyorBelt": {
+        "title": "Esteira Transportadora B-203",
+        "description": "Sistema de transporte automatizado para movimentação de materiais"
+      },
+      "motorUnit": {
+        "title": "Unidade Motor C-405",
+        "description": "Motor industrial para alimentar equipamentos de produção"
+      },
+      "fireSystem": {
+        "title": "Sistema de Supressão de Incêndio",
+        "description": "Sistema automatizado de detecção e supressão de incêndio"
+      }
+    }
+  }
+}

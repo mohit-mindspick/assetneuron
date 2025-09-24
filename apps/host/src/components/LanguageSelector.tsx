@@ -19,8 +19,8 @@ interface LanguageOption {
 }
 
 const languageOptions: LanguageOption[] = [
-  { value: 'en', label: 'English', flag: '🇺🇸' },
-  { value: 'es', label: 'Español', flag: '🇪🇸' },
+  { value: 'en-US', label: 'English', flag: '🇺🇸' },
+  { value: 'es-ES', label: 'Español', flag: '🇪🇸' },
 ];
 
 interface LanguageSelectorProps {
@@ -49,14 +49,14 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       return i18n.language;
     }
     // Fallback to English
-    return 'en';
+    return 'en-US';
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState(getInitialLanguage());
 
   // Update selected language when i18n language changes
   useEffect(() => {
-    const currentLanguage = i18n.language || 'en';
+    const currentLanguage = i18n.language || 'en-US';
     if (currentLanguage !== selectedLanguage) {
       setSelectedLanguage(currentLanguage);
     }

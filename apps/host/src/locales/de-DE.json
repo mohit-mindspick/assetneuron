@@ -1,0 +1,141 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "Ihre umfassende Plattform für Asset- und Arbeitsauftragsverwaltung",
+    "welcome": "Willkommen bei AssetNeuron"
+  },
+  "login": {
+    "title": "Willkommen bei AssetNeuron",
+    "selectDemoUser": "Demo-Benutzer auswählen",
+    "continueWithGoogle": "Mit Google fortfahren",
+    "manualLogin": "Manuelle Anmeldung",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "loginButton": "Anmelden",
+    "hideManualLogin": "Manuelle Anmeldung ausblenden",
+    "backToMainLogin": "← Zurück zur Hauptanmeldung",
+    "invalidCredentials": "Ungültiger Benutzername oder Passwort",
+    "loginFailed": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "demoLoginFailed": "Demo-Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut."
+  },
+  "navigation": {
+    "workOrders": "Arbeitsaufträge",
+    "assets": "Assets",
+    "dashboard": "Dashboard"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "sitesLocation": "Standorte & Position",
+    "assets": "Assets",
+    "inventory": "Inventar",
+    "cases": "Fälle",
+    "preventiveMaintenance": "Vorbeugende Wartung",
+    "workOrder": "Arbeitsauftrag",
+    "smartScheduling": "Intelligente Planung",
+    "people": "Personen",
+    "investmentPlanning": "Investitionsplanung",
+    "sustainability": "Nachhaltigkeit",
+    "analytics": "Analysen",
+    "collapse": "Zusammenklappen"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Arbeitsaufträge",
+      "description": "Verwalten und verfolgen Sie Arbeitsaufträge effizient"
+    },
+    "assets": {
+      "title": "Assets",
+      "description": "Überwachen und warten Sie Ihre Assets"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Überblick über Ihre Operationen"
+    },
+    "openFeature": "{{feature}} öffnen"
+  },
+  "microfrontend": {
+    "loading": "{{app}} Microfrontend wird geladen...",
+    "notFound": "Microfrontend nicht gefunden"
+  },
+  "header": {
+    "searchPlaceholder": "KI-Smart-Suche...",
+    "allSites": "Alle Standorte",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Aggregierte Ansicht aller Standorte"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "languageAndRegion": "Sprache und Region",
+    "password": "Passwort"
+  },
+  "languageAndRegion": {
+    "title": "Sprache und Region",
+    "breadcrumb": "Einstellungen /",
+    "preferredLanguage": "Bevorzugte Sprache",
+    "country": "Land",
+    "timeZone": "Zeitzone",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "languages": {
+      "en-US": "Englisch (Vereinigte Staaten)",
+      "en-GB": "Englisch (Vereinigtes Königreich)",
+      "es-ES": "Spanisch (Spanien)",
+      "fr-FR": "Französisch (Frankreich)",
+      "de-DE": "Deutsch (Deutschland)",
+      "it-IT": "Italienisch (Italien)",
+      "pt-BR": "Portugiesisch (Brasilien)",
+      "zh-CN": "Vereinfachtes Chinesisch (China)",
+      "zh-TW": "Traditionelles Chinesisch (Taiwan)",
+      "ja-JP": "Japanisch (Japan)",
+      "ko-KR": "Koreanisch (Südkorea)",
+      "ru-RU": "Russisch (Russland)",
+      "ar-SA": "Arabisch (Saudi-Arabien)",
+      "hi-IN": "Hindi (Indien)"
+    },
+    "countries": {
+      "US": "Vereinigte Staaten von Amerika (USA)",
+      "IN": "Indien",
+      "GB": "Vereinigtes Königreich (UK)",
+      "CA": "Kanada",
+      "AU": "Australien",
+      "DE": "Deutschland",
+      "FR": "Frankreich",
+      "ES": "Spanien",
+      "IT": "Italien",
+      "BR": "Brasilien",
+      "JP": "Japan",
+      "CN": "China",
+      "RU": "Russland",
+      "SA": "Saudi-Arabien",
+      "MX": "Mexiko",
+      "NL": "Niederlande",
+      "SE": "Schweden",
+      "NO": "Norwegen",
+      "DK": "Dänemark",
+      "FI": "Finnland"
+    },
+    "timeZones": {
+      "EST": "Ostküstenzeit (EST)",
+      "IST": "Indische Standardzeit (IST)",
+      "PST": "Pazifische Standardzeit (PST)",
+      "MST": "Bergstandardzeit (MST)",
+      "CST": "Zentralstandardzeit (CST)",
+      "GMT": "Greenwich Mean Time (GMT)",
+      "CET": "Mitteleuropäische Zeit (CET)",
+      "JST": "Japanische Standardzeit (JST)",
+      "AEST": "Australische Ostküstenzeit (AEST)",
+      "MSK": "Moskauer Standardzeit (MSK)",
+      "CST-China": "Chinesische Standardzeit (CST)",
+      "BRT": "Brasília-Zeit (BRT)",
+      "AST": "Arabische Standardzeit (AST)",
+      "NZST": "Neuseeländische Standardzeit (NZST)",
+      "CAT": "Zentralafrikanische Zeit (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Profil",
+    "logout": "Abmelden",
+    "myAccount": "Mein Konto",
+    "saving": "Speichern..."
+  }
+}

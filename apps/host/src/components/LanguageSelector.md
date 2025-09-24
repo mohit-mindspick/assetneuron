@@ -77,15 +77,15 @@ To add a new language:
 1. **Add to LanguageSelector component**:
 ```tsx
 const languageOptions: LanguageOption[] = [
-  { value: 'en', label: 'English', flag: '🇺🇸' },
-  { value: 'es', label: 'Español', flag: '🇪🇸' },
-  { value: 'fr', label: 'Français', flag: '🇫🇷' }, // New language
+  { value: 'en-US', label: 'English', flag: '🇺🇸' },
+  { value: 'es-ES', label: 'Español', flag: '🇪🇸' },
+  { value: 'fr-FR', label: 'Français', flag: '🇫🇷' }, // New language
 ];
 ```
 
 2. **Add translations**:
-   - Create `locales/fr.json` with French translations
-   - Update `locales/en.json` and `locales/es.json` if needed
+   - Create `locales/fr-FR.json` with French translations
+   - Update `locales/en-US.json` and `locales/es-ES.json` if needed
 
 3. **Update shared i18n configuration**:
    - Add language mapping in `packages/shared/i18n.ts`

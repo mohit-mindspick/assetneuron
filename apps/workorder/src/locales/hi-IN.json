@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "कार्य आदेश",
+    "createWorkOrder": "कार्य आदेश बनाएं",
+    "editWorkOrder": "कार्य आदेश संपादित करें",
+    "workOrderForm": "कार्य आदेश फॉर्म यहाँ उचित फॉर्म सत्यापन और सबमिशन के साथ लागू किया जाएगा।",
+    "searchPlaceholder": "कार्य आदेश खोजें...",
+    "statusFilter": "स्थिति फ़िल्टर",
+    "allStatus": "सभी स्थिति",
+    "pending": "लंबित",
+    "inProgress": "प्रगति में",
+    "completed": "पूर्ण",
+    "cancelled": "रद्द",
+    "priority": {
+      "low": "कम",
+      "medium": "मध्यम",
+      "high": "उच्च",
+      "urgent": "तत्काल"
+    },
+    "status": {
+      "pending": "लंबित",
+      "inProgress": "प्रगति में",
+      "completed": "पूर्ण",
+      "cancelled": "रद्द",
+      "onHold": "रोक दिया गया"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "नियमित रखरखाव - उत्पादन लाइन A",
+        "description": "कन्वेयर बेल्ट सिस्टम के लिए निर्धारित रखरखाव",
+        "priority": "मध्यम",
+        "status": "प्रगति में"
+      },
+      "repairWork": {
+        "title": "मोटर मरम्मत - CNC मशीन B-102",
+        "description": "CNC मशीनिंग केंद्र में दोषपूर्ण मोटर यूनिट को बदलें",
+        "priority": "उच्च",
+        "status": "लंबित"
+      },
+      "inspectionTask": {
+        "title": "सुरक्षा निरीक्षण - आग दमन प्रणाली",
+        "description": "आग का पता लगाने की प्रणाली का मासिक सुरक्षा निरीक्षण",
+        "priority": "उच्च",
+        "status": "पूर्ण"
+      },
+      "calibrationWork": {
+        "title": "उपकरण कैलिब्रेशन - गुणवत्ता नियंत्रण स्टेशन",
+        "description": "गुणवत्ता आश्वासन के लिए माप उपकरणों को कैलिब्रेट करें",
+        "priority": "मध्यम",
+        "status": "रोक दिया गया"
+      }
+    }
+  }
+}

@@ -109,7 +109,7 @@ const Login: React.FC = () => {
               <Typography
                 variant="h4"
                 sx={{
-                  color: '#d4af37',
+                  color: 'primary.main',
                   fontWeight: 'bold',
                   letterSpacing: 2,
                 }}

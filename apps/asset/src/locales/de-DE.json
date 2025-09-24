@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "Assets",
+    "addAsset": "Asset hinzufügen",
+    "editAsset": "Asset bearbeiten",
+    "assetForm": "Asset-Formular würde hier mit ordnungsgemäßer Validierung und Übermittlung implementiert.",
+    "searchPlaceholder": "Assets suchen...",
+    "typeFilter": "Typ-Filter",
+    "statusFilter": "Status-Filter",
+    "allTypes": "Alle Typen",
+    "allStatus": "Alle Status",
+    "type": {
+      "equipment": "Ausrüstung",
+      "vehicle": "Fahrzeug",
+      "building": "Gebäude",
+      "furniture": "Möbel",
+      "technology": "Technologie"
+    },
+    "status": {
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "maintenance": "In Wartung",
+      "retired": "Außer Betrieb"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC-Maschine A-101",
+        "description": "Hochpräzise CNC-Bearbeitungszentrum für Produktionslinie"
+      },
+      "conveyorBelt": {
+        "title": "Förderband B-203",
+        "description": "Automatisiertes Fördersystem für Materialhandling"
+      },
+      "motorUnit": {
+        "title": "Motoreinheit C-405",
+        "description": "Industriemotor für den Antrieb von Produktionsanlagen"
+      },
+      "fireSystem": {
+        "title": "Brandunterdrückungssystem",
+        "description": "Automatisiertes Branderkennungs- und -unterdrückungssystem"
+      }
+    }
+  }
+}

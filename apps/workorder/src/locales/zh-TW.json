@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "工作訂單",
+    "createWorkOrder": "創建工作訂單",
+    "editWorkOrder": "編輯工作訂單",
+    "workOrderForm": "工作訂單表單將在此處實現，包含適當的表單驗證和提交。",
+    "searchPlaceholder": "搜索工作訂單...",
+    "statusFilter": "狀態過濾器",
+    "allStatus": "所有狀態",
+    "pending": "待處理",
+    "inProgress": "進行中",
+    "completed": "已完成",
+    "cancelled": "已取消",
+    "priority": {
+      "low": "低",
+      "medium": "中",
+      "high": "高",
+      "urgent": "緊急"
+    },
+    "status": {
+      "pending": "待處理",
+      "inProgress": "進行中",
+      "completed": "已完成",
+      "cancelled": "已取消",
+      "onHold": "暫停"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "例行維護 - 生產線A",
+        "description": "傳送帶系統的定期維護",
+        "priority": "中",
+        "status": "進行中"
+      },
+      "repairWork": {
+        "title": "電機維修 - CNC機床B-102",
+        "description": "更換CNC加工中心的故障電機單元",
+        "priority": "高",
+        "status": "待處理"
+      },
+      "inspectionTask": {
+        "title": "安全檢查 - 消防系統",
+        "description": "火災檢測系統的月度安全檢查",
+        "priority": "高",
+        "status": "已完成"
+      },
+      "calibrationWork": {
+        "title": "設備校準 - 質量控制站",
+        "description": "校準質量保證的測量儀器",
+        "priority": "中",
+        "status": "暫停"
+      }
+    }
+  }
+}

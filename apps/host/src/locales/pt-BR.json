@@ -1,0 +1,141 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "Sua plataforma abrangente de gerenciamento de ativos e ordens de trabalho",
+    "welcome": "Bem-vindo ao AssetNeuron"
+  },
+  "login": {
+    "title": "Bem-vindo ao AssetNeuron",
+    "selectDemoUser": "Selecionar usuário demo",
+    "continueWithGoogle": "Continuar com Google",
+    "manualLogin": "Login manual",
+    "username": "Nome de usuário",
+    "password": "Senha",
+    "loginButton": "Entrar",
+    "hideManualLogin": "Ocultar login manual",
+    "backToMainLogin": "← Voltar ao login principal",
+    "invalidCredentials": "Nome de usuário ou senha inválidos",
+    "loginFailed": "Falha no login. Tente novamente.",
+    "demoLoginFailed": "Falha no login demo. Tente novamente."
+  },
+  "navigation": {
+    "workOrders": "Ordens de trabalho",
+    "assets": "Ativos",
+    "dashboard": "Painel"
+  },
+  "sidebar": {
+    "dashboard": "Painel",
+    "sitesLocation": "Sites e localização",
+    "assets": "Ativos",
+    "inventory": "Inventário",
+    "cases": "Casos",
+    "preventiveMaintenance": "Manutenção preventiva",
+    "workOrder": "Ordem de trabalho",
+    "smartScheduling": "Agendamento inteligente",
+    "people": "Pessoas",
+    "investmentPlanning": "Planejamento de investimentos",
+    "sustainability": "Sustentabilidade",
+    "analytics": "Análises",
+    "collapse": "Recolher"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Ordens de trabalho",
+      "description": "Gerencie e acompanhe ordens de trabalho com eficiência"
+    },
+    "assets": {
+      "title": "Ativos",
+      "description": "Monitore e mantenha seus ativos"
+    },
+    "dashboard": {
+      "title": "Painel",
+      "description": "Visão geral de suas operações"
+    },
+    "openFeature": "Abrir {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "Carregando microfrontend {{app}}...",
+    "notFound": "Microfrontend não encontrado"
+  },
+  "header": {
+    "searchPlaceholder": "Pesquisa inteligente IA...",
+    "allSites": "Todos os sites",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Visão agregada de todos os sites"
+  },
+  "settings": {
+    "title": "Configurações",
+    "languageAndRegion": "Idioma e região",
+    "password": "Senha"
+  },
+  "languageAndRegion": {
+    "title": "Idioma e região",
+    "breadcrumb": "Configurações /",
+    "preferredLanguage": "Idioma preferido",
+    "country": "País",
+    "timeZone": "Fuso horário",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "languages": {
+      "en-US": "Inglês (Estados Unidos)",
+      "en-GB": "Inglês (Reino Unido)",
+      "es-ES": "Espanhol (Espanha)",
+      "fr-FR": "Francês (França)",
+      "de-DE": "Alemão (Alemanha)",
+      "it-IT": "Italiano (Itália)",
+      "pt-BR": "Português (Brasil)",
+      "zh-CN": "Chinês simplificado (China)",
+      "zh-TW": "Chinês tradicional (Taiwan)",
+      "ja-JP": "Japonês (Japão)",
+      "ko-KR": "Coreano (Coreia do Sul)",
+      "ru-RU": "Russo (Rússia)",
+      "ar-SA": "Árabe (Arábia Saudita)",
+      "hi-IN": "Hindi (Índia)"
+    },
+    "countries": {
+      "US": "Estados Unidos da América (EUA)",
+      "IN": "Índia",
+      "GB": "Reino Unido (UK)",
+      "CA": "Canadá",
+      "AU": "Austrália",
+      "DE": "Alemanha",
+      "FR": "França",
+      "ES": "Espanha",
+      "IT": "Itália",
+      "BR": "Brasil",
+      "JP": "Japão",
+      "CN": "China",
+      "RU": "Rússia",
+      "SA": "Arábia Saudita",
+      "MX": "México",
+      "NL": "Países Baixos",
+      "SE": "Suécia",
+      "NO": "Noruega",
+      "DK": "Dinamarca",
+      "FI": "Finlândia"
+    },
+    "timeZones": {
+      "EST": "Horário padrão do leste (EST)",
+      "IST": "Horário padrão da Índia (IST)",
+      "PST": "Horário padrão do Pacífico (PST)",
+      "MST": "Horário padrão das montanhas (MST)",
+      "CST": "Horário padrão central (CST)",
+      "GMT": "Horário de Greenwich (GMT)",
+      "CET": "Horário da Europa Central (CET)",
+      "JST": "Horário padrão do Japão (JST)",
+      "AEST": "Horário padrão do leste da Austrália (AEST)",
+      "MSK": "Horário padrão de Moscou (MSK)",
+      "CST-China": "Horário padrão da China (CST)",
+      "BRT": "Horário de Brasília (BRT)",
+      "AST": "Horário padrão da Arábia (AST)",
+      "NZST": "Horário padrão da Nova Zelândia (NZST)",
+      "CAT": "Horário da África Central (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Perfil",
+    "logout": "Sair",
+    "myAccount": "Minha conta",
+    "saving": "Salvando..."
+  }
+}

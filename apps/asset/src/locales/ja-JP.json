@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "アセット",
+    "addAsset": "アセットを追加",
+    "editAsset": "アセットを編集",
+    "assetForm": "アセットフォームは、適切なフォーム検証と送信とともにここに実装されます。",
+    "searchPlaceholder": "アセットを検索...",
+    "typeFilter": "タイプフィルター",
+    "statusFilter": "ステータスフィルター",
+    "allTypes": "すべてのタイプ",
+    "allStatus": "すべてのステータス",
+    "type": {
+      "equipment": "機器",
+      "vehicle": "車両",
+      "building": "建物",
+      "furniture": "家具",
+      "technology": "技術"
+    },
+    "status": {
+      "active": "アクティブ",
+      "inactive": "非アクティブ",
+      "maintenance": "メンテナンス中",
+      "retired": "退役"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNCマシン A-101",
+        "description": "生産ライン用の高精度CNC加工センター"
+      },
+      "conveyorBelt": {
+        "title": "コンベアベルト B-203",
+        "description": "材料ハンドリング用の自動コンベアシステム"
+      },
+      "motorUnit": {
+        "title": "モーターユニット C-405",
+        "description": "生産設備に電力を供給する産業用モーター"
+      },
+      "fireSystem": {
+        "title": "火災抑制システム",
+        "description": "自動火災検知・抑制システム"
+      }
+    }
+  }
+}

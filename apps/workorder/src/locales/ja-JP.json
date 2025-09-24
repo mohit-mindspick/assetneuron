@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "作業指示",
+    "createWorkOrder": "作業指示を作成",
+    "editWorkOrder": "作業指示を編集",
+    "workOrderForm": "作業指示フォームは、適切なフォーム検証と送信とともにここに実装されます。",
+    "searchPlaceholder": "作業指示を検索...",
+    "statusFilter": "ステータスフィルター",
+    "allStatus": "すべてのステータス",
+    "pending": "保留中",
+    "inProgress": "進行中",
+    "completed": "完了",
+    "cancelled": "キャンセル",
+    "priority": {
+      "low": "低",
+      "medium": "中",
+      "high": "高",
+      "urgent": "緊急"
+    },
+    "status": {
+      "pending": "保留中",
+      "inProgress": "進行中",
+      "completed": "完了",
+      "cancelled": "キャンセル",
+      "onHold": "保留"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "定期メンテナンス - 生産ラインA",
+        "description": "コンベアシステムの定期メンテナンス",
+        "priority": "中",
+        "status": "進行中"
+      },
+      "repairWork": {
+        "title": "モーター修理 - CNCマシンB-102",
+        "description": "CNC加工センターの故障したモーターユニットを交換",
+        "priority": "高",
+        "status": "保留中"
+      },
+      "inspectionTask": {
+        "title": "安全点検 - 火災抑制システム",
+        "description": "火災検知システムの月次安全点検",
+        "priority": "高",
+        "status": "完了"
+      },
+      "calibrationWork": {
+        "title": "機器校正 - 品質管理ステーション",
+        "description": "品質保証のための測定機器を校正",
+        "priority": "中",
+        "status": "保留"
+      }
+    }
+  }
+}

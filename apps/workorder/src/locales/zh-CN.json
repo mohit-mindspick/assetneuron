@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "工作订单",
+    "createWorkOrder": "创建工作订单",
+    "editWorkOrder": "编辑工作订单",
+    "workOrderForm": "工作订单表单将在此处实现，包含适当的表单验证和提交。",
+    "searchPlaceholder": "搜索工作订单...",
+    "statusFilter": "状态过滤器",
+    "allStatus": "所有状态",
+    "pending": "待处理",
+    "inProgress": "进行中",
+    "completed": "已完成",
+    "cancelled": "已取消",
+    "priority": {
+      "low": "低",
+      "medium": "中",
+      "high": "高",
+      "urgent": "紧急"
+    },
+    "status": {
+      "pending": "待处理",
+      "inProgress": "进行中",
+      "completed": "已完成",
+      "cancelled": "已取消",
+      "onHold": "暂停"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "例行维护 - 生产线A",
+        "description": "传送带系统的定期维护",
+        "priority": "中",
+        "status": "进行中"
+      },
+      "repairWork": {
+        "title": "电机维修 - CNC机床B-102",
+        "description": "更换CNC加工中心的故障电机单元",
+        "priority": "高",
+        "status": "待处理"
+      },
+      "inspectionTask": {
+        "title": "安全检查 - 消防系统",
+        "description": "火灾检测系统的月度安全检查",
+        "priority": "高",
+        "status": "已完成"
+      },
+      "calibrationWork": {
+        "title": "设备校准 - 质量控制站",
+        "description": "校准质量保证的测量仪器",
+        "priority": "中",
+        "status": "暂停"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "الأصول",
+    "addAsset": "إضافة أصل",
+    "editAsset": "تحرير الأصل",
+    "assetForm": "سيتم تنفيذ نموذج الأصل هنا مع التحقق المناسب من النموذج والإرسال.",
+    "searchPlaceholder": "البحث في الأصول...",
+    "typeFilter": "مرشح النوع",
+    "statusFilter": "مرشح الحالة",
+    "allTypes": "جميع الأنواع",
+    "allStatus": "جميع الحالات",
+    "type": {
+      "equipment": "معدات",
+      "vehicle": "مركبة",
+      "building": "مبنى",
+      "furniture": "أثاث",
+      "technology": "تقنية"
+    },
+    "status": {
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "maintenance": "تحت الصيانة",
+      "retired": "متقاعد"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "آلة CNC A-101",
+        "description": "مركز تشغيل CNC عالي الدقة لخط الإنتاج"
+      },
+      "conveyorBelt": {
+        "title": "حزام ناقل B-203",
+        "description": "نظام ناقل آلي لمعالجة المواد"
+      },
+      "motorUnit": {
+        "title": "وحدة محرك C-405",
+        "description": "محرك صناعي لتشغيل معدات الإنتاج"
+      },
+      "fireSystem": {
+        "title": "نظام إطفاء الحرائق",
+        "description": "نظام آلي لكشف وإطفاء الحرائق"
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "您的綜合資產和工作訂單管理平台",
+    "welcome": "歡迎使用 AssetNeuron"
+  },
+  "login": {
+    "title": "歡迎使用 AssetNeuron",
+    "selectDemoUser": "選擇演示用戶",
+    "continueWithGoogle": "使用 Google 繼續",
+    "manualLogin": "手動登錄",
+    "username": "用戶名",
+    "password": "密碼",
+    "loginButton": "登錄",
+    "hideManualLogin": "隱藏手動登錄",
+    "backToMainLogin": "← 返回主登錄",
+    "invalidCredentials": "用戶名或密碼無效",
+    "loginFailed": "登錄失敗。請重試。",
+    "demoLoginFailed": "演示登錄失敗。請重試。"
+  },
+  "navigation": {
+    "workOrders": "工作訂單",
+    "assets": "資產",
+    "dashboard": "儀表板"
+  },
+  "sidebar": {
+    "dashboard": "儀表板",
+    "sitesLocation": "站點和位置",
+    "assets": "資產",
+    "inventory": "庫存",
+    "cases": "案例",
+    "preventiveMaintenance": "預防性維護",
+    "workOrder": "工作訂單",
+    "smartScheduling": "智能調度",
+    "people": "人員",
+    "investmentPlanning": "投資規劃",
+    "sustainability": "可持續性",
+    "analytics": "分析",
+    "collapse": "折疊"
+  },
+  "home": {
+    "workOrders": {
+      "title": "工作訂單",
+      "description": "高效管理和跟踪工作訂單"
+    },
+    "assets": {
+      "title": "資產",
+      "description": "監控和維護您的資產"
+    },
+    "dashboard": {
+      "title": "儀表板",
+      "description": "您的運營概覽"
+    },
+    "openFeature": "打開 {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "正在加載 {{app}} 微前端...",
+    "notFound": "未找到微前端"
+  },
+  "header": {
+    "searchPlaceholder": "AI 智能搜索...",
+    "allSites": "所有站點",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "所有站點的聚合視圖"
+  },
+  "settings": {
+    "title": "設置",
+    "languageAndRegion": "語言和地區",
+    "password": "密碼"
+  },
+  "languageAndRegion": {
+    "title": "語言和地區",
+    "breadcrumb": "設置 /",
+    "preferredLanguage": "首選語言",
+    "country": "國家",
+    "timeZone": "時區",
+    "cancel": "取消",
+    "save": "保存",
+    "languages": {
+      "en-US": "英語（美國）",
+      "en-GB": "英語（英國）",
+      "es-ES": "西班牙語（西班牙）",
+      "fr-FR": "法語（法國）",
+      "de-DE": "德語（德國）",
+      "it-IT": "意大利語（意大利）",
+      "pt-BR": "葡萄牙語（巴西）",
+      "zh-CN": "簡體中文（中國）",
+      "zh-TW": "繁體中文（台灣）",
+      "ja-JP": "日語（日本）",
+      "ko-KR": "韓語（韓國）",
+      "ru-RU": "俄語（俄羅斯）",
+      "ar-SA": "阿拉伯語（沙特阿拉伯）",
+      "hi-IN": "印地語（印度）"
+    },
+    "countries": {
+      "US": "美利堅合眾國（美國）",
+      "IN": "印度",
+      "GB": "英國（UK）",
+      "CA": "加拿大",
+      "AU": "澳大利亞",
+      "DE": "德國",
+      "FR": "法國",
+      "ES": "西班牙",
+      "IT": "意大利",
+      "BR": "巴西",
+      "JP": "日本",
+      "CN": "中國",
+      "RU": "俄羅斯",
+      "SA": "沙特阿拉伯",
+      "MX": "墨西哥",
+      "NL": "荷蘭",
+      "SE": "瑞典",
+      "NO": "挪威",
+      "DK": "丹麥",
+      "FI": "芬蘭"
+    },
+    "timeZones": {
+      "EST": "東部標準時間（EST）",
+      "IST": "印度標準時間（IST）",
+      "PST": "太平洋標準時間（PST）",
+      "MST": "山地標準時間（MST）",
+      "CST": "中部標準時間（CST）",
+      "GMT": "格林威治標準時間（GMT）",
+      "CET": "中歐時間（CET）",
+      "JST": "日本標準時間（JST）",
+      "AEST": "澳大利亞東部標準時間（AEST）",
+      "MSK": "莫斯科標準時間（MSK）",
+      "CST-China": "中國標準時間（CST）",
+      "BRT": "巴西利亞時間（BRT）",
+      "AST": "阿拉伯標準時間（AST）",
+      "NZST": "新西蘭標準時間（NZST）",
+      "CAT": "中非時間（CAT）"
+    }
+  },
+  "common": {
+    "profile": "個人資料",
+    "logout": "退出登錄",
+    "myAccount": "我的賬戶",
+    "saving": "保存中..."
+  }
+}

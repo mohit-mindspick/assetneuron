@@ -44,9 +44,9 @@ import { useAppContext } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import { handleLocaleChange } from '../i18n';
 import SettingsDrawer from './SettingsDrawer';
+import ThemeSelector from './ThemeSelector';
 import { useNavigationData } from '../hooks/useNavigationData';
 import { Site } from '../services/navigationApi';
-import { useUserProfile } from '../hooks/useUserProfile';
 import { customColors } from '../../../../packages/shared/theme';
 
 // Site data structure is now imported from navigationApi.ts
@@ -55,7 +55,6 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state, setTheme } = useAppContext();
-  const { user: authUser, logout } = useAuth();
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -66,8 +65,8 @@ const Navigation: React.FC = () => {
   // Use the custom hook to fetch sites data
   const { sites, loading: sitesLoading, error: sitesError, refetch: refetchSites } = useNavigationData();
   
-  // Use the custom hook to fetch user profile data
-  const { user, loading: userLoading, error: userError, signOut: handleSignOut } = useUserProfile();
+  // Use the authentication context to get logged-in user data
+  const { user: authUser, logout: handleSignOut } = useAuth();
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -78,7 +77,7 @@ const Navigation: React.FC = () => {
   };
 
   const handleSignOutClick = async () => {
-    logout();
+    handleSignOut();
     handleClose();
     navigate('/login');
   };
@@ -127,6 +126,8 @@ const Navigation: React.FC = () => {
   return (
     <AppBar 
       position="fixed" 
+      role="banner"
+      aria-label="Main application header"
       sx={{ 
         backgroundColor: 'white',
         color: 'black',
@@ -140,16 +141,16 @@ const Navigation: React.FC = () => {
         <IconButton
           size="large"
           edge="start"
-          aria-label="menu"
+          aria-label="Toggle sidebar menu"
           sx={{ mr: 2, color: 'black' }}
         >
-          <MenuIcon />
+          <MenuIcon aria-hidden="true" />
         </IconButton>
         <Typography 
           variant="h6" 
           component="div" 
           sx={{ 
-            color: '#6B7C32', // Dark olive green
+            color: 'primary.main',
             fontWeight: 600,
             fontSize: '1.5rem',
             flexGrow: 1
@@ -206,6 +207,9 @@ const Navigation: React.FC = () => {
           <Button 
               size="small" 
               onClick={handleSiteMenu}
+              aria-label={`Site selector. Current site: ${getSelectedSiteDisplay()}. Click to change site.`}
+              aria-haspopup="menu"
+              aria-expanded={Boolean(siteMenuAnchor)}
               sx={{ color: '#6B7C32' }}
             >
             <Typography 
@@ -220,12 +224,14 @@ const Navigation: React.FC = () => {
               {getSelectedSiteDisplay()}
             </Typography>
            
-              <KeyboardArrowDown />
+              <KeyboardArrowDown aria-hidden="true" />
             </Button>
             <Menu
               anchorEl={siteMenuAnchor}
               open={Boolean(siteMenuAnchor)}
               onClose={handleSiteMenuClose}
+              role="menu"
+              aria-label="Site selection menu"
               PaperProps={{
                 sx: {
                   width: 320,
@@ -381,17 +387,24 @@ const Navigation: React.FC = () => {
 
           {/* Action Icons */}
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <ThemeSelector />
+            
             <IconButton 
               size="medium" 
               sx={{ color: 'black' }}
               onClick={handleSettingsClick}
+              aria-label="Open settings panel"
             >
-              <Settings />
+              <Settings aria-hidden="true" />
             </IconButton>
             
-            <IconButton size="medium" sx={{ color: 'black' }}>
-              <Badge badgeContent={3} color="error">
-                <Notifications />
+            <IconButton 
+              size="medium" 
+              sx={{ color: 'black' }}
+              aria-label="View notifications. 3 unread notifications"
+            >
+              <Badge badgeContent={3} color="error" aria-label="3 unread notifications">
+                <Notifications aria-hidden="true" />
               </Badge>
             </IconButton>
             
@@ -406,7 +419,7 @@ const Navigation: React.FC = () => {
                   fontWeight: 600
                 }}
               >
-                {user?.avatar?.initials || 'JA'}
+                {authUser?.name ? authUser.name.split(' ').map(n => n[0]).join('').toUpperCase() : 'U'}
               </Avatar>
               <IconButton 
                 size="small" 
@@ -462,18 +475,10 @@ const Navigation: React.FC = () => {
                       fontWeight: 600
                     }}
                   >
-                    {user?.avatar?.initials || 'JA'}
+                    {authUser?.name ? authUser.name.split(' ').map(n => n[0]).join('').toUpperCase() : 'U'}
                   </Avatar>
                   <Box sx={{ flexGrow: 1 }}>
-                    {userLoading ? (
-                      <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
-                        Loading user data...
-                      </Typography>
-                    ) : userError ? (
-                      <Typography variant="body2" sx={{ color: '#d32f2f' }}>
-                        Error loading user data
-                      </Typography>
-                    ) : authUser ? (
+                    {authUser ? (
                       <>
                         <Typography
                           variant="h6"

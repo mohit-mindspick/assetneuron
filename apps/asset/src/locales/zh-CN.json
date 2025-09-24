@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "资产",
+    "addAsset": "添加资产",
+    "editAsset": "编辑资产",
+    "assetForm": "资产表单将在此处实现，包含适当的表单验证和提交。",
+    "searchPlaceholder": "搜索资产...",
+    "typeFilter": "类型过滤器",
+    "statusFilter": "状态过滤器",
+    "allTypes": "所有类型",
+    "allStatus": "所有状态",
+    "type": {
+      "equipment": "设备",
+      "vehicle": "车辆",
+      "building": "建筑",
+      "furniture": "家具",
+      "technology": "技术"
+    },
+    "status": {
+      "active": "活跃",
+      "inactive": "非活跃",
+      "maintenance": "维护中",
+      "retired": "已退役"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC机床 A-101",
+        "description": "生产线的高精度CNC加工中心"
+      },
+      "conveyorBelt": {
+        "title": "传送带 B-203",
+        "description": "用于物料处理的自动化传送系统"
+      },
+      "motorUnit": {
+        "title": "电机单元 C-405",
+        "description": "为生产设备提供动力的工业电机"
+      },
+      "fireSystem": {
+        "title": "消防系统",
+        "description": "自动化火灾检测和灭火系统"
+      }
+    }
+  }
+}

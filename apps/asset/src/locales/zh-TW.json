@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "資產",
+    "addAsset": "添加資產",
+    "editAsset": "編輯資產",
+    "assetForm": "資產表單將在此處實現，包含適當的表單驗證和提交。",
+    "searchPlaceholder": "搜索資產...",
+    "typeFilter": "類型過濾器",
+    "statusFilter": "狀態過濾器",
+    "allTypes": "所有類型",
+    "allStatus": "所有狀態",
+    "type": {
+      "equipment": "設備",
+      "vehicle": "車輛",
+      "building": "建築",
+      "furniture": "家具",
+      "technology": "技術"
+    },
+    "status": {
+      "active": "活躍",
+      "inactive": "非活躍",
+      "maintenance": "維護中",
+      "retired": "已退役"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC機床 A-101",
+        "description": "生產線的高精度CNC加工中心"
+      },
+      "conveyorBelt": {
+        "title": "傳送帶 B-203",
+        "description": "用於物料處理的自動化傳送系統"
+      },
+      "motorUnit": {
+        "title": "電機單元 C-405",
+        "description": "為生產設備提供動力的工業電機"
+      },
+      "fireSystem": {
+        "title": "消防系統",
+        "description": "自動化火災檢測和滅火系統"
+      }
+    }
+  }
+}

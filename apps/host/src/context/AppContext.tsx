@@ -1,16 +1,25 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { AppState, AppContextType, User } from '../types';
+import { AppState, AppContextType, User, ThemeType } from '../types';
+
+// Load theme from localStorage or default to 'light'
+const getInitialTheme = (): ThemeType => {
+  if (typeof window !== 'undefined') {
+    const savedTheme = localStorage.getItem('assetneuron-theme') as ThemeType;
+    return savedTheme || 'light';
+  }
+  return 'light';
+};
 
 const initialState: AppState = {
   user: null,
   currentRoute: '/',
-  theme: 'light',
+  theme: getInitialTheme(),
 };
 
 type AppAction =
   | { type: 'SET_USER'; payload: User | null }
   | { type: 'SET_CURRENT_ROUTE'; payload: string }
-  | { type: 'SET_THEME'; payload: 'light' | 'dark' };
+  | { type: 'SET_THEME'; payload: ThemeType };
 
 const appReducer = (state: AppState, action: AppAction): AppState => {
   switch (action.type) {
@@ -38,8 +47,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     dispatch({ type: 'SET_CURRENT_ROUTE', payload: route });
   };
 
-  const setTheme = (theme: 'light' | 'dark') => {
+  const setTheme = (theme: ThemeType) => {
     dispatch({ type: 'SET_THEME', payload: theme });
+    // Save theme to localStorage
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('assetneuron-theme', theme);
+    }
   };
 
   const value: AppContextType = {

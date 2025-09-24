@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "Ordres de travail",
+    "createWorkOrder": "Créer un ordre de travail",
+    "editWorkOrder": "Modifier l'ordre de travail",
+    "workOrderForm": "Le formulaire d'ordre de travail serait implémenté ici avec validation et soumission appropriées.",
+    "searchPlaceholder": "Rechercher des ordres de travail...",
+    "statusFilter": "Filtre de statut",
+    "allStatus": "Tous les statuts",
+    "pending": "En attente",
+    "inProgress": "En cours",
+    "completed": "Terminé",
+    "cancelled": "Annulé",
+    "priority": {
+      "low": "Faible",
+      "medium": "Moyen",
+      "high": "Élevé",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "pending": "En attente",
+      "inProgress": "En cours",
+      "completed": "Terminé",
+      "cancelled": "Annulé",
+      "onHold": "En attente"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "Maintenance de routine - Ligne de production A",
+        "description": "Maintenance programmée du système de convoyeur",
+        "priority": "Moyen",
+        "status": "En cours"
+      },
+      "repairWork": {
+        "title": "Réparation moteur - Machine CNC B-102",
+        "description": "Remplacer l'unité moteur défaillante dans le centre d'usinage CNC",
+        "priority": "Élevé",
+        "status": "En attente"
+      },
+      "inspectionTask": {
+        "title": "Inspection de sécurité - Système de suppression d'incendie",
+        "description": "Inspection de sécurité mensuelle du système de détection d'incendie",
+        "priority": "Élevé",
+        "status": "Terminé"
+      },
+      "calibrationWork": {
+        "title": "Étalonnage d'équipement - Station de contrôle qualité",
+        "description": "Étalonner les instruments de mesure pour l'assurance qualité",
+        "priority": "Moyen",
+        "status": "En attente"
+      }
+    }
+  }
+}

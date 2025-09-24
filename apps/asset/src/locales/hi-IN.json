@@ -1,0 +1,44 @@
+{
+  "asset": {
+    "title": "संपत्ति",
+    "addAsset": "संपत्ति जोड़ें",
+    "editAsset": "संपत्ति संपादित करें",
+    "assetForm": "संपत्ति फॉर्म यहाँ उचित फॉर्म सत्यापन और सबमिशन के साथ लागू किया जाएगा।",
+    "searchPlaceholder": "संपत्ति खोजें...",
+    "typeFilter": "प्रकार फ़िल्टर",
+    "statusFilter": "स्थिति फ़िल्टर",
+    "allTypes": "सभी प्रकार",
+    "allStatus": "सभी स्थिति",
+    "type": {
+      "equipment": "उपकरण",
+      "vehicle": "वाहन",
+      "building": "भवन",
+      "furniture": "फर्नीचर",
+      "technology": "प्रौद्योगिकी"
+    },
+    "status": {
+      "active": "सक्रिय",
+      "inactive": "निष्क्रिय",
+      "maintenance": "रखरखाव में",
+      "retired": "सेवानिवृत्त"
+    },
+    "sampleData": {
+      "cncMachine": {
+        "title": "CNC मशीन A-101",
+        "description": "उत्पादन लाइन के लिए उच्च-सटीक CNC मशीनिंग केंद्र"
+      },
+      "conveyorBelt": {
+        "title": "कन्वेयर बेल्ट B-203",
+        "description": "सामग्री हैंडलिंग के लिए स्वचालित कन्वेयर सिस्टम"
+      },
+      "motorUnit": {
+        "title": "मोटर यूनिट C-405",
+        "description": "उत्पादन उपकरण को शक्ति प्रदान करने के लिए औद्योगिक मोटर"
+      },
+      "fireSystem": {
+        "title": "आग दमन प्रणाली",
+        "description": "स्वचालित आग का पता लगाने और दमन प्रणाली"
+      }
+    }
+  }
+}

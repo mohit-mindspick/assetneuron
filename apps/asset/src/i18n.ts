@@ -2,12 +2,12 @@ import { initI18n } from 'shared';
 import i18n from 'i18next';
 
 // Import translations as require to ensure they're loaded properly
-const enTranslations = require('./locales/en.json');
-const esTranslations = require('./locales/es.json');
+const enTranslations = require('./locales/en-US.json');
+const esTranslations = require('./locales/es-ES.json');
 
 const appTranslations = {
-  en: enTranslations,
-  es: esTranslations,
+  'en-US': enTranslations,
+  'es-ES': esTranslations,
 };
 
 console.log('Asset: Initializing i18n with app translations:', appTranslations);
@@ -29,12 +29,12 @@ initPromise.then(instance => {
 
   // Check if resources are loaded
   try {
-    const enResources = instance.getResourceBundle('en', 'translation');
-    const esResources = instance.getResourceBundle('es', 'translation');
-    console.log('Asset: EN resources loaded:', !!enResources);
-    console.log('Asset: ES resources loaded:', !!esResources);
-    console.log('Asset: EN asset.title exists:', !!enResources?.asset?.title);
-    console.log('Asset: EN asset.sampleData exists:', !!enResources?.asset?.sampleData);
+    const enResources = instance.getResourceBundle('en-US', 'translation');
+    const esResources = instance.getResourceBundle('es-ES', 'translation');
+    console.log('Asset: EN-US resources loaded:', !!enResources);
+    console.log('Asset: ES-ES resources loaded:', !!esResources);
+    console.log('Asset: EN-US asset.title exists:', !!enResources?.asset?.title);
+    console.log('Asset: EN-US asset.sampleData exists:', !!enResources?.asset?.sampleData);
   } catch (error) {
     console.error('Asset: Error checking resources:', error);
   }

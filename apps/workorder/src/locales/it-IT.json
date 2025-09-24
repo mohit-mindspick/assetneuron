@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "Ordini di lavoro",
+    "createWorkOrder": "Crea ordine di lavoro",
+    "editWorkOrder": "Modifica ordine di lavoro",
+    "workOrderForm": "Il modulo ordine di lavoro sarebbe implementato qui con validazione e invio appropriati.",
+    "searchPlaceholder": "Cerca ordini di lavoro...",
+    "statusFilter": "Filtro stato",
+    "allStatus": "Tutti gli stati",
+    "pending": "In attesa",
+    "inProgress": "In corso",
+    "completed": "Completato",
+    "cancelled": "Annullato",
+    "priority": {
+      "low": "Basso",
+      "medium": "Medio",
+      "high": "Alto",
+      "urgent": "Urgente"
+    },
+    "status": {
+      "pending": "In attesa",
+      "inProgress": "In corso",
+      "completed": "Completato",
+      "cancelled": "Annullato",
+      "onHold": "In sospeso"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "Manutenzione di routine - Linea di produzione A",
+        "description": "Manutenzione programmata del sistema di trasporto",
+        "priority": "Medio",
+        "status": "In corso"
+      },
+      "repairWork": {
+        "title": "Riparazione motore - Macchina CNC B-102",
+        "description": "Sostituire l'unità motore difettosa nel centro di lavorazione CNC",
+        "priority": "Alto",
+        "status": "In attesa"
+      },
+      "inspectionTask": {
+        "title": "Ispezione di sicurezza - Sistema di soppressione incendi",
+        "description": "Ispezione di sicurezza mensile del sistema di rilevamento incendi",
+        "priority": "Alto",
+        "status": "Completato"
+      },
+      "calibrationWork": {
+        "title": "Calibrazione attrezzature - Stazione controllo qualità",
+        "description": "Calibrare gli strumenti di misura per l'assicurazione qualità",
+        "priority": "Medio",
+        "status": "In sospeso"
+      }
+    }
+  }
+}

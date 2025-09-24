@@ -1,0 +1,54 @@
+{
+  "workorder": {
+    "title": "Work Orders",
+    "createWorkOrder": "Create Work Order",
+    "editWorkOrder": "Edit Work Order",
+    "workOrderForm": "Work order form would be implemented here with proper form validation and submission.",
+    "searchPlaceholder": "Search work orders...",
+    "statusFilter": "Status Filter",
+    "allStatus": "All Status",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "priority": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "urgent": "Urgent"
+    },
+    "status": {
+      "pending": "Pending",
+      "inProgress": "In Progress",
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "onHold": "On Hold"
+    },
+    "sampleData": {
+      "maintenanceTask": {
+        "title": "Routine Maintenance - Production Line A",
+        "description": "Scheduled maintenance for conveyor belt system",
+        "priority": "Medium",
+        "status": "In Progress"
+      },
+      "repairWork": {
+        "title": "Motor Repair - CNC Machine B-102",
+        "description": "Replace faulty motor unit in CNC machining centre",
+        "priority": "High",
+        "status": "Pending"
+      },
+      "inspectionTask": {
+        "title": "Safety Inspection - Fire Suppression System",
+        "description": "Monthly safety inspection of fire detection system",
+        "priority": "High",
+        "status": "Completed"
+      },
+      "calibrationWork": {
+        "title": "Equipment Calibration - Quality Control Station",
+        "description": "Calibrate measurement instruments for quality assurance",
+        "priority": "Medium",
+        "status": "On Hold"
+      }
+    }
+  }
+}
