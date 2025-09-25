@@ -32,6 +32,7 @@ import {
   CapitalPlanningIcon,
   SustainabilityIcon,
   AnalyticsIcon,
+  CostIcon,
 } from '../icons/CustomIcons';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -70,6 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
     CapitalPlanningIcon,
     SustainabilityIcon,
     AnalyticsIcon,
+    CostIcon,
   };
 
   const handleNavigation = (path: string) => {
@@ -324,6 +326,69 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
                   )}
                 </ListItemButton>
               </ListItem>
+              
+              {/* Render Analytics sub-items when expanded */}
+              {isAnalytics && analyticsExpanded && open && item.subItems && (
+                <List sx={{ padding: 0, pl: 2 }}>
+                  {item.subItems.map((subItem) => {
+                    const SubIconComponent = iconMap[subItem.icon];
+                    const isSubItemActive = isActive(subItem.path);
+                    
+                    return (
+                      <ListItem key={subItem.id} disablePadding>
+                        <ListItemButton
+                          onClick={() => handleNavigation(subItem.path)}
+                          aria-label={`Navigate to ${t(subItem.labelKey)}${isSubItemActive ? ' (current page)' : ''}`}
+                          aria-current={isSubItemActive ? 'page' : undefined}
+                          sx={{
+                            minHeight: '40px',
+                            padding: '8px 12px',
+                            margin: '1px 8px',
+                            borderRadius: '4px',
+                            backgroundColor: isSubItemActive ? sidebarColors.activeColor : 'transparent',
+                            border: themeType === 'blackWhite' || themeType === 'blueYellow' ? 
+                              `2px solid ${isSubItemActive ? sidebarColors.activeBorder : 'transparent'}` : 'none',
+                            position: 'relative',
+                            '&:hover': {
+                              backgroundColor: isSubItemActive ? sidebarColors.activeColor : sidebarColors.hoverColor,
+                              border: themeType === 'blackWhite' || themeType === 'blueYellow' ? 
+                                `2px solid ${sidebarColors.activeBorder}` : 'none',
+                            },
+                            '&::before': isSubItemActive && (themeType === 'light' || themeType === 'dark') ? {
+                              content: '""',
+                              position: 'absolute',
+                              left: 8,
+                              top: '50%',
+                              transform: 'translateY(-50%)',
+                              width: '3px',
+                              height: '24px',
+                              backgroundColor: sidebarColors.activeIndicator,
+                              borderRadius: '0 2px 2px 0',
+                            } : {
+                              display: 'none',
+                            },
+                            '& .MuiListItemIcon-root': {
+                              minWidth: '32px',
+                              color: isSubItemActive ? sidebarColors.activeBorder : sidebarColors.textColor,
+                              fontSize: '1.0rem',
+                            },
+                            '& .MuiListItemText-primary': {
+                              color: isSubItemActive ? sidebarColors.textColor : sidebarColors.textColor,
+                              fontSize: '0.8rem',
+                              fontWeight: isSubItemActive ? 600 : 400,
+                            },
+                          }}
+                        >
+                          <ListItemIcon aria-hidden="true">
+                            <SubIconComponent />
+                          </ListItemIcon>
+                          <ListItemText primary={t(subItem.labelKey)} />
+                        </ListItemButton>
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              )}
             </React.Fragment>
           );
         })}

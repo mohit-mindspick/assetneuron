@@ -36,6 +36,13 @@
     "investmentPlanning": "투자 계획",
     "sustainability": "지속가능성",
     "analytics": "분석",
+    "siteAnalytics": "사이트 분석",
+    "assetAnalytics": "자산 분석",
+    "inventoryAnalytics": "재고 분석",
+    "caseAnalytics": "사례 분석",
+    "workOrderAnalytics": "작업 주문 분석",
+    "resourceAnalytics": "리소스 분석",
+    "costAnalytics": "비용 분석",
     "collapse": "접기"
   },
   "home": {

@@ -599,3 +599,58 @@ export const SustainabilityIcon: React.FC<IconProps> = ({ className, style, font
     </svg>
   );
 };
+
+// Custom Cost Icon (Indian Rupee Symbol)
+export const CostIcon: React.FC<IconProps> = ({ className, style, fontSize = 'medium' }) => {
+  const getSize = () => {
+    switch (fontSize) {
+      case 'small': return 20;
+      case 'large': return 32;
+      case 'inherit': return 'inherit';
+      default: return 24;
+    }
+  };
+
+  const size = getSize();
+
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={style}
+    >
+      <path 
+        d="M6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+      <path 
+        d="M8 7H16M8 11H16M8 15H16" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+      <path 
+        d="M12 7V15" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+      <path 
+        d="M10 9L14 9M10 13L14 13" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

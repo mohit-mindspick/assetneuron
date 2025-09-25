@@ -36,6 +36,13 @@
     "investmentPlanning": "投資規劃",
     "sustainability": "可持續性",
     "analytics": "分析",
+    "siteAnalytics": "站點分析",
+    "assetAnalytics": "資產分析",
+    "inventoryAnalytics": "庫存分析",
+    "caseAnalytics": "案例分析",
+    "workOrderAnalytics": "工作訂單分析",
+    "resourceAnalytics": "資源分析",
+    "costAnalytics": "成本分析",
     "collapse": "折疊"
   },
   "home": {

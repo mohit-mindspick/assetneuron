@@ -200,6 +200,13 @@ const AppContent: React.FC = () => {
                       <Route path="/investment-planning" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
                       <Route path="/sustainability" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
                       <Route path="/analytics" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/site" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/asset" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/inventory" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/case" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/workorder" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/resource" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+                      <Route path="/analytics/cost" element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
                     </Routes>
                   </Box>
                 </Box>

@@ -36,6 +36,13 @@
     "investmentPlanning": "Планирование инвестиций",
     "sustainability": "Устойчивость",
     "analytics": "Аналитика",
+    "siteAnalytics": "Аналитика сайтов",
+    "assetAnalytics": "Аналитика активов",
+    "inventoryAnalytics": "Аналитика инвентаря",
+    "caseAnalytics": "Аналитика случаев",
+    "workOrderAnalytics": "Аналитика рабочих заказов",
+    "resourceAnalytics": "Аналитика ресурсов",
+    "costAnalytics": "Аналитика затрат",
     "collapse": "Свернуть"
   },
   "home": {

@@ -83,7 +83,58 @@
       "icon": "AnalyticsIcon",
       "path": "/analytics",
       "active": false,
-      "hasSubmenu": true
+      "hasSubmenu": true,
+      "subItems": [
+        {
+          "id": "site-analytics",
+          "labelKey": "sidebar.siteAnalytics",
+          "icon": "SitesIcon",
+          "path": "/analytics/site",
+          "active": false
+        },
+        {
+          "id": "asset-analytics",
+          "labelKey": "sidebar.assetAnalytics",
+          "icon": "AssetsIcon",
+          "path": "/analytics/asset",
+          "active": false
+        },
+        {
+          "id": "inventory-analytics",
+          "labelKey": "sidebar.inventoryAnalytics",
+          "icon": "InventoryIcon",
+          "path": "/analytics/inventory",
+          "active": false
+        },
+        {
+          "id": "case-analytics",
+          "labelKey": "sidebar.caseAnalytics",
+          "icon": "CasesIcon",
+          "path": "/analytics/case",
+          "active": false
+        },
+        {
+          "id": "work-order-analytics",
+          "labelKey": "sidebar.workOrderAnalytics",
+          "icon": "WorkOrderIcon",
+          "path": "/analytics/workorder",
+          "active": false
+        },
+        {
+          "id": "resource-analytics",
+          "labelKey": "sidebar.resourceAnalytics",
+          "icon": "PeopleIcon",
+          "path": "/analytics/resource",
+          "active": false
+        },
+        {
+          "id": "cost-analytics",
+          "labelKey": "sidebar.costAnalytics",
+          "icon": "CostIcon",
+          "path": "/analytics/cost",
+          "active": false
+        }
+      ]
     }
   ]
 }

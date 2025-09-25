@@ -36,6 +36,13 @@
     "investmentPlanning": "投資計画",
     "sustainability": "持続可能性",
     "analytics": "分析",
+    "siteAnalytics": "サイト分析",
+    "assetAnalytics": "資産分析",
+    "inventoryAnalytics": "在庫分析",
+    "caseAnalytics": "ケース分析",
+    "workOrderAnalytics": "作業指示分析",
+    "resourceAnalytics": "リソース分析",
+    "costAnalytics": "コスト分析",
     "collapse": "折りたたむ"
   },
   "home": {

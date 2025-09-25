@@ -36,6 +36,13 @@
     "investmentPlanning": "Planejamento de investimentos",
     "sustainability": "Sustentabilidade",
     "analytics": "Análises",
+    "siteAnalytics": "Análises do Site",
+    "assetAnalytics": "Análises de Ativos",
+    "inventoryAnalytics": "Análises de Inventário",
+    "caseAnalytics": "Análises de Casos",
+    "workOrderAnalytics": "Análises de Ordens de Trabalho",
+    "resourceAnalytics": "Análises de Recursos",
+    "costAnalytics": "Análises de Custos",
     "collapse": "Recolher"
   },
   "home": {

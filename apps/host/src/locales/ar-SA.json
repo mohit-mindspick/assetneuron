@@ -36,6 +36,13 @@
     "investmentPlanning": "تخطيط الاستثمار",
     "sustainability": "الاستدامة",
     "analytics": "التحليلات",
+    "siteAnalytics": "تحليلات الموقع",
+    "assetAnalytics": "تحليلات الأصول",
+    "inventoryAnalytics": "تحليلات المخزون",
+    "caseAnalytics": "تحليلات الحالات",
+    "workOrderAnalytics": "تحليلات أوامر العمل",
+    "resourceAnalytics": "تحليلات الموارد",
+    "costAnalytics": "تحليلات التكلفة",
     "collapse": "طي"
   },
   "home": {

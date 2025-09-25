@@ -36,6 +36,13 @@
     "investmentPlanning": "निवेश योजना",
     "sustainability": "स्थिरता",
     "analytics": "विश्लेषण",
+    "siteAnalytics": "साइट विश्लेषण",
+    "assetAnalytics": "संपत्ति विश्लेषण",
+    "inventoryAnalytics": "इन्वेंटरी विश्लेषण",
+    "caseAnalytics": "केस विश्लेषण",
+    "workOrderAnalytics": "कार्य आदेश विश्लेषण",
+    "resourceAnalytics": "संसाधन विश्लेषण",
+    "costAnalytics": "लागत विश्लेषण",
     "collapse": "सिकोड़ें"
   },
   "home": {

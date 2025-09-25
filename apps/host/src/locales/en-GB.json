@@ -36,6 +36,13 @@
     "investmentPlanning": "Investment Planning",
     "sustainability": "Sustainability",
     "analytics": "Analytics",
+    "siteAnalytics": "Site Analytics",
+    "assetAnalytics": "Asset Analytics",
+    "inventoryAnalytics": "Inventory Analytics",
+    "caseAnalytics": "Case Analytics",
+    "workOrderAnalytics": "Work Order Analytics",
+    "resourceAnalytics": "Resource Analytics",
+    "costAnalytics": "Cost Analytics",
     "collapse": "Collapse"
   },
   "home": {
