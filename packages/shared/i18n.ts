@@ -866,6 +866,78 @@ const initI18n = async (appTranslations: any = {}, appName: string = 'unknown') 
           ...appTranslations['es-ES'],
         },
       },
+      'en-GB': {
+        translation: {
+          ...commonTranslations['en-GB'],
+          ...appTranslations['en-GB'],
+        },
+      },
+      'fr-FR': {
+        translation: {
+          ...commonTranslations['fr-FR'],
+          ...appTranslations['fr-FR'],
+        },
+      },
+      'de-DE': {
+        translation: {
+          ...commonTranslations['de-DE'],
+          ...appTranslations['de-DE'],
+        },
+      },
+      'it-IT': {
+        translation: {
+          ...commonTranslations['it-IT'],
+          ...appTranslations['it-IT'],
+        },
+      },
+      'pt-BR': {
+        translation: {
+          ...commonTranslations['pt-BR'],
+          ...appTranslations['pt-BR'],
+        },
+      },
+      'zh-CN': {
+        translation: {
+          ...commonTranslations['zh-CN'],
+          ...appTranslations['zh-CN'],
+        },
+      },
+      'zh-TW': {
+        translation: {
+          ...commonTranslations['zh-TW'],
+          ...appTranslations['zh-TW'],
+        },
+      },
+      'ja-JP': {
+        translation: {
+          ...commonTranslations['ja-JP'],
+          ...appTranslations['ja-JP'],
+        },
+      },
+      'ko-KR': {
+        translation: {
+          ...commonTranslations['ko-KR'],
+          ...appTranslations['ko-KR'],
+        },
+      },
+      'ru-RU': {
+        translation: {
+          ...commonTranslations['ru-RU'],
+          ...appTranslations['ru-RU'],
+        },
+      },
+      'ar-SA': {
+        translation: {
+          ...commonTranslations['ar-SA'],
+          ...appTranslations['ar-SA'],
+        },
+      },
+      'hi-IN': {
+        translation: {
+          ...commonTranslations['hi-IN'],
+          ...appTranslations['hi-IN'],
+        },
+      },
     };
 
     console.log('Initializing i18n with resources:', resources);

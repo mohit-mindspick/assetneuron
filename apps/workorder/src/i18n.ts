@@ -4,10 +4,34 @@ import i18n from 'i18next';
 // Import translations as require to ensure they're loaded properly
 const enTranslations = require('./locales/en-US.json');
 const esTranslations = require('./locales/es-ES.json');
+const enGBTranslations = require('./locales/en-GB.json');
+const frTranslations = require('./locales/fr-FR.json');
+const deTranslations = require('./locales/de-DE.json');
+const itTranslations = require('./locales/it-IT.json');
+const ptTranslations = require('./locales/pt-BR.json');
+const zhCNTranslations = require('./locales/zh-CN.json');
+const zhTWTranslations = require('./locales/zh-TW.json');
+const jaTranslations = require('./locales/ja-JP.json');
+const koTranslations = require('./locales/ko-KR.json');
+const ruTranslations = require('./locales/ru-RU.json');
+const arTranslations = require('./locales/ar-SA.json');
+const hiTranslations = require('./locales/hi-IN.json');
 
 const appTranslations = {
   'en-US': enTranslations,
   'es-ES': esTranslations,
+  'en-GB': enGBTranslations,
+  'fr-FR': frTranslations,
+  'de-DE': deTranslations,
+  'it-IT': itTranslations,
+  'pt-BR': ptTranslations,
+  'zh-CN': zhCNTranslations,
+  'zh-TW': zhTWTranslations,
+  'ja-JP': jaTranslations,
+  'ko-KR': koTranslations,
+  'ru-RU': ruTranslations,
+  'ar-SA': arTranslations,
+  'hi-IN': hiTranslations,
 };
 
 console.log('Workorder: Initializing i18n with app translations:', appTranslations);
