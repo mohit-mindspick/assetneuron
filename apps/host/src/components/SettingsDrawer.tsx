@@ -16,6 +16,8 @@ import {
   Lock as LockIcon,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../context/AppContext';
+import { getCustomColors } from '../../../../packages/shared/theme';
 import LanguageAndRegionDrawer from './LanguageAndRegionDrawer';
 
 interface SettingsDrawerProps {
@@ -25,6 +27,8 @@ interface SettingsDrawerProps {
 
 const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
   const { t } = useTranslation();
+  const { state } = useAppContext();
+  const customColors = getCustomColors(state.theme);
   const [languageDrawerOpen, setLanguageDrawerOpen] = useState(false);
 
   const handleLanguageClick = () => {
@@ -54,7 +58,7 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
           width: '66%',
           maxWidth: '600px',
           minWidth: '400px',
-          backgroundColor: 'white',
+          backgroundColor: 'background.paper',
           borderTopLeftRadius: '12px',
           borderBottomLeftRadius: '12px',
           boxShadow: '-4px 0 20px rgba(0,0,0,0.1)',
@@ -69,14 +73,14 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             p: 3,
-            borderBottom: '1px solid #e0e0e0',
+            borderBottom: `1px solid ${customColors.common.borders.light}`,
           }}
         >
           <Typography
             variant="h5"
             sx={{
               fontWeight: 600,
-              color: 'black',
+              color: 'text.primary',
               fontSize: '1.5rem',
             }}
           >
@@ -85,7 +89,7 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
           <IconButton
             onClick={onClose}
             sx={{
-              color: 'black',
+              color: 'text.primary',
               '&:hover': {
                 backgroundColor: 'rgba(0,0,0,0.04)',
               },
@@ -107,13 +111,13 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
                 '&:hover': {
                   backgroundColor: 'rgba(0,0,0,0.04)',
                 },
-                borderBottom: '1px solid #f0f0f0',
+                borderBottom: `1px solid ${customColors.common.gray[100]}`,
               }}
             >
               <ListItemIcon sx={{ minWidth: 48 }}>
                 <LanguageIcon
                   sx={{
-                    color: 'black',
+                    color: 'text.primary',
                     fontSize: '1.5rem',
                   }}
                 />
@@ -122,7 +126,7 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
                 primary={t('settings.languageAndRegion')}
                 primaryTypographyProps={{
                   sx: {
-                    color: 'black',
+                    color: 'text.primary',
                     fontSize: '1rem',
                     fontWeight: 400,
                   },
@@ -144,7 +148,7 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
               <ListItemIcon sx={{ minWidth: 48 }}>
                 <LockIcon
                   sx={{
-                    color: 'black',
+                    color: 'text.primary',
                     fontSize: '1.5rem',
                   }}
                 />
@@ -153,7 +157,7 @@ const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ open, onClose }) => {
                 primary={t('settings.password')}
                 primaryTypographyProps={{
                   sx: {
-                    color: 'black',
+                    color: 'text.primary',
                     fontSize: '1rem',
                     fontWeight: 400,
                   },

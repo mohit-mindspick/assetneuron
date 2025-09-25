@@ -47,7 +47,7 @@ import SettingsDrawer from './SettingsDrawer';
 import ThemeSelector from './ThemeSelector';
 import { useNavigationData } from '../hooks/useNavigationData';
 import { Site } from '../services/navigationApi';
-import { customColors } from '../../../../packages/shared/theme';
+import { getCustomColors } from '../../../../packages/shared/theme';
 
 // Site data structure is now imported from navigationApi.ts
 
@@ -57,6 +57,7 @@ const Navigation: React.FC = () => {
   const { state, setTheme } = useAppContext();
   const { t, i18n } = useTranslation();
   const theme = useTheme();
+  const customColors = getCustomColors(state.theme);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [siteMenuAnchor, setSiteMenuAnchor] = React.useState<null | HTMLElement>(null);
   const [settingsDrawerOpen, setSettingsDrawerOpen] = React.useState(false);
@@ -111,9 +112,6 @@ const Navigation: React.FC = () => {
     setSettingsDrawerOpen(false);
   };
 
-  const handleThemeToggle = () => {
-    setTheme(state.theme === 'light' ? 'dark' : 'light');
-  };
 
   const handleLanguageChange = async (event: any) => {
     const newLocale = event.target.value;
@@ -129,10 +127,10 @@ const Navigation: React.FC = () => {
       role="banner"
       aria-label="Main application header"
       sx={{ 
-        backgroundColor: 'white',
-        color: 'black',
+        backgroundColor: 'background.paper',
+        color: 'text.primary',
         boxShadow: 'none',
-        borderBottom: '1px solid #e0e0e0',
+        borderBottom: `1px solid ${customColors.common.borders.light}`,
         zIndex: 1200
       }}
     >
@@ -142,7 +140,7 @@ const Navigation: React.FC = () => {
           size="large"
           edge="start"
           aria-label="Toggle sidebar menu"
-          sx={{ mr: 2, color: 'black' }}
+          sx={{ mr: 2, color: 'text.primary' }}
         >
           <MenuIcon aria-hidden="true" />
         </IconButton>
@@ -171,15 +169,15 @@ const Navigation: React.FC = () => {
               sx={{
                 '& .MuiOutlinedInput-root': {
                   borderRadius: '8px',
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: customColors.common.gray[100],
                   '& fieldset': {
-                    borderColor: '#e0e0e0',
+                    borderColor: customColors.common.borders.light,
                   },
                   '&:hover fieldset': {
-                    borderColor: '#d0d0d0',
+                    borderColor: customColors.common.borders.medium,
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#6B7C32',
+                    borderColor: customColors.common.brand.olive,
                   },
                 },
                 '& .MuiInputBase-input': {
@@ -190,10 +188,10 @@ const Navigation: React.FC = () => {
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
-                    <IconButton size="small" sx={{ color: '#666', mr: 1 }}>
+                    <IconButton size="small" sx={{ color: customColors.common.gray[600], mr: 1 }}>
                       <MicOff />
                     </IconButton>
-                    <IconButton size="small" sx={{ color: '#666' }}>
+                    <IconButton size="small" sx={{ color: customColors.common.gray[600] }}>
                       <Search />
                     </IconButton>
                   </InputAdornment>
@@ -210,12 +208,12 @@ const Navigation: React.FC = () => {
               aria-label={`Site selector. Current site: ${getSelectedSiteDisplay()}. Click to change site.`}
               aria-haspopup="menu"
               aria-expanded={Boolean(siteMenuAnchor)}
-              sx={{ color: '#6B7C32' }}
+              sx={{ color: customColors.common.brand.olive }}
             >
             <Typography 
               variant="body2" 
               sx={{ 
-                color: 'black',
+                color: 'text.primary',
                 fontSize: '0.9rem',
                 mr: 1,
                 fontWeight: 600
@@ -237,7 +235,7 @@ const Navigation: React.FC = () => {
                   width: 320,
                   borderRadius: '12px',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid customColors.common.borders.light',
                   mt: 1,
                 }
               }}
@@ -261,7 +259,7 @@ const Navigation: React.FC = () => {
                     variant="body2"
                     sx={{
                       fontWeight: 600,
-                      color: 'black',
+                      color: 'text.primary',
                       fontSize: '0.9rem',
                       mb: 0.5,
                     }}
@@ -271,7 +269,7 @@ const Navigation: React.FC = () => {
                   <Typography
                     variant="caption"
                     sx={{
-                      color: '#666',
+                      color: 'customColors.common.gray[600]',
                       fontSize: '0.75rem',
                     }}
                   >
@@ -284,13 +282,13 @@ const Navigation: React.FC = () => {
                       width: 20,
                       height: 20,
                       borderRadius: '50%',
-                      backgroundColor: '#1976d2',
+                      backgroundColor: 'customColors.common.status.info',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                     }}
                   >
-                    <Check sx={{ color: 'white', fontSize: '0.8rem' }} />
+                    <Check sx={{ color: 'text.primary', fontSize: '0.8rem' }} />
                   </Box>
                 )}
               </MenuItem>
@@ -301,19 +299,19 @@ const Navigation: React.FC = () => {
               {/* Site List */}
               {sitesLoading ? (
                 <MenuItem disabled>
-                  <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                  <Typography variant="body2" sx={{ color: 'customColors.common.gray[600]', fontStyle: 'italic' }}>
                     Loading sites...
                   </Typography>
                 </MenuItem>
               ) : sitesError ? (
                 <MenuItem disabled>
-                  <Typography variant="body2" sx={{ color: '#d32f2f' }}>
+                  <Typography variant="body2" sx={{ color: 'customColors.common.status.error' }}>
                     Error loading sites: {sitesError}
                   </Typography>
                 </MenuItem>
               ) : sites.length === 0 ? (
                 <MenuItem disabled>
-                  <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                  <Typography variant="body2" sx={{ color: 'customColors.common.gray[600]', fontStyle: 'italic' }}>
                     No sites available
                   </Typography>
                 </MenuItem>
@@ -337,7 +335,7 @@ const Navigation: React.FC = () => {
                         variant="body2"
                         sx={{
                           fontWeight: 600,
-                          color: 'black',
+                          color: 'text.primary',
                           fontSize: '0.8rem',
                         }}
                       >
@@ -346,7 +344,7 @@ const Navigation: React.FC = () => {
                       <Typography
                         variant="body2"
                         sx={{
-                          color: '#4caf50',
+                          color: 'customColors.common.status.success',
                           fontSize: '0.5rem',
                           fontWeight: 400,
                         }}
@@ -357,7 +355,7 @@ const Navigation: React.FC = () => {
                     <Typography
                       variant="caption"
                       sx={{
-                        color: '#666',
+                        color: 'customColors.common.gray[600]',
                         fontSize: '0.75rem',
                       }}
                     >
@@ -370,13 +368,13 @@ const Navigation: React.FC = () => {
                         width: 20,
                         height: 20,
                         borderRadius: '50%',
-                        backgroundColor: '#1976d2',
+                        backgroundColor: 'customColors.common.status.info',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                       }}
                     >
-                      <Check sx={{ color: 'white', fontSize: '0.8rem' }} />
+                      <Check sx={{ color: 'text.primary', fontSize: '0.8rem' }} />
                     </Box>
                   )}
                 </MenuItem>
@@ -391,7 +389,7 @@ const Navigation: React.FC = () => {
             
             <IconButton 
               size="medium" 
-              sx={{ color: 'black' }}
+              sx={{ color: 'text.primary' }}
               onClick={handleSettingsClick}
               aria-label="Open settings panel"
             >
@@ -400,7 +398,7 @@ const Navigation: React.FC = () => {
             
             <IconButton 
               size="medium" 
-              sx={{ color: 'black' }}
+              sx={{ color: 'text.primary' }}
               aria-label="View notifications. 3 unread notifications"
             >
               <Badge badgeContent={3} color="error" aria-label="3 unread notifications">
@@ -414,7 +412,7 @@ const Navigation: React.FC = () => {
                   width: 32, 
                   height: 32, 
                   backgroundColor: customColors.userProfile.avatarBackgroundColor,
-                  color: 'white',
+                  color: 'text.primary',
                   fontSize: '0.8rem',
                   fontWeight: 600
                 }}
@@ -424,7 +422,7 @@ const Navigation: React.FC = () => {
               <IconButton 
                 size="small" 
                 onClick={handleMenu}
-                sx={{ color: '#6B7C32', ml: 0.5 }}
+                sx={{ color: customColors.common.brand.olive, ml: 0.5 }}
               >
                 <KeyboardArrowDown />
               </IconButton>
@@ -449,7 +447,7 @@ const Navigation: React.FC = () => {
                   width: 280,
                   borderRadius: '12px',
                   boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
-                  border: '1px solid #e0e0e0',
+                  border: '1px solid customColors.common.borders.light',
                   mt: 1,
                   p: 0,
                 }
@@ -459,7 +457,7 @@ const Navigation: React.FC = () => {
               <Box
                 sx={{
                   p: 3,
-                  backgroundColor: '#F5F5F5',
+                  backgroundColor: 'customColors.common.gray[100]',
                   borderTopLeftRadius: '12px',
                   borderTopRightRadius: '12px',
                 }}
@@ -470,7 +468,7 @@ const Navigation: React.FC = () => {
                       width: 48, 
                       height: 48, 
                       backgroundColor: customColors.userProfile.avatarBackgroundColor,
-                      color: 'white',
+                      color: 'text.primary',
                       fontSize: '1.2rem',
                       fontWeight: 600
                     }}
@@ -484,7 +482,7 @@ const Navigation: React.FC = () => {
                           variant="h6"
                           sx={{
                             fontWeight: 600,
-                            color: 'black',
+                            color: 'text.primary',
                             fontSize: '1.1rem',
                             mb: 0.5,
                           }}
@@ -494,7 +492,7 @@ const Navigation: React.FC = () => {
                         <Typography
                           variant="body2"
                           sx={{
-                            color: '#666',
+                            color: 'customColors.common.gray[600]',
                             fontSize: '0.8rem',
                             mb: 0.25,
                           }}
@@ -504,7 +502,7 @@ const Navigation: React.FC = () => {
                         <Typography
                           variant="body2"
                           sx={{
-                            color: 'black',
+                            color: 'text.primary',
                             fontSize: '0.9rem',
                             mb: 0.25,
                           }}
@@ -514,7 +512,7 @@ const Navigation: React.FC = () => {
                         <Typography
                           variant="body2"
                           sx={{
-                            color: 'black',
+                            color: 'text.primary',
                             fontSize: '0.9rem',
                           }}
                         >
@@ -522,7 +520,7 @@ const Navigation: React.FC = () => {
                         </Typography>
                       </>
                     ) : (
-                      <Typography variant="body2" sx={{ color: '#666', fontStyle: 'italic' }}>
+                      <Typography variant="body2" sx={{ color: 'customColors.common.gray[600]', fontStyle: 'italic' }}>
                         No user data available
                       </Typography>
                     )}

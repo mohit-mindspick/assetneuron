@@ -36,7 +36,7 @@ import {
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAppContext } from '../context/AppContext';
-import { getCustomColors, ThemeType } from 'shared';
+import { getCustomColors, ThemeType, commonColors, accessibilityColors, brandColors } from 'shared';
 import navigationMenuData from '../data/navigationMenu.json';
 
 const DRAWER_WIDTH = 280;
@@ -91,38 +91,52 @@ const Sidebar: React.FC<SidebarProps> = ({ open, onToggle }) => {
   const getSidebarColors = () => {
     if (themeType === 'blackWhite') {
       return {
-        backgroundColor: '#FFFFFF',
-        borderColor: '#000000',
-        textColor: '#000000',
-        textSecondary: '#333333',
-        hoverColor: '#F5F5F5',
-        activeColor: '#E0E0E0',
-        activeBorder: '#000000',
-        activeIndicator: '#000000',
+        backgroundColor: accessibilityColors.blackWhite.paper, // Use same as header's background.paper
+        borderColor: accessibilityColors.blackWhite.primary,
+        textColor: accessibilityColors.blackWhite.text,
+        textSecondary: accessibilityColors.blackWhite.textSecondary,
+        hoverColor: accessibilityColors.blackWhite.hover,
+        activeColor: accessibilityColors.blackWhite.selected,
+        activeBorder: accessibilityColors.blackWhite.primary,
+        activeIndicator: accessibilityColors.blackWhite.primary,
       };
     }
     if (themeType === 'blueYellow') {
       return {
-        backgroundColor: '#FFFFCC',
-        borderColor: '#0000FF',
-        textColor: '#0000FF',
-        textSecondary: '#003399',
-        hoverColor: '#FFFF99',
-        activeColor: '#FFFF66',
-        activeBorder: '#0000FF',
-        activeIndicator: '#0000FF',
+        backgroundColor: accessibilityColors.blueYellow.paper,
+        borderColor: accessibilityColors.blueYellow.border,
+        textColor: accessibilityColors.blueYellow.text,
+        textSecondary: accessibilityColors.blueYellow.textSecondary,
+        hoverColor: accessibilityColors.blueYellow.hover,
+        activeColor: accessibilityColors.blueYellow.selected,
+        activeBorder: accessibilityColors.blueYellow.primary,
+        activeIndicator: accessibilityColors.blueYellow.primary,
       };
     }
-    // Default theme colors
+    // Default theme colors (light/dark)
+    if (themeType === 'dark') {
+      return {
+        backgroundColor: '#2D2D2D', // Match header's background.paper color
+        borderColor: '#3D3D3D', // Slightly lighter border
+        textColor: '#FFFFFF', // White text
+        textSecondary: brandColors.neutralL, // Light gray secondary text
+        hoverColor: brandColors.accentD, // Dark orange hover for dark theme
+        activeColor: '#E8A87C', // Lighter orange for selected state (lighter than hover)
+        activeBorder: brandColors.accentC, // Brand accent color for active border
+        activeIndicator: brandColors.accentC, // Brand accent color for active indicator
+      };
+    }
+    
+    // Light theme colors
     return {
-      backgroundColor: 'white',
-      borderColor: '#e0e0e0',
-      textColor: '#424242',
-      textSecondary: '#9e9e9e',
-      hoverColor: '#f5f5f5',
-      activeColor: '#fff2e6',
-      activeBorder: '#ff8a00',
-      activeIndicator: '#ff8a00',
+      backgroundColor: commonColors.white,
+      borderColor: commonColors.gray[200],
+      textColor: commonColors.gray[700],
+      textSecondary: commonColors.gray[500],
+      hoverColor: commonColors.gray[100],
+      activeColor: '#fff2e6', // Orange active color for default theme
+      activeBorder: brandColors.accentC, // Use brand accent color for active border
+      activeIndicator: brandColors.accentC, // Use brand accent color for active indicator
     };
   };
 

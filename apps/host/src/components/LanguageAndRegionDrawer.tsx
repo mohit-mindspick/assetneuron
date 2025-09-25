@@ -19,6 +19,8 @@ import {
   Info as InfoIcon,
 } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../context/AppContext';
+import { getCustomColors } from '../../../../packages/shared/theme';
 import { useTheme } from '@mui/material/styles';
 import { handleLocaleChange } from '../i18n';
 import { useLocaleData, useSaveUserPreferences } from '../hooks/useLocaleData';
@@ -36,6 +38,8 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
+  const { state } = useAppContext();
+  const customColors = getCustomColors(state.theme);
   const [preferredLanguage, setPreferredLanguage] = useState('en-US');
   const [country, setCountry] = useState('IN');
   const [timeZone, setTimeZone] = useState('IST');
@@ -163,7 +167,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
           width: '66%',
           maxWidth: '600px',
           minWidth: '400px',
-          backgroundColor: 'white',
+          backgroundColor: 'background.paper',
           borderTopLeftRadius: '12px',
           borderBottomLeftRadius: '12px',
           boxShadow: '-4px 0 20px rgba(0,0,0,0.1)',
@@ -178,14 +182,14 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
             alignItems: 'center',
             justifyContent: 'space-between',
             p: 3,
-            borderBottom: '1px solid #e0e0e0',
+            borderBottom: `1px solid ${customColors.common.borders.light}`,
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             <IconButton
               onClick={onBack}
               sx={{
-                color: 'black',
+                color: 'text.primary',
                 '&:hover': {
                   backgroundColor: 'rgba(0,0,0,0.04)',
                 },
@@ -196,7 +200,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
             <Typography
               variant="body2"
               sx={{
-                color: '#666',
+                color: customColors.common.gray[600],
                 fontSize: '0.9rem',
               }}
             >
@@ -206,7 +210,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
           <IconButton
             onClick={onClose}
             sx={{
-              color: 'black',
+              color: 'text.primary',
               '&:hover': {
                 backgroundColor: 'rgba(0,0,0,0.04)',
               },
@@ -222,7 +226,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
             variant="h4"
             sx={{
               fontWeight: 600,
-              color: 'black',
+              color: 'text.primary',
               fontSize: '1.8rem',
               textAlign: 'center',
             }}
@@ -262,7 +266,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                           <Typography
                             variant="body1"
                             sx={{
-                              color: 'black',
+                              color: 'text.primary',
                               fontSize: '1rem',
                               fontWeight: 500,
                             }}
@@ -271,7 +275,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                           </Typography>
                           <InfoIcon
                             sx={{
-                              color: '#666',
+                              color: customColors.common.gray[600],
                               fontSize: '1.2rem',
                             }}
                           />
@@ -282,14 +286,14 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                             onChange={(e) => handleLanguageChange(e.target.value as string)}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#e0e0e0',
+                                borderColor: customColors.common.borders.light,
                                 borderRadius: '8px',
                               },
                               '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#d0d0d0',
+                                borderColor: customColors.common.borders.medium,
                               },
                               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#6B7C32',
+                                borderColor: customColors.common.brand.olive,
                               },
                             }}
                           >
@@ -307,7 +311,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         <Typography
                           variant="body1"
                           sx={{
-                            color: 'black',
+                            color: 'text.primary',
                             fontSize: '1rem',
                             fontWeight: 500,
                             mb: 1,
@@ -321,14 +325,14 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                             onChange={(e) => setCountry(e.target.value)}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#e0e0e0',
+                                borderColor: customColors.common.borders.light,
                                 borderRadius: '8px',
                               },
                               '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#d0d0d0',
+                                borderColor: customColors.common.borders.medium,
                               },
                               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#6B7C32',
+                                borderColor: customColors.common.brand.olive,
                               },
                             }}
                           >
@@ -346,7 +350,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         <Typography
                           variant="body1"
                           sx={{
-                            color: 'black',
+                            color: 'text.primary',
                             fontSize: '1rem',
                             fontWeight: 500,
                             mb: 1,
@@ -360,14 +364,14 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                             onChange={(e) => setTimeZone(e.target.value)}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#e0e0e0',
+                                borderColor: customColors.common.borders.light,
                                 borderRadius: '8px',
                               },
                               '&:hover .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#d0d0d0',
+                                borderColor: customColors.common.borders.medium,
                               },
                               '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                borderColor: '#6B7C32',
+                                borderColor: customColors.common.brand.olive,
                               },
                             }}
                           >
@@ -388,7 +392,7 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
           sx={{
             p: 3,
             pt: 2,
-            borderTop: '1px solid #e0e0e0',
+            borderTop: `1px solid ${customColors.common.borders.light}`,
             display: 'flex',
             gap: 2,
             justifyContent: 'space-between',
@@ -431,8 +435,8 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         boxShadow: 'none',
                       },
                       '&:disabled': {
-                        backgroundColor: '#ccc',
-                        color: '#666',
+                        backgroundColor: customColors.common.gray[400],
+                        color: customColors.common.gray[600],
                       },
                     }}
                   >

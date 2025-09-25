@@ -206,6 +206,63 @@ export const createBrandPalette = (themeType: ThemeType = 'light') => {
   };
 };
 
+// Common UI colors used throughout the application
+export const commonColors = {
+  // Neutral colors
+  white: '#FFFFFF',
+  black: '#000000',
+  gray: {
+    50: '#fafafa',
+    100: '#f5f5f5',
+    200: '#e0e0e0',
+    300: '#d0d0d0',
+    400: '#ccc',
+    500: '#9e9e9e',
+    600: '#666666',
+    700: '#424242',
+    800: '#333333',
+    900: '#1a1a1a',
+  },
+  // Brand-specific colors
+  brand: {
+    olive: '#6B7C32',
+    oliveDark: '#556b2f',
+    oliveLight: '#4a5a2a',
+    gold: '#d4af37',
+    darkGold: '#4caf50',
+  },
+  // Status colors
+  status: {
+    success: '#4caf50',
+    error: '#d32f2f',
+    warning: '#ff9800',
+    info: '#1976d2',
+  },
+  // Role-specific colors
+  roles: {
+    'Regional Manager': '#9c27b0',
+    'Plant Manager': '#2196f3',
+    'Maintenance Manager': '#4caf50',
+    'Asset Manager': '#ff9800',
+    'Maintenance Technician': '#f44336',
+    'Executive': '#2196f3',
+  },
+  // Background colors
+  backgrounds: {
+    light: '#f5f5dc',
+    dark: '#e8e8e8',
+    card: '#F5F5F5',
+    hover: 'rgba(0,0,0,0.04)',
+    selected: 'rgba(85, 107, 47, 0.04)',
+  },
+  // Border colors
+  borders: {
+    light: '#e0e0e0',
+    medium: '#d0d0d0',
+    dark: '#6B7C32',
+  },
+} as const;
+
 // Custom color variants for specific use cases
 export const getCustomColors = (themeType: ThemeType) => {
   if (themeType === 'blackWhite') {
@@ -230,6 +287,28 @@ export const getCustomColors = (themeType: ThemeType) => {
       },
       userProfile: {
         avatarBackgroundColor: accessibilityColors.blackWhite.secondary,
+      },
+      // Common colors for accessibility themes
+      common: {
+        ...commonColors,
+        // Override with accessibility-appropriate colors
+        gray: {
+          ...commonColors.gray,
+          200: accessibilityColors.blackWhite.border,
+          500: accessibilityColors.blackWhite.secondary,
+          600: accessibilityColors.blackWhite.textSecondary,
+          700: accessibilityColors.blackWhite.text,
+        },
+        brand: {
+          ...commonColors.brand,
+          olive: accessibilityColors.blackWhite.primary,
+          oliveDark: accessibilityColors.blackWhite.primary,
+        },
+        borders: {
+          light: accessibilityColors.blackWhite.border,
+          medium: accessibilityColors.blackWhite.border,
+          dark: accessibilityColors.blackWhite.primary,
+        },
       },
     };
   }
@@ -257,6 +336,28 @@ export const getCustomColors = (themeType: ThemeType) => {
       userProfile: {
         avatarBackgroundColor: accessibilityColors.blueYellow.secondary,
       },
+      // Common colors for accessibility themes
+      common: {
+        ...commonColors,
+        // Override with accessibility-appropriate colors
+        gray: {
+          ...commonColors.gray,
+          200: accessibilityColors.blueYellow.border,
+          500: accessibilityColors.blueYellow.secondary,
+          600: accessibilityColors.blueYellow.textSecondary,
+          700: accessibilityColors.blueYellow.text,
+        },
+        brand: {
+          ...commonColors.brand,
+          olive: accessibilityColors.blueYellow.primary,
+          oliveDark: accessibilityColors.blueYellow.primary,
+        },
+        borders: {
+          light: accessibilityColors.blueYellow.border,
+          medium: accessibilityColors.blueYellow.border,
+          dark: accessibilityColors.blueYellow.primary,
+        },
+      },
     };
   }
 
@@ -281,8 +382,10 @@ export const getCustomColors = (themeType: ThemeType) => {
       primaryHoverAlpha: 0.12,
     },
     userProfile: {
-      avatarBackgroundColor: '#9e9e9e',
+      avatarBackgroundColor: commonColors.gray[500],
     },
+    // Common colors for all themes
+    common: commonColors,
   };
 };
 

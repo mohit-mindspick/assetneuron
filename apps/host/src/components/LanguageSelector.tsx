@@ -8,6 +8,8 @@ import {
   Box,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { useAppContext } from '../context/AppContext';
+import { getCustomColors } from '../../../../packages/shared/theme';
 import { handleLocaleChange } from '../i18n';
 import { Language } from '@mui/icons-material';
 
@@ -35,6 +37,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
   showLabel = false 
 }) => {
   const { i18n } = useTranslation();
+  const { state } = useAppContext();
+  const customColors = getCustomColors(state.theme);
   
   // Initialize with current language or fallback to English
   const getInitialLanguage = () => {
@@ -116,7 +120,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
             }}
             renderValue={() => (
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                 <Language sx={{ fontSize: '1.2rem', color: '#556b2f' }} />
+                 <Language sx={{ fontSize: '1.2rem', color: customColors.common.brand.oliveDark }} />
               </Box>
             )}
           >
@@ -142,14 +146,14 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         onChange={(e) => handleLanguageChange(e.target.value as string)}
         sx={{
           '& .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#e0e0e0',
+            borderColor: customColors.common.borders.light,
             borderRadius: '8px',
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#d0d0d0',
+            borderColor: customColors.common.borders.medium,
           },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-            borderColor: '#6B7C32',
+            borderColor: customColors.common.brand.olive,
           },
         }}
         renderValue={() => (

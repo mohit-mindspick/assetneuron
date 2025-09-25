@@ -25,13 +25,17 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '../context/AuthContext';
+import { useAppContext } from '../context/AppContext';
+import { getCustomColors } from '../../../../packages/shared/theme';
 import authApi, { User } from '../services/authApi';
 import LanguageSelector from './LanguageSelector';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const { login, loginWithDemoUser, isLoading } = useAuth();
+  const { state } = useAppContext();
   const { t } = useTranslation();
+  const customColors = getCustomColors(state.theme);
   const [showManualLogin, setShowManualLogin] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
@@ -72,15 +76,7 @@ const Login: React.FC = () => {
   };
 
   const getRoleColor = (role: string): string => {
-    const colors: { [key: string]: string } = {
-      'Regional Manager': '#9c27b0',
-      'Plant Manager': '#2196f3',
-      'Maintenance Manager': '#4caf50',
-      'Asset Manager': '#ff9800',
-      'Maintenance Technician': '#f44336',
-      'Executive': '#2196f3',
-    };
-    return colors[role] || '#757575';
+    return customColors.common.roles[role as keyof typeof customColors.common.roles] || customColors.common.gray[500];
   };
 
   return (
@@ -90,7 +86,7 @@ const Login: React.FC = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(135deg, #f5f5dc 0%, #e8e8e8 100%)',
+        background: `linear-gradient(135deg, ${customColors.common.backgrounds.light} 0%, ${customColors.common.backgrounds.dark} 100%)`,
         padding: 2,
       }}
     >
@@ -118,7 +114,7 @@ const Login: React.FC = () => {
               </Typography>
               <LanguageSelector variant="icon" size="medium" />
             </Box>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#333' }}>
+            <Typography variant="h5" sx={{ fontWeight: 'bold', color: customColors.common.gray[800] }}>
               {t('login.title')}
             </Typography>
           </Box>
@@ -135,7 +131,7 @@ const Login: React.FC = () => {
             <Typography
               variant="h6"
               sx={{
-                color: '#d4af37',
+                color: 'customColors.common.brand.gold',
                 mb: 2,
                 fontWeight: 500,
               }}
@@ -172,7 +168,7 @@ const Login: React.FC = () => {
                         size="small"
                         sx={{
                           backgroundColor: getRoleColor(user.role),
-                          color: 'white',
+                          color: 'text.primary',
                           mb: 1,
                         }}
                       />
@@ -203,11 +199,11 @@ const Login: React.FC = () => {
             sx={{
               mb: 2,
               py: 1.5,
-              borderColor: '#556b2f',
-              color: '#333',
+              borderColor: 'customColors.common.brand.oliveDark',
+              color: 'customColors.common.gray[800]',
               '&:hover': {
-                borderColor: '#556b2f',
-                backgroundColor: 'rgba(85, 107, 47, 0.04)',
+                borderColor: 'customColors.common.brand.oliveDark',
+                backgroundColor: 'customColors.common.backgrounds.selected',
               },
             }}
           >
@@ -222,11 +218,11 @@ const Login: React.FC = () => {
             disabled={isLoading}
             sx={{
               py: 1.5,
-              borderColor: '#556b2f',
-              color: '#556b2f',
+              borderColor: 'customColors.common.brand.oliveDark',
+              color: 'customColors.common.brand.oliveDark',
               '&:hover': {
-                borderColor: '#556b2f',
-                backgroundColor: 'rgba(85, 107, 47, 0.04)',
+                borderColor: 'customColors.common.brand.oliveDark',
+                backgroundColor: 'customColors.common.backgrounds.selected',
               },
             }}
           >
@@ -274,9 +270,9 @@ const Login: React.FC = () => {
                 disabled={isLoading}
                 sx={{
                   py: 1.5,
-                  backgroundColor: '#556b2f',
+                  backgroundColor: 'customColors.common.brand.oliveDark',
                   '&:hover': {
-                    backgroundColor: '#4a5a2a',
+                    backgroundColor: 'customColors.common.brand.oliveLight',
                   },
                 }}
               >
@@ -290,7 +286,7 @@ const Login: React.FC = () => {
             <Button
               variant="text"
               onClick={() => navigate('/')}
-              sx={{ color: '#556b2f' }}
+              sx={{ color: 'customColors.common.brand.oliveDark' }}
             >
 {t('login.backToMainLogin')}
             </Button>
