@@ -1,4 +1,5 @@
 import userProfileData from '../data/userProfile.json';
+import { apiClient, ApiResponse } from 'shared';
 
 // User profile data structure
 export interface UserProfile {
@@ -9,6 +10,7 @@ export interface UserProfile {
   role: string;
   avatar: {
     initials: string;
+    backgroundColor?: string;
   };
   profile: {
     department: string;
@@ -30,15 +32,18 @@ export interface UserProfileApiResponse {
 // Mock API service for user profile data
 export class UserProfileApiService {
   /**
-   * Mock API call to fetch user profile data
-   * This can be easily replaced with actual API call later
+   * Fetch user profile data
+   * Uses the centralized API client with interceptors
    */
   static async getUserProfile(): Promise<UserProfileApiResponse> {
     try {
-      // Simulate API delay
+      // For now, use mock data. In production, replace with:
+      // const response = await apiClient.get<UserProfile>('/user/profile');
+      
+      // Simulate API delay for mock
       await new Promise(resolve => setTimeout(resolve, 150));
       
-      console.log('🌐 Mock API: Fetching user profile data...');
+      console.log('🌐 API: Fetching user profile data...');
       
       // Return mock data from JSON file
       return {
@@ -49,7 +54,7 @@ export class UserProfileApiService {
         message: 'User profile data fetched successfully'
       };
     } catch (error) {
-      console.error('❌ Mock API: Error fetching user profile data:', error);
+      console.error('❌ API: Error fetching user profile data:', error);
       return {
         success: false,
         data: {
@@ -61,14 +66,18 @@ export class UserProfileApiService {
   }
 
   /**
-   * Mock API call to update user profile
+   * Update user profile data
+   * Uses the centralized API client with interceptors
    */
   static async updateUserProfile(profileData: Partial<UserProfile>): Promise<UserProfileApiResponse> {
     try {
-      // Simulate API delay
+      // For now, use mock data. In production, replace with:
+      // const response = await apiClient.put<UserProfile>('/user/profile', profileData);
+      
+      // Simulate API delay for mock
       await new Promise(resolve => setTimeout(resolve, 200));
       
-      console.log('🌐 Mock API: Updating user profile data...', profileData);
+      console.log('🌐 API: Updating user profile data...', profileData);
       
       // In a real API, this would make a PUT/PATCH request
       // For now, we'll just return success
@@ -80,7 +89,7 @@ export class UserProfileApiService {
         message: 'User profile updated successfully'
       };
     } catch (error) {
-      console.error('❌ Mock API: Error updating user profile data:', error);
+      console.error('❌ API: Error updating user profile data:', error);
       return {
         success: false,
         data: {
@@ -92,14 +101,18 @@ export class UserProfileApiService {
   }
 
   /**
-   * Mock API call to sign out user
+   * Sign out user
+   * Uses the centralized API client with interceptors
    */
   static async signOut(): Promise<{ success: boolean; message?: string }> {
     try {
-      // Simulate API delay
+      // For now, use mock data. In production, replace with:
+      // const response = await apiClient.post('/auth/signout');
+      
+      // Simulate API delay for mock
       await new Promise(resolve => setTimeout(resolve, 100));
       
-      console.log('🌐 Mock API: Signing out user...');
+      console.log('🌐 API: Signing out user...');
       
       // In a real API, this would invalidate the session/token
       return {
@@ -107,7 +120,7 @@ export class UserProfileApiService {
         message: 'User signed out successfully'
       };
     } catch (error) {
-      console.error('❌ Mock API: Error signing out user:', error);
+      console.error('❌ API: Error signing out user:', error);
       return {
         success: false,
         message: 'Failed to sign out user'

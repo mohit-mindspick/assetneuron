@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "La vostra piattaforma completa per la gestione di asset e ordini di lavoro",
+    "welcome": "Benvenuti in AssetNeuron"
+  },
+  "login": {
+    "title": "Benvenuti in AssetNeuron",
+    "selectDemoUser": "Seleziona utente demo",
+    "continueWithGoogle": "Continua con Google",
+    "manualLogin": "Accesso manuale",
+    "username": "Nome utente",
+    "password": "Password",
+    "loginButton": "Accedi",
+    "hideManualLogin": "Nascondi accesso manuale",
+    "backToMainLogin": "← Torna all'accesso principale",
+    "invalidCredentials": "Nome utente o password non validi",
+    "loginFailed": "Accesso fallito. Riprova.",
+    "demoLoginFailed": "Accesso demo fallito. Riprova."
+  },
+  "navigation": {
+    "workOrders": "Ordini di lavoro",
+    "assets": "Asset",
+    "dashboard": "Dashboard"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "sitesLocation": "Siti e posizione",
+    "assets": "Asset",
+    "inventory": "Inventario",
+    "cases": "Casi",
+    "preventiveMaintenance": "Manutenzione preventiva",
+    "workOrder": "Ordine di lavoro",
+    "smartScheduling": "Pianificazione intelligente",
+    "people": "Persone",
+    "investmentPlanning": "Pianificazione degli investimenti",
+    "sustainability": "Sostenibilità",
+    "analytics": "Analisi",
+    "siteAnalytics": "Analisi del Sito",
+    "assetAnalytics": "Analisi degli Asset",
+    "inventoryAnalytics": "Analisi dell'Inventario",
+    "caseAnalytics": "Analisi dei Casi",
+    "workOrderAnalytics": "Analisi degli Ordini di Lavoro",
+    "resourceAnalytics": "Analisi delle Risorse",
+    "costAnalytics": "Analisi dei Costi",
+    "collapse": "Comprimi"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Ordini di lavoro",
+      "description": "Gestisci e traccia gli ordini di lavoro in modo efficiente"
+    },
+    "assets": {
+      "title": "Asset",
+      "description": "Monitora e mantieni i tuoi asset"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "Panoramica delle tue operazioni"
+    },
+    "openFeature": "Apri {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "Caricamento microfrontend {{app}}...",
+    "notFound": "Microfrontend non trovato"
+  },
+  "header": {
+    "searchPlaceholder": "Ricerca intelligente IA...",
+    "allSites": "Tutti i siti",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Vista aggregata di tutti i siti"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "languageAndRegion": "Lingua e regione",
+    "password": "Password"
+  },
+  "languageAndRegion": {
+    "title": "Lingua e regione",
+    "breadcrumb": "Impostazioni /",
+    "preferredLanguage": "Lingua preferita",
+    "country": "Paese",
+    "timeZone": "Fuso orario",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "languages": {
+      "en-US": "Inglese (Stati Uniti)",
+      "en-GB": "Inglese (Regno Unito)",
+      "es-ES": "Spagnolo (Spagna)",
+      "fr-FR": "Francese (Francia)",
+      "de-DE": "Tedesco (Germania)",
+      "it-IT": "Italiano (Italia)",
+      "pt-BR": "Portoghese (Brasile)",
+      "zh-CN": "Cinese semplificato (Cina)",
+      "zh-TW": "Cinese tradizionale (Taiwan)",
+      "ja-JP": "Giapponese (Giappone)",
+      "ko-KR": "Coreano (Corea del Sud)",
+      "ru-RU": "Russo (Russia)",
+      "ar-SA": "Arabo (Arabia Saudita)",
+      "hi-IN": "Hindi (India)"
+    },
+    "countries": {
+      "US": "Stati Uniti d'America (USA)",
+      "IN": "India",
+      "GB": "Regno Unito (UK)",
+      "CA": "Canada",
+      "AU": "Australia",
+      "DE": "Germania",
+      "FR": "Francia",
+      "ES": "Spagna",
+      "IT": "Italia",
+      "BR": "Brasile",
+      "JP": "Giappone",
+      "CN": "Cina",
+      "RU": "Russia",
+      "SA": "Arabia Saudita",
+      "MX": "Messico",
+      "NL": "Paesi Bassi",
+      "SE": "Svezia",
+      "NO": "Norvegia",
+      "DK": "Danimarca",
+      "FI": "Finlandia"
+    },
+    "timeZones": {
+      "EST": "Ora standard orientale (EST)",
+      "IST": "Ora standard indiana (IST)",
+      "PST": "Ora standard del Pacifico (PST)",
+      "MST": "Ora standard delle Montagne Rocciose (MST)",
+      "CST": "Ora standard centrale (CST)",
+      "GMT": "Ora di Greenwich (GMT)",
+      "CET": "Ora dell'Europa centrale (CET)",
+      "JST": "Ora standard del Giappone (JST)",
+      "AEST": "Ora standard dell'Australia orientale (AEST)",
+      "MSK": "Ora standard di Mosca (MSK)",
+      "CST-China": "Ora standard cinese (CST)",
+      "BRT": "Ora di Brasilia (BRT)",
+      "AST": "Ora standard araba (AST)",
+      "NZST": "Ora standard della Nuova Zelanda (NZST)",
+      "CAT": "Ora dell'Africa centrale (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Profilo",
+    "logout": "Disconnetti",
+    "myAccount": "Il mio account",
+    "saving": "Salvataggio..."
+  }
+}

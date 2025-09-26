@@ -10,7 +10,7 @@ import HomePage from './components/HomePage';
 import Login from './components/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import MicrofrontendLoader from './components/MicrofrontendLoader';
-import { createBrandPalette, getCustomColors, getAccessibilityOverrides, ThemeType } from 'shared';
+import { createBrandPalette, getCustomColors, getAccessibilityOverrides, ThemeType, setupApiClientForEnvironment } from 'shared';
 import i18n from './i18n';
 
 // Component to wait for i18n initialization
@@ -220,6 +220,11 @@ const AppContent: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  // Initialize API client with environment-based configuration
+  useEffect(() => {
+    setupApiClientForEnvironment();
+  }, []);
+
   return (
     <AppProvider>
       <AuthProvider>

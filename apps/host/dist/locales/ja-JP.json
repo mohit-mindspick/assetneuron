@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "包括的なアセットおよび作業指示管理プラットフォーム",
+    "welcome": "AssetNeuronへようこそ"
+  },
+  "login": {
+    "title": "AssetNeuronへようこそ",
+    "selectDemoUser": "デモユーザーを選択",
+    "continueWithGoogle": "Googleで続行",
+    "manualLogin": "手動ログイン",
+    "username": "ユーザー名",
+    "password": "パスワード",
+    "loginButton": "ログイン",
+    "hideManualLogin": "手動ログインを非表示",
+    "backToMainLogin": "← メインログインに戻る",
+    "invalidCredentials": "無効なユーザー名またはパスワード",
+    "loginFailed": "ログインに失敗しました。再試行してください。",
+    "demoLoginFailed": "デモログインに失敗しました。再試行してください。"
+  },
+  "navigation": {
+    "workOrders": "作業指示",
+    "assets": "アセット",
+    "dashboard": "ダッシュボード"
+  },
+  "sidebar": {
+    "dashboard": "ダッシュボード",
+    "sitesLocation": "サイトと場所",
+    "assets": "アセット",
+    "inventory": "在庫",
+    "cases": "ケース",
+    "preventiveMaintenance": "予防保全",
+    "workOrder": "作業指示",
+    "smartScheduling": "スマートスケジューリング",
+    "people": "人材",
+    "investmentPlanning": "投資計画",
+    "sustainability": "持続可能性",
+    "analytics": "分析",
+    "siteAnalytics": "サイト分析",
+    "assetAnalytics": "資産分析",
+    "inventoryAnalytics": "在庫分析",
+    "caseAnalytics": "ケース分析",
+    "workOrderAnalytics": "作業指示分析",
+    "resourceAnalytics": "リソース分析",
+    "costAnalytics": "コスト分析",
+    "collapse": "折りたたむ"
+  },
+  "home": {
+    "workOrders": {
+      "title": "作業指示",
+      "description": "作業指示を効率的に管理・追跡"
+    },
+    "assets": {
+      "title": "アセット",
+      "description": "アセットの監視とメンテナンス"
+    },
+    "dashboard": {
+      "title": "ダッシュボード",
+      "description": "運用の概要"
+    },
+    "openFeature": "{{feature}}を開く"
+  },
+  "microfrontend": {
+    "loading": "{{app}}マイクロフロントエンドを読み込み中...",
+    "notFound": "マイクロフロントエンドが見つかりません"
+  },
+  "header": {
+    "searchPlaceholder": "AIスマート検索...",
+    "allSites": "すべてのサイト",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "すべてのサイトの集約ビュー"
+  },
+  "settings": {
+    "title": "設定",
+    "languageAndRegion": "言語と地域",
+    "password": "パスワード"
+  },
+  "languageAndRegion": {
+    "title": "言語と地域",
+    "breadcrumb": "設定 /",
+    "preferredLanguage": "優先言語",
+    "country": "国",
+    "timeZone": "タイムゾーン",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "languages": {
+      "en-US": "英語（アメリカ）",
+      "en-GB": "英語（イギリス）",
+      "es-ES": "スペイン語（スペイン）",
+      "fr-FR": "フランス語（フランス）",
+      "de-DE": "ドイツ語（ドイツ）",
+      "it-IT": "イタリア語（イタリア）",
+      "pt-BR": "ポルトガル語（ブラジル）",
+      "zh-CN": "簡体字中国語（中国）",
+      "zh-TW": "繁体字中国語（台湾）",
+      "ja-JP": "日本語（日本）",
+      "ko-KR": "韓国語（韓国）",
+      "ru-RU": "ロシア語（ロシア）",
+      "ar-SA": "アラビア語（サウジアラビア）",
+      "hi-IN": "ヒンディー語（インド）"
+    },
+    "countries": {
+      "US": "アメリカ合衆国（USA）",
+      "IN": "インド",
+      "GB": "イギリス（UK）",
+      "CA": "カナダ",
+      "AU": "オーストラリア",
+      "DE": "ドイツ",
+      "FR": "フランス",
+      "ES": "スペイン",
+      "IT": "イタリア",
+      "BR": "ブラジル",
+      "JP": "日本",
+      "CN": "中国",
+      "RU": "ロシア",
+      "SA": "サウジアラビア",
+      "MX": "メキシコ",
+      "NL": "オランダ",
+      "SE": "スウェーデン",
+      "NO": "ノルウェー",
+      "DK": "デンマーク",
+      "FI": "フィンランド"
+    },
+    "timeZones": {
+      "EST": "東部標準時（EST）",
+      "IST": "インド標準時（IST）",
+      "PST": "太平洋標準時（PST）",
+      "MST": "山地標準時（MST）",
+      "CST": "中部標準時（CST）",
+      "GMT": "グリニッジ標準時（GMT）",
+      "CET": "中央ヨーロッパ時間（CET）",
+      "JST": "日本標準時（JST）",
+      "AEST": "オーストラリア東部標準時（AEST）",
+      "MSK": "モスクワ標準時（MSK）",
+      "CST-China": "中国標準時（CST）",
+      "BRT": "ブラジリア時間（BRT）",
+      "AST": "アラビア標準時（AST）",
+      "NZST": "ニュージーランド標準時（NZST）",
+      "CAT": "中央アフリカ時間（CAT）"
+    }
+  },
+  "common": {
+    "profile": "プロフィール",
+    "logout": "ログアウト",
+    "myAccount": "マイアカウント",
+    "saving": "保存中..."
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "您的综合资产和工作订单管理平台",
+    "welcome": "欢迎使用 AssetNeuron"
+  },
+  "login": {
+    "title": "欢迎使用 AssetNeuron",
+    "selectDemoUser": "选择演示用户",
+    "continueWithGoogle": "使用 Google 继续",
+    "manualLogin": "手动登录",
+    "username": "用户名",
+    "password": "密码",
+    "loginButton": "登录",
+    "hideManualLogin": "隐藏手动登录",
+    "backToMainLogin": "← 返回主登录",
+    "invalidCredentials": "用户名或密码无效",
+    "loginFailed": "登录失败。请重试。",
+    "demoLoginFailed": "演示登录失败。请重试。"
+  },
+  "navigation": {
+    "workOrders": "工作订单",
+    "assets": "资产",
+    "dashboard": "仪表板"
+  },
+  "sidebar": {
+    "dashboard": "仪表板",
+    "sitesLocation": "站点和位置",
+    "assets": "资产",
+    "inventory": "库存",
+    "cases": "案例",
+    "preventiveMaintenance": "预防性维护",
+    "workOrder": "工作订单",
+    "smartScheduling": "智能调度",
+    "people": "人员",
+    "investmentPlanning": "投资规划",
+    "sustainability": "可持续性",
+    "analytics": "分析",
+    "siteAnalytics": "站点分析",
+    "assetAnalytics": "资产分析",
+    "inventoryAnalytics": "库存分析",
+    "caseAnalytics": "案例分析",
+    "workOrderAnalytics": "工单分析",
+    "resourceAnalytics": "资源分析",
+    "costAnalytics": "成本分析",
+    "collapse": "折叠"
+  },
+  "home": {
+    "workOrders": {
+      "title": "工作订单",
+      "description": "高效管理和跟踪工作订单"
+    },
+    "assets": {
+      "title": "资产",
+      "description": "监控和维护您的资产"
+    },
+    "dashboard": {
+      "title": "仪表板",
+      "description": "您的运营概览"
+    },
+    "openFeature": "打开 {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "正在加载 {{app}} 微前端...",
+    "notFound": "未找到微前端"
+  },
+  "header": {
+    "searchPlaceholder": "AI 智能搜索...",
+    "allSites": "所有站点",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "所有站点的聚合视图"
+  },
+  "settings": {
+    "title": "设置",
+    "languageAndRegion": "语言和地区",
+    "password": "密码"
+  },
+  "languageAndRegion": {
+    "title": "语言和地区",
+    "breadcrumb": "设置 /",
+    "preferredLanguage": "首选语言",
+    "country": "国家",
+    "timeZone": "时区",
+    "cancel": "取消",
+    "save": "保存",
+    "languages": {
+      "en-US": "英语（美国）",
+      "en-GB": "英语（英国）",
+      "es-ES": "西班牙语（西班牙）",
+      "fr-FR": "法语（法国）",
+      "de-DE": "德语（德国）",
+      "it-IT": "意大利语（意大利）",
+      "pt-BR": "葡萄牙语（巴西）",
+      "zh-CN": "简体中文（中国）",
+      "zh-TW": "繁体中文（台湾）",
+      "ja-JP": "日语（日本）",
+      "ko-KR": "韩语（韩国）",
+      "ru-RU": "俄语（俄罗斯）",
+      "ar-SA": "阿拉伯语（沙特阿拉伯）",
+      "hi-IN": "印地语（印度）"
+    },
+    "countries": {
+      "US": "美利坚合众国（美国）",
+      "IN": "印度",
+      "GB": "英国（UK）",
+      "CA": "加拿大",
+      "AU": "澳大利亚",
+      "DE": "德国",
+      "FR": "法国",
+      "ES": "西班牙",
+      "IT": "意大利",
+      "BR": "巴西",
+      "JP": "日本",
+      "CN": "中国",
+      "RU": "俄罗斯",
+      "SA": "沙特阿拉伯",
+      "MX": "墨西哥",
+      "NL": "荷兰",
+      "SE": "瑞典",
+      "NO": "挪威",
+      "DK": "丹麦",
+      "FI": "芬兰"
+    },
+    "timeZones": {
+      "EST": "东部标准时间（EST）",
+      "IST": "印度标准时间（IST）",
+      "PST": "太平洋标准时间（PST）",
+      "MST": "山地标准时间（MST）",
+      "CST": "中部标准时间（CST）",
+      "GMT": "格林威治标准时间（GMT）",
+      "CET": "中欧时间（CET）",
+      "JST": "日本标准时间（JST）",
+      "AEST": "澳大利亚东部标准时间（AEST）",
+      "MSK": "莫斯科标准时间（MSK）",
+      "CST-China": "中国标准时间（CST）",
+      "BRT": "巴西利亚时间（BRT）",
+      "AST": "阿拉伯标准时间（AST）",
+      "NZST": "新西兰标准时间（NZST）",
+      "CAT": "中非时间（CAT）"
+    }
+  },
+  "common": {
+    "profile": "个人资料",
+    "logout": "退出登录",
+    "myAccount": "我的账户",
+    "saving": "保存中..."
+  }
+}

@@ -1,166 +1,371 @@
-# User Profile API Service
+# API Client Wrapper with Axios and Interceptors
 
-This service provides a mock implementation for fetching user profile data. It's designed to be easily replaceable with a real REST API.
+This directory contains a centralized API client wrapper built on top of Axios with comprehensive interceptor support for authentication, logging, error handling, and more.
 
-## Current Implementation
+## 🚀 Features
 
-The service currently uses mock data from `../data/userProfile.json` with simulated API delays.
+- **Centralized API Client**: Single point of configuration for all API calls
+- **Request/Response Interceptors**: Automatic handling of authentication, logging, error handling
+- **TypeScript Support**: Full type safety for API requests and responses
+- **Error Handling**: Standardized error handling across all API calls
+- **Retry Logic**: Automatic retry for failed requests
+- **Performance Monitoring**: Request timing and performance tracking
+- **Environment-based Configuration**: Different setups for development and production
 
-## Files Structure
+## 📁 Files Structure
 
-- `userProfileApi.ts` - Main API service with mock implementation
-- `../data/userProfile.json` - Mock data file
-- `../hooks/useUserProfile.ts` - React hooks for consuming the API
+```
+services/
+├── apiClient.ts          # Main API client with Axios wrapper
+├── interceptors.ts       # Pre-built interceptors for common use cases
+├── apiSetup.ts          # Configuration and setup functions
+├── exampleApiService.ts  # Example service showing real API usage
+├── userProfileApi.ts     # Updated to use new API client
+├── authApi.ts           # Authentication API (can be updated)
+├── localeApi.ts         # Locale API (can be updated)
+└── navigationApi.ts      # Navigation API (can be updated)
+```
 
-## API Methods
+## 🛠️ Setup and Configuration
 
-### `UserProfileApiService.getUserProfile()`
-Fetches user profile data.
+### 1. Basic Setup
 
-**Mock Response:**
-```json
-{
-  "success": true,
-  "data": {
-    "user": {
-      "id": "user-001",
-      "firstName": "John",
-      "lastName": "Anderson",
-      "email": "John.Anderson@work.com",
-      "role": "Regional Manager",
-      "avatar": {
-        "initials": "JA",
-        "backgroundColor": "#9e9e9e"
-      },
-      "profile": {
-        "department": "Operations",
-        "location": "Regional Office",
-        "employeeId": "EMP-001",
-        "joinDate": "2022-01-15"
-      }
-    }
+The API client is automatically configured when you import it:
+
+```typescript
+import { apiClient } from './services/apiClient';
+import { setupApiClient } from './services/apiSetup';
+
+// Setup with default interceptors
+setupApiClient();
+```
+
+### 2. Environment-based Setup
+
+```typescript
+import { setupDevelopmentApiClient, setupProductionApiClient } from './services/apiSetup';
+
+// For development
+setupDevelopmentApiClient();
+
+// For production
+setupProductionApiClient();
+
+// Auto-setup based on NODE_ENV
+import { setupApiClientForEnvironment } from './services/apiSetup';
+setupApiClientForEnvironment();
+```
+
+### 3. Custom Configuration
+
+```typescript
+import { ApiClient } from './services/apiClient';
+
+const customApiClient = new ApiClient({
+  baseURL: 'https://api.example.com/v1',
+  timeout: 15000,
+  headers: {
+    'X-Custom-Header': 'value',
   },
-  "message": "User profile data fetched successfully"
+});
+```
+
+## 🔧 Available Interceptors
+
+### Request Interceptors
+
+- **Authentication**: Automatically adds auth tokens
+- **Request ID**: Adds unique request IDs for tracking
+- **Content Type**: Ensures proper content types
+- **Loading State**: Manages loading states
+- **Performance**: Tracks request timing
+- **Logging**: Detailed request logging
+
+### Response Interceptors
+
+- **Success Handling**: Processes successful responses
+- **Loading State**: Manages loading states
+- **Performance**: Tracks response timing
+- **Logging**: Detailed response logging
+
+### Error Interceptors
+
+- **Error Handling**: Centralized error processing
+- **Retry Logic**: Automatic retry for failed requests
+- **Loading State**: Manages loading states
+- **Logging**: Detailed error logging
+
+## 📝 Usage Examples
+
+### Basic API Calls
+
+```typescript
+import { apiClient } from './services/apiClient';
+
+// GET request
+const response = await apiClient.get<UserProfile>('/user/profile');
+
+// POST request
+const response = await apiClient.post<LoginResponse>('/auth/login', {
+  username: 'user',
+  password: 'pass'
+});
+
+// PUT request
+const response = await apiClient.put<UserProfile>('/user/profile', profileData);
+
+// DELETE request
+const response = await apiClient.delete<{success: boolean}>('/user/profile');
+```
+
+### Using in Service Classes
+
+```typescript
+import { apiClient } from './services/apiClient';
+import { ApiResponse } from '../types/api';
+
+export class UserService {
+  static async getUserProfile(): Promise<ApiResponse<UserProfile>> {
+    try {
+      const response = await apiClient.get<UserProfile>('/user/profile');
+      return response;
+    } catch (error) {
+      console.error('Error fetching user profile:', error);
+      throw error;
+    }
+  }
+
+  static async updateUserProfile(data: Partial<UserProfile>): Promise<ApiResponse<UserProfile>> {
+    try {
+      const response = await apiClient.put<UserProfile>('/user/profile', data);
+      return response;
+    } catch (error) {
+      console.error('Error updating user profile:', error);
+      throw error;
+    }
+  }
 }
 ```
 
-### `UserProfileApiService.updateUserProfile(profileData)`
-Updates user profile data.
-
-### `UserProfileApiService.signOut()`
-Signs out the user.
-
-## Replacing with Real API
-
-To replace the mock API with a real REST API:
-
-1. **Update the API service methods** in `userProfileApi.ts`:
-   ```typescript
-   static async getUserProfile(): Promise<UserProfileApiResponse> {
-     try {
-       const response = await fetch('/api/user/profile', {
-         method: 'GET',
-         headers: {
-           'Content-Type': 'application/json',
-           'Authorization': `Bearer ${getAuthToken()}`
-         }
-       });
-       
-       if (!response.ok) {
-         throw new Error(`HTTP error! status: ${response.status}`);
-       }
-       
-       const data = await response.json();
-       return {
-         success: true,
-         data: data,
-         message: 'User profile data fetched successfully'
-       };
-     } catch (error) {
-       console.error('API Error:', error);
-       return {
-         success: false,
-         data: { user: {} as UserProfile },
-         message: 'Failed to fetch user profile data'
-       };
-     }
-   }
-   ```
-
-2. **Update API endpoints** to match your backend:
-   - `GET /api/user/profile` - Get user profile
-   - `PUT /api/user/profile` - Update user profile
-   - `POST /api/auth/signout` - Sign out user
-
-3. **Add authentication** if required:
-   ```typescript
-   // Add to headers
-   'Authorization': `Bearer ${getAuthToken()}`
-   ```
-
-4. **Update error handling** for real API responses:
-   ```typescript
-   if (!response.ok) {
-     const errorData = await response.json();
-     throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
-   }
-   ```
-
-## Data Structure
-
-The API expects the following data structure:
+### File Upload Example
 
 ```typescript
-interface UserProfile {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  role: string;
-  avatar: {
-    initials: string;
-    backgroundColor: string;
-  };
-  profile: {
-    department: string;
-    location: string;
-    employeeId: string;
-    joinDate: string;
-  };
-}
-```
-
-## Usage in Components
-
-The service is consumed through React hooks:
-
-```typescript
-import { useUserProfile } from '../hooks/useUserProfile';
-
-const MyComponent = () => {
-  const { user, loading, error, signOut, updateProfile } = useUserProfile();
+const uploadFile = async (file: File) => {
+  const formData = new FormData();
+  formData.append('file', file);
   
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  const response = await apiClient.post<{url: string}>('/upload', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
   
-  return (
-    <div>
-      <h1>{user?.firstName} {user?.lastName}</h1>
-      <p>{user?.email}</p>
-      <p>{user?.role}</p>
-      <button onClick={signOut}>Sign Out</button>
-    </div>
-  );
+  return response;
 };
 ```
 
-## Benefits of This Architecture
+### Query Parameters
 
-1. **Easy Migration**: Mock API can be replaced with real API by updating only the service methods
-2. **Type Safety**: Full TypeScript support with proper interfaces
-3. **Error Handling**: Consistent error handling across all API calls
-4. **Loading States**: Built-in loading and error states for UI components
-5. **Caching**: Hooks can be extended to include caching mechanisms
-6. **Testing**: Mock implementation makes unit testing easier
-7. **Authentication**: Built-in support for authentication tokens
-8. **Real-time Updates**: Hooks can be extended to support real-time profile updates
+```typescript
+const getUsers = async (page: number, limit: number, search?: string) => {
+  const response = await apiClient.get<User[]>('/users', {
+    params: {
+      page,
+      limit,
+      ...(search && { search }),
+    },
+  });
+  
+  return response;
+};
+```
+
+## 🔐 Authentication
+
+The authentication interceptor automatically adds auth tokens to requests:
+
+```typescript
+// Token is automatically added from localStorage
+const response = await apiClient.get('/protected-endpoint');
+```
+
+To set the auth token:
+
+```typescript
+localStorage.setItem('auth_token', 'your-jwt-token');
+```
+
+## 🚨 Error Handling
+
+The API client provides standardized error handling:
+
+```typescript
+try {
+  const response = await apiClient.get('/data');
+  // Handle success
+} catch (error) {
+  // error is of type ApiError with:
+  // - message: string
+  // - status: number
+  // - code: string
+  // - details?: any
+  
+  console.error('API Error:', error.message);
+  console.error('Status:', error.status);
+  console.error('Code:', error.code);
+}
+```
+
+## 🔄 Retry Logic
+
+Failed requests are automatically retried with exponential backoff:
+
+- Network errors: 3 retries
+- 5xx server errors: 3 retries
+- 4xx client errors: No retry
+
+## 📊 Performance Monitoring
+
+Request timing is automatically tracked:
+
+```typescript
+// Performance data is logged to console
+// You can also send to analytics services
+```
+
+## 🎛️ Custom Interceptors
+
+You can add custom interceptors:
+
+```typescript
+import { apiClient } from './services/apiClient';
+
+// Custom request interceptor
+apiClient.addRequestInterceptor((config) => {
+  config.headers = {
+    ...config.headers,
+    'X-Custom-Header': 'value',
+  };
+  return config;
+});
+
+// Custom response interceptor
+apiClient.addResponseInterceptor((response) => {
+  // Transform response data
+  response.data = transformData(response.data);
+  return response;
+});
+
+// Custom error interceptor
+apiClient.addErrorInterceptor(async (error) => {
+  // Custom error handling
+  if (error.response?.status === 401) {
+    // Redirect to login
+    window.location.href = '/login';
+  }
+  throw error;
+});
+```
+
+## 🌍 Environment Variables
+
+Configure the API base URL using environment variables:
+
+```bash
+# .env
+REACT_APP_API_BASE_URL=https://api.example.com/v1
+```
+
+## 🔧 Configuration Options
+
+```typescript
+import { setupApiClient } from './services/apiSetup';
+
+setupApiClient({
+  enableAuth: true,           // Enable authentication interceptor
+  enableRequestId: true,      // Enable request ID tracking
+  enableContentType: true,    // Enable content type handling
+  enableErrorHandling: true,  // Enable error handling
+  enableRetry: true,          // Enable retry logic
+  enableLoading: false,       // Enable loading state management
+  enablePerformance: true,    // Enable performance monitoring
+  enableDetailedLogging: true, // Enable detailed logging
+  enableProductionLogging: true, // Enable production logging
+});
+```
+
+## 🧪 Testing
+
+The API client can be easily mocked for testing:
+
+```typescript
+// Mock the API client
+jest.mock('./services/apiClient', () => ({
+  apiClient: {
+    get: jest.fn(),
+    post: jest.fn(),
+    put: jest.fn(),
+    delete: jest.fn(),
+  },
+}));
+```
+
+## 📚 Migration Guide
+
+### From Mock to Real API
+
+1. **Update service methods** to use `apiClient` instead of mock data
+2. **Replace mock delays** with real API calls
+3. **Update error handling** to use the standardized error format
+4. **Test thoroughly** with real API endpoints
+
+### Example Migration
+
+**Before (Mock):**
+```typescript
+static async getUserProfile() {
+  await new Promise(resolve => setTimeout(resolve, 150));
+  return { success: true, data: mockData };
+}
+```
+
+**After (Real API):**
+```typescript
+static async getUserProfile() {
+  const response = await apiClient.get<UserProfile>('/user/profile');
+  return response;
+}
+```
+
+## 🚀 Best Practices
+
+1. **Use TypeScript**: Always type your API responses
+2. **Handle Errors**: Always wrap API calls in try-catch blocks
+3. **Use Interceptors**: Leverage interceptors for common functionality
+4. **Environment Configuration**: Use different configs for dev/prod
+5. **Performance Monitoring**: Monitor API performance in production
+6. **Error Logging**: Log errors for debugging and monitoring
+
+## 🔍 Debugging
+
+Enable detailed logging for debugging:
+
+```typescript
+setupApiClient({
+  enableDetailedLogging: true,
+  enablePerformance: true,
+});
+```
+
+This will log:
+- Request details (method, URL, headers, data)
+- Response details (status, headers, data)
+- Performance metrics (request duration)
+- Error details (status, message, stack trace)
+
+## 📞 Support
+
+For questions or issues with the API client, please refer to:
+- Axios documentation: https://axios-http.com/
+- TypeScript documentation: https://www.typescriptlang.org/
+- React documentation: https://reactjs.org/

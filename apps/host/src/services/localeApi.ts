@@ -1,9 +1,9 @@
-import { LocaleDataResponse, ApiResponse, ApiConfig, ApiError } from '../types/api';
+import { LocaleDataResponse, ApiResponse, ApiConfig, ApiError } from 'shared';
 import localeData from '../data/localeData.json';
 
 // Mock API Configuration
 const MOCK_API_CONFIG: ApiConfig = {
-  baseUrl: '/api/v1',
+  baseURL: '/api/v1',
   timeout: 5000,
   headers: {
     'Content-Type': 'application/json',

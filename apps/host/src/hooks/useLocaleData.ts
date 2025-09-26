@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LocaleDataResponse, LocaleOption, ApiError } from '../types/api';
+import { LocaleDataResponse, LocaleOption, ApiError } from 'shared';
 import { localeApiService } from '../services/localeApi';
 
 interface UseLocaleDataReturn {
@@ -31,10 +31,15 @@ export const useLocaleData = (): UseLocaleDataReturn => {
       const response = await localeApiService.getLocaleData();
       
       if (response.success) {
+        // The data is already in the correct LocaleOption format
         setLanguages(response.data.languages);
         setCountries(response.data.countries);
         setTimezones(response.data.timezones);
-        console.log('✅ Locale data loaded successfully');
+        console.log('✅ Locale data loaded successfully', {
+          languages: response.data.languages.length,
+          countries: response.data.countries.length,
+          timezones: response.data.timezones.length
+        });
       } else {
         throw new Error(response.message || 'Failed to fetch locale data');
       }

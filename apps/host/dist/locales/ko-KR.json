@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "포괄적인 자산 및 작업 주문 관리 플랫폼",
+    "welcome": "AssetNeuron에 오신 것을 환영합니다"
+  },
+  "login": {
+    "title": "AssetNeuron에 오신 것을 환영합니다",
+    "selectDemoUser": "데모 사용자 선택",
+    "continueWithGoogle": "Google로 계속",
+    "manualLogin": "수동 로그인",
+    "username": "사용자 이름",
+    "password": "비밀번호",
+    "loginButton": "로그인",
+    "hideManualLogin": "수동 로그인 숨기기",
+    "backToMainLogin": "← 메인 로그인으로 돌아가기",
+    "invalidCredentials": "잘못된 사용자 이름 또는 비밀번호",
+    "loginFailed": "로그인에 실패했습니다. 다시 시도해 주세요.",
+    "demoLoginFailed": "데모 로그인에 실패했습니다. 다시 시도해 주세요."
+  },
+  "navigation": {
+    "workOrders": "작업 주문",
+    "assets": "자산",
+    "dashboard": "대시보드"
+  },
+  "sidebar": {
+    "dashboard": "대시보드",
+    "sitesLocation": "사이트 및 위치",
+    "assets": "자산",
+    "inventory": "재고",
+    "cases": "사례",
+    "preventiveMaintenance": "예방 유지보수",
+    "workOrder": "작업 주문",
+    "smartScheduling": "스마트 스케줄링",
+    "people": "사람",
+    "investmentPlanning": "투자 계획",
+    "sustainability": "지속가능성",
+    "analytics": "분석",
+    "siteAnalytics": "사이트 분석",
+    "assetAnalytics": "자산 분석",
+    "inventoryAnalytics": "재고 분석",
+    "caseAnalytics": "사례 분석",
+    "workOrderAnalytics": "작업 주문 분석",
+    "resourceAnalytics": "리소스 분석",
+    "costAnalytics": "비용 분석",
+    "collapse": "접기"
+  },
+  "home": {
+    "workOrders": {
+      "title": "작업 주문",
+      "description": "작업 주문을 효율적으로 관리하고 추적"
+    },
+    "assets": {
+      "title": "자산",
+      "description": "자산을 모니터링하고 유지보수"
+    },
+    "dashboard": {
+      "title": "대시보드",
+      "description": "운영 개요"
+    },
+    "openFeature": "{{feature}} 열기"
+  },
+  "microfrontend": {
+    "loading": "{{app}} 마이크로프론트엔드 로딩 중...",
+    "notFound": "마이크로프론트엔드를 찾을 수 없습니다"
+  },
+  "header": {
+    "searchPlaceholder": "AI 스마트 검색...",
+    "allSites": "모든 사이트",
+    "fallbackCompanyName": "Bharat Manufacturing Ltd",
+    "aggregatedView": "모든 사이트의 집계 보기"
+  },
+  "settings": {
+    "title": "설정",
+    "languageAndRegion": "언어 및 지역",
+    "password": "비밀번호"
+  },
+  "languageAndRegion": {
+    "title": "언어 및 지역",
+    "breadcrumb": "설정 /",
+    "preferredLanguage": "선호 언어",
+    "country": "국가",
+    "timeZone": "시간대",
+    "cancel": "취소",
+    "save": "저장",
+    "languages": {
+      "en-US": "영어 (미국)",
+      "en-GB": "영어 (영국)",
+      "es-ES": "스페인어 (스페인)",
+      "fr-FR": "프랑스어 (프랑스)",
+      "de-DE": "독일어 (독일)",
+      "it-IT": "이탈리아어 (이탈리아)",
+      "pt-BR": "포르투갈어 (브라질)",
+      "zh-CN": "간체 중국어 (중국)",
+      "zh-TW": "번체 중국어 (대만)",
+      "ja-JP": "일본어 (일본)",
+      "ko-KR": "한국어 (대한민국)",
+      "ru-RU": "러시아어 (러시아)",
+      "ar-SA": "아랍어 (사우디아라비아)",
+      "hi-IN": "힌디어 (인도)"
+    },
+    "countries": {
+      "US": "미합중국 (USA)",
+      "IN": "인도",
+      "GB": "영국 (UK)",
+      "CA": "캐나다",
+      "AU": "호주",
+      "DE": "독일",
+      "FR": "프랑스",
+      "ES": "스페인",
+      "IT": "이탈리아",
+      "BR": "브라질",
+      "JP": "일본",
+      "CN": "중국",
+      "RU": "러시아",
+      "SA": "사우디아라비아",
+      "MX": "멕시코",
+      "NL": "네덜란드",
+      "SE": "스웨덴",
+      "NO": "노르웨이",
+      "DK": "덴마크",
+      "FI": "핀란드"
+    },
+    "timeZones": {
+      "EST": "동부 표준시 (EST)",
+      "IST": "인도 표준시 (IST)",
+      "PST": "태평양 표준시 (PST)",
+      "MST": "산지 표준시 (MST)",
+      "CST": "중부 표준시 (CST)",
+      "GMT": "그리니치 표준시 (GMT)",
+      "CET": "중앙 유럽 시간 (CET)",
+      "JST": "일본 표준시 (JST)",
+      "AEST": "호주 동부 표준시 (AEST)",
+      "MSK": "모스크바 표준시 (MSK)",
+      "CST-China": "중국 표준시 (CST)",
+      "BRT": "브라질리아 시간 (BRT)",
+      "AST": "아라비아 표준시 (AST)",
+      "NZST": "뉴질랜드 표준시 (NZST)",
+      "CAT": "중앙 아프리카 시간 (CAT)"
+    }
+  },
+  "common": {
+    "profile": "프로필",
+    "logout": "로그아웃",
+    "myAccount": "내 계정",
+    "saving": "저장 중..."
+  }
+}

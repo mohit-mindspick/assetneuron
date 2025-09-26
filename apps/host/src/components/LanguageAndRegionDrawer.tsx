@@ -49,6 +49,17 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
   const { languages, countries, timezones, loading, error, refetch } = useLocaleData();
   const { savePreferences, saving: apiSaving, error: saveError } = useSaveUserPreferences();
 
+  // Debug logging
+  useEffect(() => {
+    console.log('🔍 LanguageAndRegionDrawer - Data state:', {
+      languages: languages.length,
+      countries: countries.length,
+      timezones: timezones.length,
+      loading,
+      error: error?.message
+    });
+  }, [languages, countries, timezones, loading, error]);
+
   // Initialize state from localStorage and current i18n language
   useEffect(() => {
     // Load saved settings from localStorage
@@ -282,8 +293,9 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         </Box>
                         <FormControl fullWidth>
                           <Select
-                            value={preferredLanguage}
+                            value={preferredLanguage || ''}
                             onChange={(e) => handleLanguageChange(e.target.value as string)}
+                            disabled={languages.length === 0}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
                                 borderColor: customColors.common.borders.light,
@@ -321,8 +333,9 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         </Typography>
                         <FormControl fullWidth>
                           <Select
-                            value={country}
+                            value={country || ''}
                             onChange={(e) => setCountry(e.target.value)}
+                            disabled={countries.length === 0}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
                                 borderColor: customColors.common.borders.light,
@@ -360,8 +373,9 @@ const LanguageAndRegionDrawer: React.FC<LanguageAndRegionDrawerProps> = ({
                         </Typography>
                         <FormControl fullWidth>
                           <Select
-                            value={timeZone}
+                            value={timeZone || ''}
                             onChange={(e) => setTimeZone(e.target.value)}
+                            disabled={timezones.length === 0}
                             sx={{
                               '& .MuiOutlinedInput-notchedOutline': {
                                 borderColor: customColors.common.borders.light,

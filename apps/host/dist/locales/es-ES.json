@@ -1,0 +1,148 @@
+{
+  "app": {
+    "title": "AssetNeuron",
+    "subtitle": "Su plataforma integral de gestión de activos y órdenes de trabajo",
+    "welcome": "Bienvenido a AssetNeuron"
+  },
+  "login": {
+    "title": "Bienvenido a AssetNeuron",
+    "selectDemoUser": "Seleccionar Usuario Demo",
+    "continueWithGoogle": "Continuar con Google",
+    "manualLogin": "Inicio de Sesión Manual",
+    "username": "Nombre de Usuario",
+    "password": "Contraseña",
+    "loginButton": "Iniciar Sesión",
+    "hideManualLogin": "Ocultar Inicio de Sesión Manual",
+    "backToMainLogin": "← Volver al Inicio de Sesión Principal",
+    "invalidCredentials": "Nombre de usuario o contraseña inválidos",
+    "loginFailed": "Error al iniciar sesión. Por favor, inténtalo de nuevo.",
+    "demoLoginFailed": "Error al iniciar sesión demo. Por favor, inténtalo de nuevo."
+  },
+  "navigation": {
+    "workOrders": "Órdenes de Trabajo",
+    "assets": "Activos",
+    "dashboard": "Panel de Control"
+  },
+  "sidebar": {
+    "dashboard": "Panel de Control",
+    "sitesLocation": "Sitios y Ubicación",
+    "assets": "Activos",
+    "inventory": "Inventario",
+    "cases": "Casos",
+    "preventiveMaintenance": "Mantenimiento Preventivo",
+    "workOrder": "Orden de Trabajo",
+    "smartScheduling": "Programación Inteligente",
+    "people": "Personas",
+    "investmentPlanning": "Planificación de Inversión",
+    "sustainability": "Sostenibilidad",
+    "analytics": "Analíticas",
+    "siteAnalytics": "Analíticas de Sitio",
+    "assetAnalytics": "Analíticas de Activos",
+    "inventoryAnalytics": "Analíticas de Inventario",
+    "caseAnalytics": "Analíticas de Casos",
+    "workOrderAnalytics": "Analíticas de Órdenes de Trabajo",
+    "resourceAnalytics": "Analíticas de Recursos",
+    "costAnalytics": "Analíticas de Costos",
+    "collapse": "Contraer"
+  },
+  "home": {
+    "workOrders": {
+      "title": "Órdenes de Trabajo",
+      "description": "Gestiona y rastrea las órdenes de trabajo de manera eficiente"
+    },
+    "assets": {
+      "title": "Activos",
+      "description": "Monitorea y mantén tus activos"
+    },
+    "dashboard": {
+      "title": "Panel de Control",
+      "description": "Resumen de tus operaciones"
+    },
+    "openFeature": "Abrir {{feature}}"
+  },
+  "microfrontend": {
+    "loading": "Cargando microfrontend {{app}}...",
+    "notFound": "Microfrontend no encontrado"
+  },
+  "header": {
+    "searchPlaceholder": "Búsqueda Inteligente IA...",
+    "allSites": "Todos los Sitios",
+    "bharatManufacturing": "Bharat Manufacturing Ltd",
+    "aggregatedView": "Vista agregada de todos los sitios"
+  },
+  "settings": {
+    "title": "Configuración",
+    "languageAndRegion": "Idioma y región",
+    "password": "Contraseña"
+  },
+  "languageAndRegion": {
+    "title": "Idioma y región",
+    "breadcrumb": "Configuración /",
+    "preferredLanguage": "Idioma preferido",
+    "country": "País",
+    "timeZone": "Zona horaria",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "languages": {
+      "en-US": "Inglés (Estados Unidos)",
+      "en-GB": "Inglés (Reino Unido)",
+      "es-ES": "Español (España)",
+      "fr-FR": "Francés (Francia)",
+      "de-DE": "Alemán (Alemania)",
+      "it-IT": "Italiano (Italia)",
+      "pt-BR": "Portugués (Brasil)",
+      "zh-CN": "Chino Simplificado (China)",
+      "zh-TW": "Chino Tradicional (Taiwán)",
+      "ja-JP": "Japonés (Japón)",
+      "ko-KR": "Coreano (Corea del Sur)",
+      "ru-RU": "Ruso (Rusia)",
+      "ar-SA": "Árabe (Arabia Saudita)",
+      "hi-IN": "Hindi (India)"
+    },
+    "countries": {
+      "US": "Estados Unidos de América (EE.UU.)",
+      "IN": "India",
+      "GB": "Reino Unido (RU)",
+      "CA": "Canadá",
+      "AU": "Australia",
+      "DE": "Alemania",
+      "FR": "Francia",
+      "ES": "España",
+      "IT": "Italia",
+      "BR": "Brasil",
+      "JP": "Japón",
+      "CN": "China",
+      "RU": "Rusia",
+      "SA": "Arabia Saudita",
+      "MX": "México",
+      "NL": "Países Bajos",
+      "SE": "Suecia",
+      "NO": "Noruega",
+      "DK": "Dinamarca",
+      "FI": "Finlandia"
+    },
+    "timeZones": {
+      "EST": "Hora Estándar del Este (EST)",
+      "IST": "Hora Estándar de la India (IST)",
+      "PST": "Hora Estándar del Pacífico (PST)",
+      "MST": "Hora Estándar de la Montaña (MST)",
+      "CST": "Hora Estándar Central (CST)",
+      "GMT": "Hora del Meridiano de Greenwich (GMT)",
+      "CET": "Hora de Europa Central (CET)",
+      "JST": "Hora Estándar de Japón (JST)",
+      "AEST": "Hora Estándar del Este de Australia (AEST)",
+      "MSK": "Hora Estándar de Moscú (MSK)",
+      "CST-China": "Hora Estándar de China (CST)",
+      "BRT": "Hora de Brasilia (BRT)",
+      "AST": "Hora Estándar de Arabia (AST)",
+      "NZST": "Hora Estándar de Nueva Zelanda (NZST)",
+      "CAT": "Hora de África Central (CAT)"
+    }
+  },
+  "common": {
+    "profile": "Perfil",
+    "logout": "Cerrar sesión",
+    "myAccount": "Mi cuenta",
+    "saving": "Guardando..."
+  }
+}
